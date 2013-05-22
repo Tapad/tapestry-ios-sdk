@@ -1,0 +1,6 @@
+Tapestry iOS SDK
+
+This project allows for integration with Tapad's Tapestry Cross-Platform API.
+
+The SDK code is within the "arc" subdirectory. A simple demo application is in
+the DemoApp-Arc subdirectory.
