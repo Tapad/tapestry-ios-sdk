@@ -32,6 +32,8 @@
     [TapestryRequestBuilder applicationDidFinishLaunching:application];
 
     // tests (scheduled because the event sending is asynchronous but the config setting is synchronous
+    
+    /*
     [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(testEventWithNoIdentifier) userInfo:nil repeats:NO];
     [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(testEventWithUserId) userInfo:nil repeats:NO];
     [NSTimer scheduledTimerWithTimeInterval:4 target:self selector:@selector(testEventWithOpenUDID) userInfo:nil repeats:NO];
@@ -42,6 +44,7 @@
     [NSTimer scheduledTimerWithTimeInterval:12 target:self selector:@selector(testEventWithSHA1HashedMAC) userInfo:nil repeats:NO];
     [NSTimer scheduledTimerWithTimeInterval:14 target:self selector:@selector(testEventWithAdvertisingIdentifier) userInfo:nil repeats:NO];
     [NSTimer scheduledTimerWithTimeInterval:16 target:self selector:@selector(testEventWithAllIdentifiers) userInfo:nil repeats:NO];
+     */
 }
 
 - (void) resetIdentifierConfig {
