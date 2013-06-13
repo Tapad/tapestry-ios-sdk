@@ -59,7 +59,7 @@ static NSString*const kplatform      =@"ta_platform";
 - (id) init {
     if ((self = [super init])) {
         protocol=@"http";
-        dns=@"tapestry-api-test.dev.tapad.com";
+        dns=@"tapestry.tapad.com";
         port=@":80";
         apiVersion=@"1";
         hasError=NO;
