@@ -12,12 +12,14 @@
     NSDictionary* dataToSet;
     NSDictionary* dataToAdd;
     NSArray* audiencesToAdd;
+    NSDictionary* analytics;
     BOOL shouldGetData;
     BOOL shouldGetDevices;
 }
 
 @property (nonatomic,copy) NSString* name;
 @property (nonatomic,copy) NSString* partnerId;
+@property (nonatomic,copy) NSDictionary* analytics;
 @property (nonatomic,copy) NSDictionary* dataToSet;
 @property (nonatomic,copy) NSDictionary* dataToAdd;
 @property (nonatomic,copy) NSArray* audiencesToAdd;

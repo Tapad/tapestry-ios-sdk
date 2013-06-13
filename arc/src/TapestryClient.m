@@ -58,8 +58,8 @@ static NSString*const kplatform      =@"ta_platform";
 // Must always override super's designated initializer.
 - (id) init {
     if ((self = [super init])) {
-        protocol=@"https";
-        dns=@"tapestry.tapad.com";
+        protocol=@"http";
+        dns=@"tapestry-api-test.dev.tapad.com";
         port=@":80";
         apiVersion=@"1";
         hasError=NO;
@@ -83,6 +83,9 @@ static NSString*const kplatform      =@"ta_platform";
                          [userId stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         }
 
+        if (req.analytics) {
+            urlString = [NSString stringWithFormat:@"%@%@%@", urlString, @"&ta_analytics=", [TapadPreferences dictionaryAsEncodedCsvString:req.analytics]];
+        }
         if (req.shouldGetData) {
             urlString = [NSString stringWithFormat:@"%@%@", urlString, @"&ta_get"];
         }

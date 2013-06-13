@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D3A62EF176A4F6A00EDCF1A /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3A62EE176A4F6A00EDCF1A /* libGoogleAnalytics.a */; };
+		1D3A62F3176A500D00EDCF1A /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3A62F2176A500D00EDCF1A /* libsqlite3.0.dylib */; };
+		1D3A62F5176A502200EDCF1A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3A62F4176A502200EDCF1A /* CFNetwork.framework */; };
 		231257D9163132A800EDFF3A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 231257D8163132A800EDFF3A /* Default-568h@2x.png */; };
 		231257DB1631332D00EDFF3A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 231257DA1631332D00EDFF3A /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		237C713914210758002DF422 /* DemoAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 237C713614210758002DF422 /* DemoAppAppDelegate.m */; };
-		237C713A14210758002DF422 /* DemoAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 237C713814210758002DF422 /* DemoAppViewController.m */; };
+		237C713914210758002DF422 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 237C713614210758002DF422 /* AppDelegate.m */; };
 		237C713E1421081B002DF422 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 237C713D1421081B002DF422 /* main.m */; };
 		237C71411421085E002DF422 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 237C713F1421085E002DF422 /* InfoPlist.strings */; };
-		237C714614210873002DF422 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 237C714214210873002DF422 /* MainStoryboard_iPad.storyboard */; };
 		237C714714210873002DF422 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 237C714414210873002DF422 /* MainStoryboard_iPhone.storyboard */; };
 		2392B17A1594039200DE2CD5 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 2392B1711594039200DE2CD5 /* NSString+MD5.m */; };
 		2392B17B1594039200DE2CD5 /* TapestryRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2392B1731594039200DE2CD5 /* TapestryRequestBuilder.m */; };
@@ -40,15 +41,16 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
+		1D3A62EE176A4F6A00EDCF1A /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
+		1D3A62F0176A4F7E00EDCF1A /* GANTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GANTracker.h; sourceTree = "<group>"; };
+		1D3A62F1176A4FC100EDCF1A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1D3A62F2176A500D00EDCF1A /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		1D3A62F4176A502200EDCF1A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		231257D8163132A800EDFF3A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		231257DA1631332D00EDFF3A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		237C713514210758002DF422 /* DemoAppAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoAppAppDelegate.h; path = Classes/DemoAppAppDelegate.h; sourceTree = SOURCE_ROOT; };
-		237C713614210758002DF422 /* DemoAppAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemoAppAppDelegate.m; path = Classes/DemoAppAppDelegate.m; sourceTree = SOURCE_ROOT; };
-		237C713714210758002DF422 /* DemoAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoAppViewController.h; path = Classes/DemoAppViewController.h; sourceTree = SOURCE_ROOT; };
-		237C713814210758002DF422 /* DemoAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemoAppViewController.m; path = Classes/DemoAppViewController.m; sourceTree = SOURCE_ROOT; };
+		237C713614210758002DF422 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		237C713D1421081B002DF422 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 		237C71401421085E002DF422 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
-		237C714314210873002DF422 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = SOURCE_ROOT; };
 		237C714514210873002DF422 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = SOURCE_ROOT; };
 		237C7148142108A8002DF422 /* DemoApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DemoApp-Info.plist"; sourceTree = SOURCE_ROOT; };
 		2392B1701594039200DE2CD5 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5.h"; path = "../arc/src/NSString+MD5.h"; sourceTree = "<group>"; };
@@ -78,10 +80,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D3A62F5176A502200EDCF1A /* CFNetwork.framework in Frameworks */,
+				1D3A62F3176A500D00EDCF1A /* libsqlite3.0.dylib in Frameworks */,
 				23B83F1514210534003DAFFE /* UIKit.framework in Frameworks */,
 				23B83F1714210534003DAFFE /* Foundation.framework in Frameworks */,
 				23B83F1914210534003DAFFE /* CoreGraphics.framework in Frameworks */,
 				231257DB1631332D00EDFF3A /* AdSupport.framework in Frameworks */,
+				1D3A62EF176A4F6A00EDCF1A /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,14 +141,12 @@
 		23A4CFEE14212DBC006ADF52 /* DemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				23D5C9CF159408DC000E92C2 /* MyEnabledTapadIdentifiers.h */,
 				23561CFA14212EFC0090FA71 /* TapadEvent */,
 				23B83F1B14210534003DAFFE /* Supporting Files */,
-				237C713614210758002DF422 /* DemoAppAppDelegate.m */,
-				237C713514210758002DF422 /* DemoAppAppDelegate.h */,
-				237C713714210758002DF422 /* DemoAppViewController.h */,
-				237C713814210758002DF422 /* DemoAppViewController.m */,
-				237C714214210873002DF422 /* MainStoryboard_iPad.storyboard */,
+				237C713614210758002DF422 /* AppDelegate.m */,
+				1D3A62F1176A4FC100EDCF1A /* AppDelegate.h */,
+				1D3A62F0176A4F7E00EDCF1A /* GANTracker.h */,
+				23D5C9CF159408DC000E92C2 /* MyEnabledTapadIdentifiers.h */,
 				237C714414210873002DF422 /* MainStoryboard_iPhone.storyboard */,
 			);
 			name = DemoApp;
@@ -152,6 +155,8 @@
 		23B83F0514210534003DAFFE = {
 			isa = PBXGroup;
 			children = (
+				1D3A62F4176A502200EDCF1A /* CFNetwork.framework */,
+				1D3A62F2176A500D00EDCF1A /* libsqlite3.0.dylib */,
 				231257D8163132A800EDFF3A /* Default-568h@2x.png */,
 				23A4CFEE14212DBC006ADF52 /* DemoApp */,
 				23B83F1314210534003DAFFE /* Frameworks */,
@@ -170,6 +175,7 @@
 		23B83F1314210534003DAFFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D3A62EE176A4F6A00EDCF1A /* libGoogleAnalytics.a */,
 				23B83F1414210534003DAFFE /* UIKit.framework */,
 				23B83F1614210534003DAFFE /* Foundation.framework */,
 				23B83F1814210534003DAFFE /* CoreGraphics.framework */,
@@ -219,7 +225,7 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 			};
-			buildConfigurationList = 23B83F0A14210534003DAFFE /* Build configuration list for PBXProject "DemoApp" */;
+			buildConfigurationList = 23B83F0A14210534003DAFFE /* Build configuration list for PBXProject "GoogleAnalytics" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -242,7 +248,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				237C71411421085E002DF422 /* InfoPlist.strings in Resources */,
-				237C714614210873002DF422 /* MainStoryboard_iPad.storyboard in Resources */,
 				237C714714210873002DF422 /* MainStoryboard_iPhone.storyboard in Resources */,
 				231257D9163132A800EDFF3A /* Default-568h@2x.png in Resources */,
 			);
@@ -255,8 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				237C713914210758002DF422 /* DemoAppAppDelegate.m in Sources */,
-				237C713A14210758002DF422 /* DemoAppViewController.m in Sources */,
+				237C713914210758002DF422 /* AppDelegate.m in Sources */,
 				237C713E1421081B002DF422 /* main.m in Sources */,
 				2392B17A1594039200DE2CD5 /* NSString+MD5.m in Sources */,
 				2392B17B1594039200DE2CD5 /* TapestryRequestBuilder.m in Sources */,
@@ -277,15 +281,6 @@
 				237C71401421085E002DF422 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		237C714214210873002DF422 /* MainStoryboard_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				237C714314210873002DF422 /* en */,
-			);
-			name = MainStoryboard_iPad.storyboard;
-			path = DemoApp;
 			sourceTree = "<group>";
 		};
 		237C714414210873002DF422 /* MainStoryboard_iPhone.storyboard */ = {
@@ -360,10 +355,15 @@
 		23B83F3214210534003DAFFE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DemoApp-Prefix.pch";
 				INFOPLIST_FILE = "DemoApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -372,10 +372,15 @@
 		23B83F3314210534003DAFFE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DemoApp-Prefix.pch";
 				INFOPLIST_FILE = "DemoApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -384,7 +389,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		23B83F0A14210534003DAFFE /* Build configuration list for PBXProject "DemoApp" */ = {
+		23B83F0A14210534003DAFFE /* Build configuration list for PBXProject "GoogleAnalytics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				23B83F2F14210534003DAFFE /* Debug */,

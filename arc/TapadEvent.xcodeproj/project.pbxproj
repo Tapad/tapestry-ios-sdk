@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D3A62AB176A4B3800EDCF1A /* TapestryRequestBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D3A62A9176A4B3800EDCF1A /* TapestryRequestBuilder.h */; };
+		1D3A62AC176A4B3800EDCF1A /* TapestryRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A62AA176A4B3800EDCF1A /* TapestryRequestBuilder.m */; };
+		1D3A62AF176A4B4000EDCF1A /* TapestryClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D3A62AD176A4B4000EDCF1A /* TapestryClient.h */; };
+		1D3A62B0176A4B4000EDCF1A /* TapestryClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A62AE176A4B4000EDCF1A /* TapestryClient.m */; };
 		230D1420141FF8A000E770B0 /* OpenUDID.h in Headers */ = {isa = PBXBuildFile; fileRef = 230D141E141FF8A000E770B0 /* OpenUDID.h */; };
 		230D1421141FF8A000E770B0 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 230D141F141FF8A000E770B0 /* OpenUDID.m */; };
 		230F9800141FEEAD001936EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 230F97FF141FEEAD001936EC /* Foundation.framework */; };
@@ -16,18 +20,18 @@
 		23FC78CA159401F1002C1A53 /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FC78C8159401F1002C1A53 /* UIDevice-Hardware.m */; };
 		23FC78D715940212002C1A53 /* NSString+MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 23FC78CD15940212002C1A53 /* NSString+MD5.h */; };
 		23FC78D815940212002C1A53 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FC78CE15940212002C1A53 /* NSString+MD5.m */; };
-		23FC78D915940212002C1A53 /* TapadEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 23FC78CF15940212002C1A53 /* TapadEvent.h */; };
-		23FC78DA15940212002C1A53 /* TapadEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FC78D015940212002C1A53 /* TapadEvent.m */; };
 		23FC78DB15940212002C1A53 /* TapadIdentifiers.h in Headers */ = {isa = PBXBuildFile; fileRef = 23FC78D115940212002C1A53 /* TapadIdentifiers.h */; };
 		23FC78DC15940212002C1A53 /* TapadIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FC78D215940212002C1A53 /* TapadIdentifiers.m */; };
 		23FC78DD15940212002C1A53 /* TapadPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = 23FC78D315940212002C1A53 /* TapadPreferences.h */; };
 		23FC78DE15940212002C1A53 /* TapadPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FC78D415940212002C1A53 /* TapadPreferences.m */; };
-		23FC78DF15940212002C1A53 /* TapadRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 23FC78D515940212002C1A53 /* TapadRequest.h */; };
-		23FC78E015940212002C1A53 /* TapadRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 23FC78D615940212002C1A53 /* TapadRequest.m */; };
 		23FC78E21594021C002C1A53 /* MyEnabledTapadIdentifiers.h in Headers */ = {isa = PBXBuildFile; fileRef = 23FC78E11594021C002C1A53 /* MyEnabledTapadIdentifiers.h */; settings = {ATTRIBUTES = (Private, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D3A62A9176A4B3800EDCF1A /* TapestryRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapestryRequestBuilder.h; path = src/TapestryRequestBuilder.h; sourceTree = "<group>"; };
+		1D3A62AA176A4B3800EDCF1A /* TapestryRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapestryRequestBuilder.m; path = src/TapestryRequestBuilder.m; sourceTree = "<group>"; };
+		1D3A62AD176A4B4000EDCF1A /* TapestryClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapestryClient.h; path = src/TapestryClient.h; sourceTree = "<group>"; };
+		1D3A62AE176A4B4000EDCF1A /* TapestryClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapestryClient.m; path = src/TapestryClient.m; sourceTree = "<group>"; };
 		230D141E141FF8A000E770B0 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		230D141F141FF8A000E770B0 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		230F97FC141FEEAD001936EC /* libTapadEvent.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTapadEvent.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,14 +42,10 @@
 		23FC78C8159401F1002C1A53 /* UIDevice-Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice-Hardware.m"; path = "UIDevice-Hardware/UIDevice-Hardware.m"; sourceTree = "<group>"; };
 		23FC78CD15940212002C1A53 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5.h"; path = "src/NSString+MD5.h"; sourceTree = "<group>"; };
 		23FC78CE15940212002C1A53 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MD5.m"; path = "src/NSString+MD5.m"; sourceTree = "<group>"; };
-		23FC78CF15940212002C1A53 /* TapadEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapadEvent.h; path = src/TapadEvent.h; sourceTree = "<group>"; };
-		23FC78D015940212002C1A53 /* TapadEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapadEvent.m; path = src/TapadEvent.m; sourceTree = "<group>"; };
 		23FC78D115940212002C1A53 /* TapadIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapadIdentifiers.h; path = src/TapadIdentifiers.h; sourceTree = "<group>"; };
 		23FC78D215940212002C1A53 /* TapadIdentifiers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapadIdentifiers.m; path = src/TapadIdentifiers.m; sourceTree = "<group>"; };
 		23FC78D315940212002C1A53 /* TapadPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapadPreferences.h; path = src/TapadPreferences.h; sourceTree = "<group>"; };
 		23FC78D415940212002C1A53 /* TapadPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapadPreferences.m; path = src/TapadPreferences.m; sourceTree = "<group>"; };
-		23FC78D515940212002C1A53 /* TapadRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TapadRequest.h; path = src/TapadRequest.h; sourceTree = "<group>"; };
-		23FC78D615940212002C1A53 /* TapadRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TapadRequest.m; path = src/TapadRequest.m; sourceTree = "<group>"; };
 		23FC78E11594021C002C1A53 /* MyEnabledTapadIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEnabledTapadIdentifiers.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,16 +129,16 @@
 		23FC78CC159401F7002C1A53 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				1D3A62AD176A4B4000EDCF1A /* TapestryClient.h */,
+				1D3A62AE176A4B4000EDCF1A /* TapestryClient.m */,
+				1D3A62A9176A4B3800EDCF1A /* TapestryRequestBuilder.h */,
+				1D3A62AA176A4B3800EDCF1A /* TapestryRequestBuilder.m */,
 				23FC78CD15940212002C1A53 /* NSString+MD5.h */,
 				23FC78CE15940212002C1A53 /* NSString+MD5.m */,
-				23FC78CF15940212002C1A53 /* TapadEvent.h */,
-				23FC78D015940212002C1A53 /* TapadEvent.m */,
 				23FC78D115940212002C1A53 /* TapadIdentifiers.h */,
 				23FC78D215940212002C1A53 /* TapadIdentifiers.m */,
 				23FC78D315940212002C1A53 /* TapadPreferences.h */,
 				23FC78D415940212002C1A53 /* TapadPreferences.m */,
-				23FC78D515940212002C1A53 /* TapadRequest.h */,
-				23FC78D615940212002C1A53 /* TapadRequest.m */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -155,10 +155,10 @@
 				230D1420141FF8A000E770B0 /* OpenUDID.h in Headers */,
 				23FC78C9159401F1002C1A53 /* UIDevice-Hardware.h in Headers */,
 				23FC78D715940212002C1A53 /* NSString+MD5.h in Headers */,
-				23FC78D915940212002C1A53 /* TapadEvent.h in Headers */,
 				23FC78DB15940212002C1A53 /* TapadIdentifiers.h in Headers */,
 				23FC78DD15940212002C1A53 /* TapadPreferences.h in Headers */,
-				23FC78DF15940212002C1A53 /* TapadRequest.h in Headers */,
+				1D3A62AB176A4B3800EDCF1A /* TapestryRequestBuilder.h in Headers */,
+				1D3A62AF176A4B4000EDCF1A /* TapestryClient.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,10 +215,10 @@
 				230D1421141FF8A000E770B0 /* OpenUDID.m in Sources */,
 				23FC78CA159401F1002C1A53 /* UIDevice-Hardware.m in Sources */,
 				23FC78D815940212002C1A53 /* NSString+MD5.m in Sources */,
-				23FC78DA15940212002C1A53 /* TapadEvent.m in Sources */,
 				23FC78DC15940212002C1A53 /* TapadIdentifiers.m in Sources */,
 				23FC78DE15940212002C1A53 /* TapadPreferences.m in Sources */,
-				23FC78E015940212002C1A53 /* TapadRequest.m in Sources */,
+				1D3A62AC176A4B3800EDCF1A /* TapestryRequestBuilder.m in Sources */,
+				1D3A62B0176A4B4000EDCF1A /* TapestryClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

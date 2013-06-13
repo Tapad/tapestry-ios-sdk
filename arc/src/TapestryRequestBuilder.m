@@ -13,6 +13,7 @@
 @synthesize dataToSet;
 @synthesize dataToAdd;
 @synthesize audiencesToAdd;
+@synthesize analytics;
 @synthesize shouldGetData;
 @synthesize shouldGetDevices;
 

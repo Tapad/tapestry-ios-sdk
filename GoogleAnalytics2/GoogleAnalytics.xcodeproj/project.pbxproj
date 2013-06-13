@@ -1,0 +1,430 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3A6261176A492800EDCF1A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3A6260176A492800EDCF1A /* UIKit.framework */; };
+		1D3A6263176A492800EDCF1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3A6262176A492800EDCF1A /* Foundation.framework */; };
+		1D3A6265176A492800EDCF1A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3A6264176A492800EDCF1A /* CoreGraphics.framework */; };
+		1D3A626B176A492800EDCF1A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A6269176A492800EDCF1A /* InfoPlist.strings */; };
+		1D3A626D176A492800EDCF1A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A626C176A492800EDCF1A /* main.m */; };
+		1D3A6273176A492800EDCF1A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A6272176A492800EDCF1A /* Default.png */; };
+		1D3A6275176A492800EDCF1A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A6274176A492800EDCF1A /* Default@2x.png */; };
+		1D3A6277176A492800EDCF1A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A6276176A492800EDCF1A /* Default-568h@2x.png */; };
+		1D3A6281176A4A1800EDCF1A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A6280176A4A1800EDCF1A /* AppDelegate.m */; };
+		1D3A62D5176A4B5100EDCF1A /* TapadEvent-Prefix.pch in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A62C4176A4B5100EDCF1A /* TapadEvent-Prefix.pch */; };
+		1D3A62D7176A4BB900EDCF1A /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3A62D6176A4BB900EDCF1A /* libGoogleAnalytics.a */; };
+		1D3A62D9176A4BE300EDCF1A /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3A62D8176A4BE300EDCF1A /* libsqlite3.0.dylib */; };
+		1D3A62DB176A4BEF00EDCF1A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3A62DA176A4BEF00EDCF1A /* CFNetwork.framework */; };
+		1D3A62DC176A4C0A00EDCF1A /* TapestryClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A62B3176A4B5100EDCF1A /* TapestryClient.m */; };
+		1D3A62DD176A4C0A00EDCF1A /* TapestryRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A62B5176A4B5100EDCF1A /* TapestryRequestBuilder.m */; };
+		1D3A62DE176A4C0A00EDCF1A /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A62B7176A4B5100EDCF1A /* NSString+MD5.m */; };
+		1D3A62DF176A4C0A00EDCF1A /* TapadIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A62B9176A4B5100EDCF1A /* TapadIdentifiers.m */; };
+		1D3A62E0176A4C0A00EDCF1A /* TapadPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A62BB176A4B5100EDCF1A /* TapadPreferences.m */; };
+		1D3A62E1176A4C0A00EDCF1A /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A62BE176A4B5100EDCF1A /* OpenUDID.m */; };
+		1D3A62E2176A4C0A00EDCF1A /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A62C1176A4B5100EDCF1A /* UIDevice-Hardware.m */; };
+		1D3A62E3176A4CFD00EDCF1A /* TapestryClient.h in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A62B2176A4B5100EDCF1A /* TapestryClient.h */; };
+		1D3A62E4176A4CFD00EDCF1A /* TapestryClient.m in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A62B3176A4B5100EDCF1A /* TapestryClient.m */; };
+		1D3A62E5176A4CFD00EDCF1A /* TapestryRequestBuilder.h in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A62B4176A4B5100EDCF1A /* TapestryRequestBuilder.h */; };
+		1D3A62E6176A4CFD00EDCF1A /* TapestryRequestBuilder.m in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A62B5176A4B5100EDCF1A /* TapestryRequestBuilder.m */; };
+		1D3A62E7176A4CFD00EDCF1A /* NSString+MD5.h in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A62B6176A4B5100EDCF1A /* NSString+MD5.h */; };
+		1D3A62E8176A4CFD00EDCF1A /* NSString+MD5.m in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A62B7176A4B5100EDCF1A /* NSString+MD5.m */; };
+		1D3A62E9176A4CFD00EDCF1A /* TapadIdentifiers.h in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A62B8176A4B5100EDCF1A /* TapadIdentifiers.h */; };
+		1D3A62EA176A4CFD00EDCF1A /* TapadIdentifiers.m in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A62B9176A4B5100EDCF1A /* TapadIdentifiers.m */; };
+		1D3A62EB176A4CFD00EDCF1A /* TapadPreferences.h in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A62BA176A4B5100EDCF1A /* TapadPreferences.h */; };
+		1D3A62EC176A4CFD00EDCF1A /* TapadPreferences.m in Resources */ = {isa = PBXBuildFile; fileRef = 1D3A62BB176A4B5100EDCF1A /* TapadPreferences.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D3A625D176A492800EDCF1A /* GoogleAnalytics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleAnalytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D3A6260176A492800EDCF1A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1D3A6262176A492800EDCF1A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3A6264176A492800EDCF1A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1D3A6268176A492800EDCF1A /* GoogleAnalytics-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleAnalytics-Info.plist"; sourceTree = "<group>"; };
+		1D3A626A176A492800EDCF1A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1D3A626C176A492800EDCF1A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1D3A626E176A492800EDCF1A /* GoogleAnalytics-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GoogleAnalytics-Prefix.pch"; sourceTree = "<group>"; };
+		1D3A6272176A492800EDCF1A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		1D3A6274176A492800EDCF1A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		1D3A6276176A492800EDCF1A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1D3A627F176A4A1800EDCF1A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1D3A6280176A4A1800EDCF1A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1D3A6282176A4A2900EDCF1A /* GANTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GANTracker.h; sourceTree = "<group>"; };
+		1D3A62A8176A4AFE00EDCF1A /* MyEnabledTapadIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEnabledTapadIdentifiers.h; sourceTree = "<group>"; };
+		1D3A62B1176A4B5100EDCF1A /* MyEnabledTapadIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = MyEnabledTapadIdentifiers.h; sourceTree = "<group>"; };
+		1D3A62B2176A4B5100EDCF1A /* TapestryClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = TapestryClient.h; path = src/TapestryClient.h; sourceTree = "<group>"; };
+		1D3A62B3176A4B5100EDCF1A /* TapestryClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = TapestryClient.m; path = src/TapestryClient.m; sourceTree = "<group>"; };
+		1D3A62B4176A4B5100EDCF1A /* TapestryRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = TapestryRequestBuilder.h; path = src/TapestryRequestBuilder.h; sourceTree = "<group>"; };
+		1D3A62B5176A4B5100EDCF1A /* TapestryRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = TapestryRequestBuilder.m; path = src/TapestryRequestBuilder.m; sourceTree = "<group>"; };
+		1D3A62B6176A4B5100EDCF1A /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = "NSString+MD5.h"; path = "src/NSString+MD5.h"; sourceTree = "<group>"; };
+		1D3A62B7176A4B5100EDCF1A /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = "NSString+MD5.m"; path = "src/NSString+MD5.m"; sourceTree = "<group>"; };
+		1D3A62B8176A4B5100EDCF1A /* TapadIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = TapadIdentifiers.h; path = src/TapadIdentifiers.h; sourceTree = "<group>"; };
+		1D3A62B9176A4B5100EDCF1A /* TapadIdentifiers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = TapadIdentifiers.m; path = src/TapadIdentifiers.m; sourceTree = "<group>"; };
+		1D3A62BA176A4B5100EDCF1A /* TapadPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = TapadPreferences.h; path = src/TapadPreferences.h; sourceTree = "<group>"; };
+		1D3A62BB176A4B5100EDCF1A /* TapadPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = TapadPreferences.m; path = src/TapadPreferences.m; sourceTree = "<group>"; };
+		1D3A62BD176A4B5100EDCF1A /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = OpenUDID.h; sourceTree = "<group>"; };
+		1D3A62BE176A4B5100EDCF1A /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = OpenUDID.m; sourceTree = "<group>"; };
+		1D3A62C0176A4B5100EDCF1A /* UIDevice-Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = "UIDevice-Hardware.h"; path = "UIDevice-Hardware/UIDevice-Hardware.h"; sourceTree = "<group>"; };
+		1D3A62C1176A4B5100EDCF1A /* UIDevice-Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = "UIDevice-Hardware.m"; path = "UIDevice-Hardware/UIDevice-Hardware.m"; sourceTree = "<group>"; };
+		1D3A62C4176A4B5100EDCF1A /* TapadEvent-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; path = "TapadEvent-Prefix.pch"; sourceTree = "<group>"; };
+		1D3A62D6176A4BB900EDCF1A /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
+		1D3A62D8176A4BE300EDCF1A /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		1D3A62DA176A4BEF00EDCF1A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D3A625A176A492800EDCF1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D3A62DB176A4BEF00EDCF1A /* CFNetwork.framework in Frameworks */,
+				1D3A62D9176A4BE300EDCF1A /* libsqlite3.0.dylib in Frameworks */,
+				1D3A6261176A492800EDCF1A /* UIKit.framework in Frameworks */,
+				1D3A6263176A492800EDCF1A /* Foundation.framework in Frameworks */,
+				1D3A6265176A492800EDCF1A /* CoreGraphics.framework in Frameworks */,
+				1D3A62D7176A4BB900EDCF1A /* libGoogleAnalytics.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D3A6254176A492800EDCF1A = {
+			isa = PBXGroup;
+			children = (
+				1D3A6266176A492800EDCF1A /* GoogleAnalytics */,
+				1D3A625F176A492800EDCF1A /* Frameworks */,
+				1D3A625E176A492800EDCF1A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1D3A625E176A492800EDCF1A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D3A625D176A492800EDCF1A /* GoogleAnalytics.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1D3A625F176A492800EDCF1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D3A62D8176A4BE300EDCF1A /* libsqlite3.0.dylib */,
+				1D3A62DA176A4BEF00EDCF1A /* CFNetwork.framework */,
+				1D3A62D6176A4BB900EDCF1A /* libGoogleAnalytics.a */,
+				1D3A6260176A492800EDCF1A /* UIKit.framework */,
+				1D3A6262176A492800EDCF1A /* Foundation.framework */,
+				1D3A6264176A492800EDCF1A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D3A6266176A492800EDCF1A /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				1D3A62C5176A4B5100EDCF1A /* TapadEvent */,
+				1D3A62A8176A4AFE00EDCF1A /* MyEnabledTapadIdentifiers.h */,
+				1D3A6282176A4A2900EDCF1A /* GANTracker.h */,
+				1D3A627F176A4A1800EDCF1A /* AppDelegate.h */,
+				1D3A6280176A4A1800EDCF1A /* AppDelegate.m */,
+				1D3A6267176A492800EDCF1A /* Supporting Files */,
+			);
+			path = GoogleAnalytics;
+			sourceTree = "<group>";
+		};
+		1D3A6267176A492800EDCF1A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1D3A6268176A492800EDCF1A /* GoogleAnalytics-Info.plist */,
+				1D3A6269176A492800EDCF1A /* InfoPlist.strings */,
+				1D3A626C176A492800EDCF1A /* main.m */,
+				1D3A626E176A492800EDCF1A /* GoogleAnalytics-Prefix.pch */,
+				1D3A6272176A492800EDCF1A /* Default.png */,
+				1D3A6274176A492800EDCF1A /* Default@2x.png */,
+				1D3A6276176A492800EDCF1A /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1D3A62BC176A4B5100EDCF1A /* src */ = {
+			isa = PBXGroup;
+			children = (
+				1D3A62B2176A4B5100EDCF1A /* TapestryClient.h */,
+				1D3A62B3176A4B5100EDCF1A /* TapestryClient.m */,
+				1D3A62B4176A4B5100EDCF1A /* TapestryRequestBuilder.h */,
+				1D3A62B5176A4B5100EDCF1A /* TapestryRequestBuilder.m */,
+				1D3A62B6176A4B5100EDCF1A /* NSString+MD5.h */,
+				1D3A62B7176A4B5100EDCF1A /* NSString+MD5.m */,
+				1D3A62B8176A4B5100EDCF1A /* TapadIdentifiers.h */,
+				1D3A62B9176A4B5100EDCF1A /* TapadIdentifiers.m */,
+				1D3A62BA176A4B5100EDCF1A /* TapadPreferences.h */,
+				1D3A62BB176A4B5100EDCF1A /* TapadPreferences.m */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		1D3A62BF176A4B5100EDCF1A /* OpenUDID */ = {
+			isa = PBXGroup;
+			children = (
+				1D3A62BD176A4B5100EDCF1A /* OpenUDID.h */,
+				1D3A62BE176A4B5100EDCF1A /* OpenUDID.m */,
+			);
+			path = OpenUDID;
+			sourceTree = "<group>";
+		};
+		1D3A62C2176A4B5100EDCF1A /* UIDevice */ = {
+			isa = PBXGroup;
+			children = (
+				1D3A62C0176A4B5100EDCF1A /* UIDevice-Hardware.h */,
+				1D3A62C1176A4B5100EDCF1A /* UIDevice-Hardware.m */,
+			);
+			name = UIDevice;
+			sourceTree = "<group>";
+		};
+		1D3A62C3176A4B5100EDCF1A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		1D3A62C5176A4B5100EDCF1A /* TapadEvent */ = {
+			isa = PBXGroup;
+			children = (
+				1D3A62B1176A4B5100EDCF1A /* MyEnabledTapadIdentifiers.h */,
+				1D3A62BC176A4B5100EDCF1A /* src */,
+				1D3A62BF176A4B5100EDCF1A /* OpenUDID */,
+				1D3A62C2176A4B5100EDCF1A /* UIDevice */,
+				1D3A62C3176A4B5100EDCF1A /* Support Files */,
+				1D3A62C4176A4B5100EDCF1A /* TapadEvent-Prefix.pch */,
+			);
+			name = TapadEvent;
+			path = ../../arc;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D3A625C176A492800EDCF1A /* GoogleAnalytics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D3A627A176A492800EDCF1A /* Build configuration list for PBXNativeTarget "GoogleAnalytics" */;
+			buildPhases = (
+				1D3A6259176A492800EDCF1A /* Sources */,
+				1D3A625A176A492800EDCF1A /* Frameworks */,
+				1D3A625B176A492800EDCF1A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoogleAnalytics;
+			productName = GoogleAnalytics;
+			productReference = 1D3A625D176A492800EDCF1A /* GoogleAnalytics.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1D3A6255176A492800EDCF1A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Tapad;
+			};
+			buildConfigurationList = 1D3A6258176A492800EDCF1A /* Build configuration list for PBXProject "GoogleAnalytics" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1D3A6254176A492800EDCF1A;
+			productRefGroup = 1D3A625E176A492800EDCF1A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D3A625C176A492800EDCF1A /* GoogleAnalytics */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D3A625B176A492800EDCF1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D3A626B176A492800EDCF1A /* InfoPlist.strings in Resources */,
+				1D3A6273176A492800EDCF1A /* Default.png in Resources */,
+				1D3A6275176A492800EDCF1A /* Default@2x.png in Resources */,
+				1D3A6277176A492800EDCF1A /* Default-568h@2x.png in Resources */,
+				1D3A62D5176A4B5100EDCF1A /* TapadEvent-Prefix.pch in Resources */,
+				1D3A62E3176A4CFD00EDCF1A /* TapestryClient.h in Resources */,
+				1D3A62E4176A4CFD00EDCF1A /* TapestryClient.m in Resources */,
+				1D3A62E5176A4CFD00EDCF1A /* TapestryRequestBuilder.h in Resources */,
+				1D3A62E6176A4CFD00EDCF1A /* TapestryRequestBuilder.m in Resources */,
+				1D3A62E7176A4CFD00EDCF1A /* NSString+MD5.h in Resources */,
+				1D3A62E8176A4CFD00EDCF1A /* NSString+MD5.m in Resources */,
+				1D3A62E9176A4CFD00EDCF1A /* TapadIdentifiers.h in Resources */,
+				1D3A62EA176A4CFD00EDCF1A /* TapadIdentifiers.m in Resources */,
+				1D3A62EB176A4CFD00EDCF1A /* TapadPreferences.h in Resources */,
+				1D3A62EC176A4CFD00EDCF1A /* TapadPreferences.m in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D3A6259176A492800EDCF1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D3A62DC176A4C0A00EDCF1A /* TapestryClient.m in Sources */,
+				1D3A62DD176A4C0A00EDCF1A /* TapestryRequestBuilder.m in Sources */,
+				1D3A62DE176A4C0A00EDCF1A /* NSString+MD5.m in Sources */,
+				1D3A62DF176A4C0A00EDCF1A /* TapadIdentifiers.m in Sources */,
+				1D3A62E0176A4C0A00EDCF1A /* TapadPreferences.m in Sources */,
+				1D3A62E1176A4C0A00EDCF1A /* OpenUDID.m in Sources */,
+				1D3A62E2176A4C0A00EDCF1A /* UIDevice-Hardware.m in Sources */,
+				1D3A626D176A492800EDCF1A /* main.m in Sources */,
+				1D3A6281176A4A1800EDCF1A /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1D3A6269176A492800EDCF1A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D3A626A176A492800EDCF1A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1D3A6278176A492800EDCF1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1D3A6279176A492800EDCF1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1D3A627B176A492800EDCF1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GoogleAnalytics/GoogleAnalytics-Prefix.pch";
+				INFOPLIST_FILE = "GoogleAnalytics/GoogleAnalytics-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1D3A627C176A492800EDCF1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GoogleAnalytics/GoogleAnalytics-Prefix.pch";
+				INFOPLIST_FILE = "GoogleAnalytics/GoogleAnalytics-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D3A6258176A492800EDCF1A /* Build configuration list for PBXProject "GoogleAnalytics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D3A6278176A492800EDCF1A /* Debug */,
+				1D3A6279176A492800EDCF1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D3A627A176A492800EDCF1A /* Build configuration list for PBXNativeTarget "GoogleAnalytics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D3A627B176A492800EDCF1A /* Debug */,
+				1D3A627C176A492800EDCF1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1D3A6255176A492800EDCF1A /* Project object */;
+}
