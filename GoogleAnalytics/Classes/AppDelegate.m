@@ -3,7 +3,7 @@
 //
 #import "AppDelegate.h"
 #import "GANTracker.h"
-#import "TapestryRequestBuilder.h"
+#import "TATapestryRequestBuilder.h"
 
 @implementation AppDelegate
 
@@ -14,7 +14,7 @@ static NSDate *lastAnalyticsSend;
 - (void)sendAnalytics {
     if (lastAnalyticsSend == nil) {
         // initialize
-        [TapestryRequestBuilder registerAppWithPartnerId:@"12345"];
+        [TATapestryRequestBuilder registerAppWithPartnerId:@"12345"];
         [[GANTracker sharedTracker] startTrackerWithAccountID:@"UA-41283710-1"
                                                dispatchPeriod:10
                                                      delegate:nil];
@@ -22,7 +22,7 @@ static NSDate *lastAnalyticsSend;
     }
 
     NSString* isNewSession = [lastAnalyticsSend timeIntervalSinceNow] < (-30 * 60) ? @"true" : @"false";
-    TapestryRequestBuilder* req = [[TapestryRequestBuilder alloc] init];
+    TATapestryRequestBuilder* req = [[TATapestryRequestBuilder alloc] init];
     [req setAnalytics:[NSDictionary dictionaryWithObjectsAndKeys:isNewSession, @"isNewSession", nil]];
     [req sendWithCallback:^(NSDictionary *response) {
         NSDictionary* analytics = [[NSDictionary alloc] initWithDictionary:[response objectForKey:@"analytics"]];

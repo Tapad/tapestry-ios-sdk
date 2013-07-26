@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface TapadPreferences : NSObject {}
+@interface TATapadPreferences : NSObject {}
 
 + (BOOL) registerDefaults;
 

@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F180B7317A1C3F900EC3F5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F180B7217A1C3F900EC3F5F /* Foundation.framework */; };
+		2F180B7817A1C3F900EC3F5F /* TATapestry.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2F180B7717A1C3F900EC3F5F /* TATapestry.h */; };
+		2F180B7A17A1C3F900EC3F5F /* TATapestry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180B7917A1C3F900EC3F5F /* TATapestry.m */; };
+		2F180B8217A1C3F900EC3F5F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F180B8117A1C3F900EC3F5F /* SenTestingKit.framework */; };
+		2F180B8417A1C3F900EC3F5F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F180B8317A1C3F900EC3F5F /* UIKit.framework */; };
+		2F180B8517A1C3F900EC3F5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F180B7217A1C3F900EC3F5F /* Foundation.framework */; };
+		2F180B8817A1C3F900EC3F5F /* libTapestry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F180B6F17A1C3F900EC3F5F /* libTapestry.a */; };
+		2F180B8E17A1C3F900EC3F5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F180B8C17A1C3F900EC3F5F /* InfoPlist.strings */; };
+		2F180B9117A1C3F900EC3F5F /* TATapestryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180B9017A1C3F900EC3F5F /* TATapestryTests.m */; };
+		2F180BC617A1C64200EC3F5F /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BB617A1C64200EC3F5F /* NSString+MD5.m */; };
+		2F180BC717A1C64200EC3F5F /* TATapadIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BB817A1C64200EC3F5F /* TATapadIdentifiers.m */; };
+		2F180BC817A1C64200EC3F5F /* TATapadPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BBA17A1C64200EC3F5F /* TATapadPreferences.m */; };
+		2F180BC917A1C64200EC3F5F /* TATapestryClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BBC17A1C64200EC3F5F /* TATapestryClient.m */; };
+		2F180BCA17A1C64200EC3F5F /* TATapestryRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BBE17A1C64200EC3F5F /* TATapestryRequestBuilder.m */; };
+		2F180BCB17A1C64200EC3F5F /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BC217A1C64200EC3F5F /* OpenUDID.m */; };
+		2F180BCC17A1C64200EC3F5F /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BC517A1C64200EC3F5F /* UIDevice-Hardware.m */; };
+		2F180BE317A1D0B900EC3F5F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F180BE217A1D0B900EC3F5F /* AdSupport.framework */; };
+		2F180BE517A1D90100EC3F5F /* TATapestryClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F180BBB17A1C64200EC3F5F /* TATapestryClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F180BE717A1D91500EC3F5F /* TATapestryRequestBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F180BBD17A1C64200EC3F5F /* TATapestryRequestBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2FA6A69017A302C80081BF75 /* TATapadIdentifiers.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F180BB717A1C64200EC3F5F /* TATapadIdentifiers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2F180B8617A1C3F900EC3F5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F180B6717A1C3F900EC3F5F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F180B6E17A1C3F900EC3F5F;
+			remoteInfo = Tapestry;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2F180B6D17A1C3F900EC3F5F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				2F180B7817A1C3F900EC3F5F /* TATapestry.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2F180B6F17A1C3F900EC3F5F /* libTapestry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTapestry.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F180B7217A1C3F900EC3F5F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2F180B7617A1C3F900EC3F5F /* TATapestry-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TATapestry-Prefix.pch"; sourceTree = "<group>"; };
+		2F180B7717A1C3F900EC3F5F /* TATapestry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TATapestry.h; sourceTree = "<group>"; };
+		2F180B7917A1C3F900EC3F5F /* TATapestry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TATapestry.m; sourceTree = "<group>"; };
+		2F180B8017A1C3F900EC3F5F /* TapestryTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TapestryTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F180B8117A1C3F900EC3F5F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		2F180B8317A1C3F900EC3F5F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		2F180B8B17A1C3F900EC3F5F /* TapestryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TapestryTests-Info.plist"; sourceTree = "<group>"; };
+		2F180B8D17A1C3F900EC3F5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2F180B8F17A1C3F900EC3F5F /* TATapestryTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TATapestryTests.h; sourceTree = "<group>"; };
+		2F180B9017A1C3F900EC3F5F /* TATapestryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TATapestryTests.m; sourceTree = "<group>"; };
+		2F180BB417A1C64200EC3F5F /* MyEnabledTapadIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEnabledTapadIdentifiers.h; sourceTree = "<group>"; };
+		2F180BB517A1C64200EC3F5F /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		2F180BB617A1C64200EC3F5F /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		2F180BB717A1C64200EC3F5F /* TATapadIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapadIdentifiers.h; sourceTree = "<group>"; };
+		2F180BB817A1C64200EC3F5F /* TATapadIdentifiers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapadIdentifiers.m; sourceTree = "<group>"; };
+		2F180BB917A1C64200EC3F5F /* TATapadPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapadPreferences.h; sourceTree = "<group>"; };
+		2F180BBA17A1C64200EC3F5F /* TATapadPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapadPreferences.m; sourceTree = "<group>"; };
+		2F180BBB17A1C64200EC3F5F /* TATapestryClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapestryClient.h; sourceTree = "<group>"; };
+		2F180BBC17A1C64200EC3F5F /* TATapestryClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapestryClient.m; sourceTree = "<group>"; };
+		2F180BBD17A1C64200EC3F5F /* TATapestryRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapestryRequestBuilder.h; sourceTree = "<group>"; };
+		2F180BBE17A1C64200EC3F5F /* TATapestryRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapestryRequestBuilder.m; sourceTree = "<group>"; };
+		2F180BC117A1C64200EC3F5F /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		2F180BC217A1C64200EC3F5F /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		2F180BC417A1C64200EC3F5F /* UIDevice-Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice-Hardware.h"; sourceTree = "<group>"; };
+		2F180BC517A1C64200EC3F5F /* UIDevice-Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice-Hardware.m"; sourceTree = "<group>"; };
+		2F180BE217A1D0B900EC3F5F /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2F180B6C17A1C3F900EC3F5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F180BE317A1D0B900EC3F5F /* AdSupport.framework in Frameworks */,
+				2F180B7317A1C3F900EC3F5F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F180B7C17A1C3F900EC3F5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F180B8217A1C3F900EC3F5F /* SenTestingKit.framework in Frameworks */,
+				2F180B8417A1C3F900EC3F5F /* UIKit.framework in Frameworks */,
+				2F180B8517A1C3F900EC3F5F /* Foundation.framework in Frameworks */,
+				2F180B8817A1C3F900EC3F5F /* libTapestry.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F180B6617A1C3F900EC3F5F = {
+			isa = PBXGroup;
+			children = (
+				2F180B7417A1C3F900EC3F5F /* Tapestry */,
+				2F180B8917A1C3F900EC3F5F /* TapestryTests */,
+				2F180B7117A1C3F900EC3F5F /* Frameworks */,
+				2F180B7017A1C3F900EC3F5F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2F180B7017A1C3F900EC3F5F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F180B6F17A1C3F900EC3F5F /* libTapestry.a */,
+				2F180B8017A1C3F900EC3F5F /* TapestryTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2F180B7117A1C3F900EC3F5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F180BE217A1D0B900EC3F5F /* AdSupport.framework */,
+				2F180B7217A1C3F900EC3F5F /* Foundation.framework */,
+				2F180B8117A1C3F900EC3F5F /* SenTestingKit.framework */,
+				2F180B8317A1C3F900EC3F5F /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2F180B7417A1C3F900EC3F5F /* Tapestry */ = {
+			isa = PBXGroup;
+			children = (
+				2F180BB417A1C64200EC3F5F /* MyEnabledTapadIdentifiers.h */,
+				2F180BB517A1C64200EC3F5F /* NSString+MD5.h */,
+				2F180BB617A1C64200EC3F5F /* NSString+MD5.m */,
+				2F180BB717A1C64200EC3F5F /* TATapadIdentifiers.h */,
+				2F180BB817A1C64200EC3F5F /* TATapadIdentifiers.m */,
+				2F180BB917A1C64200EC3F5F /* TATapadPreferences.h */,
+				2F180BBA17A1C64200EC3F5F /* TATapadPreferences.m */,
+				2F180BBB17A1C64200EC3F5F /* TATapestryClient.h */,
+				2F180BBC17A1C64200EC3F5F /* TATapestryClient.m */,
+				2F180BBD17A1C64200EC3F5F /* TATapestryRequestBuilder.h */,
+				2F180BBE17A1C64200EC3F5F /* TATapestryRequestBuilder.m */,
+				2F180BBF17A1C64200EC3F5F /* Vendors */,
+				2F180B7717A1C3F900EC3F5F /* TATapestry.h */,
+				2F180B7917A1C3F900EC3F5F /* TATapestry.m */,
+				2F180B7517A1C3F900EC3F5F /* Supporting Files */,
+			);
+			path = Tapestry;
+			sourceTree = "<group>";
+		};
+		2F180B7517A1C3F900EC3F5F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F180B7617A1C3F900EC3F5F /* TATapestry-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2F180B8917A1C3F900EC3F5F /* TapestryTests */ = {
+			isa = PBXGroup;
+			children = (
+				2F180B8F17A1C3F900EC3F5F /* TATapestryTests.h */,
+				2F180B9017A1C3F900EC3F5F /* TATapestryTests.m */,
+				2F180B8A17A1C3F900EC3F5F /* Supporting Files */,
+			);
+			path = TapestryTests;
+			sourceTree = "<group>";
+		};
+		2F180B8A17A1C3F900EC3F5F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F180B8B17A1C3F900EC3F5F /* TapestryTests-Info.plist */,
+				2F180B8C17A1C3F900EC3F5F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2F180BBF17A1C64200EC3F5F /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				2F180BC017A1C64200EC3F5F /* OpenUDID */,
+				2F180BC317A1C64200EC3F5F /* UIDevice-Hardware */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		2F180BC017A1C64200EC3F5F /* OpenUDID */ = {
+			isa = PBXGroup;
+			children = (
+				2F180BC117A1C64200EC3F5F /* OpenUDID.h */,
+				2F180BC217A1C64200EC3F5F /* OpenUDID.m */,
+			);
+			path = OpenUDID;
+			sourceTree = "<group>";
+		};
+		2F180BC317A1C64200EC3F5F /* UIDevice-Hardware */ = {
+			isa = PBXGroup;
+			children = (
+				2F180BC417A1C64200EC3F5F /* UIDevice-Hardware.h */,
+				2F180BC517A1C64200EC3F5F /* UIDevice-Hardware.m */,
+			);
+			path = "UIDevice-Hardware";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2F180BE417A1D8ED00EC3F5F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F180BE517A1D90100EC3F5F /* TATapestryClient.h in Headers */,
+				2F180BE717A1D91500EC3F5F /* TATapestryRequestBuilder.h in Headers */,
+				2FA6A69017A302C80081BF75 /* TATapadIdentifiers.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2F180B6E17A1C3F900EC3F5F /* Tapestry */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F180B9417A1C3F900EC3F5F /* Build configuration list for PBXNativeTarget "Tapestry" */;
+			buildPhases = (
+				2F180B6B17A1C3F900EC3F5F /* Sources */,
+				2F180B6C17A1C3F900EC3F5F /* Frameworks */,
+				2F180BE417A1D8ED00EC3F5F /* Headers */,
+				2F180B6D17A1C3F900EC3F5F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tapestry;
+			productName = Tapestry;
+			productReference = 2F180B6F17A1C3F900EC3F5F /* libTapestry.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		2F180B7F17A1C3F900EC3F5F /* TapestryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F180B9717A1C3F900EC3F5F /* Build configuration list for PBXNativeTarget "TapestryTests" */;
+			buildPhases = (
+				2F180B7B17A1C3F900EC3F5F /* Sources */,
+				2F180B7C17A1C3F900EC3F5F /* Frameworks */,
+				2F180B7D17A1C3F900EC3F5F /* Resources */,
+				2F180B7E17A1C3F900EC3F5F /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F180B8717A1C3F900EC3F5F /* PBXTargetDependency */,
+			);
+			name = TapestryTests;
+			productName = TapestryTests;
+			productReference = 2F180B8017A1C3F900EC3F5F /* TapestryTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2F180B6717A1C3F900EC3F5F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TA;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Tapad;
+			};
+			buildConfigurationList = 2F180B6A17A1C3F900EC3F5F /* Build configuration list for PBXProject "Tapestry" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2F180B6617A1C3F900EC3F5F;
+			productRefGroup = 2F180B7017A1C3F900EC3F5F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F180B6E17A1C3F900EC3F5F /* Tapestry */,
+				2F180B7F17A1C3F900EC3F5F /* TapestryTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2F180B7D17A1C3F900EC3F5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F180B8E17A1C3F900EC3F5F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2F180B7E17A1C3F900EC3F5F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F180B6B17A1C3F900EC3F5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F180B7A17A1C3F900EC3F5F /* TATapestry.m in Sources */,
+				2F180BC617A1C64200EC3F5F /* NSString+MD5.m in Sources */,
+				2F180BC717A1C64200EC3F5F /* TATapadIdentifiers.m in Sources */,
+				2F180BC817A1C64200EC3F5F /* TATapadPreferences.m in Sources */,
+				2F180BC917A1C64200EC3F5F /* TATapestryClient.m in Sources */,
+				2F180BCA17A1C64200EC3F5F /* TATapestryRequestBuilder.m in Sources */,
+				2F180BCB17A1C64200EC3F5F /* OpenUDID.m in Sources */,
+				2F180BCC17A1C64200EC3F5F /* UIDevice-Hardware.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F180B7B17A1C3F900EC3F5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F180B9117A1C3F900EC3F5F /* TATapestryTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2F180B8717A1C3F900EC3F5F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F180B6E17A1C3F900EC3F5F /* Tapestry */;
+			targetProxy = 2F180B8617A1C3F900EC3F5F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2F180B8C17A1C3F900EC3F5F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F180B8D17A1C3F900EC3F5F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2F180B9217A1C3F900EC3F5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				PRIVATE_HEADERS_FOLDER_PATH = "$(PUBLIC_HEADERS_FOLDER_PATH)/Private";
+				PUBLIC_HEADERS_FOLDER_PATH = include/Headers/Tapestry;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2F180B9317A1C3F900EC3F5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRIVATE_HEADERS_FOLDER_PATH = "$(PUBLIC_HEADERS_FOLDER_PATH)/Private";
+				PUBLIC_HEADERS_FOLDER_PATH = include/Headers/Tapestry;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2F180B9517A1C3F900EC3F5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Tapestry.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tapestry/TATapestry-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2F180B9617A1C3F900EC3F5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Tapestry.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tapestry/TATapestry-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		2F180B9817A1C3F900EC3F5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tapestry/Tapestry-Prefix.pch";
+				INFOPLIST_FILE = "TapestryTests/TapestryTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		2F180B9917A1C3F900EC3F5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tapestry/Tapestry-Prefix.pch";
+				INFOPLIST_FILE = "TapestryTests/TapestryTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F180B6A17A1C3F900EC3F5F /* Build configuration list for PBXProject "Tapestry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F180B9217A1C3F900EC3F5F /* Debug */,
+				2F180B9317A1C3F900EC3F5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F180B9417A1C3F900EC3F5F /* Build configuration list for PBXNativeTarget "Tapestry" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F180B9517A1C3F900EC3F5F /* Debug */,
+				2F180B9617A1C3F900EC3F5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F180B9717A1C3F900EC3F5F /* Build configuration list for PBXNativeTarget "TapestryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F180B9817A1C3F900EC3F5F /* Debug */,
+				2F180B9917A1C3F900EC3F5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2F180B6717A1C3F900EC3F5F /* Project object */;
+}

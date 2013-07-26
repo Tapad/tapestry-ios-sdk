@@ -6,7 +6,7 @@
 
 @class UIApplication;
 
-@interface TapestryRequestBuilder : NSObject {
+@interface TATapestryRequestBuilder : NSObject {
     NSString* name;
     NSString* partnerId;
     NSDictionary* dataToSet;

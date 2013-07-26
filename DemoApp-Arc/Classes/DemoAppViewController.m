@@ -7,9 +7,9 @@
 //
 
 #import "DemoAppViewController.h"
-#import "TapestryRequestBuilder.h"
-#import "TapestryClient.h"
-#import "TapadIdentifiers.h"
+#import "TATapestryRequestBuilder.h"
+#import "TATapestryClient.h"
+#import "TATapadIdentifiers.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation DemoAppViewController
@@ -113,7 +113,7 @@
 - (IBAction)sendRequest {
     [self hideKeyboard];
     
-    TapestryRequestBuilder* req = [[TapestryRequestBuilder alloc] init];
+    TATapestryRequestBuilder* req = [[TATapestryRequestBuilder alloc] init];
     
     [req setShouldGetData:self.getDataSwitch.isOn];
     [req setShouldGetDevices:self.getDevicesSwitch.isOn];
@@ -134,17 +134,17 @@
     
     if (self.userIdInput.text.length > 0) {
         // Register this user id. It is pulled out of the preferences when the query is constructed.
-        [TapestryRequestBuilder registerUserId:self.userIdInput.text];
+        [TATapestryRequestBuilder registerUserId:self.userIdInput.text];
     }
     
-    [TapadIdentifiers sendOpenUDID:self.didOpenUdidSwitch.isOn];
-    [TapadIdentifiers sendMD5HashedRawMAC:self.didMd5RawMacSwitch.isOn];
-    [TapadIdentifiers sendSHA1HashedRawMAC:self.didSha1RawMacSwitch.isOn];
-    [TapadIdentifiers sendMD5HashedMAC:self.didMd5MacSwitch.isOn];
-    [TapadIdentifiers sendSHA1HashedMAC:self.didSha1MacSwitch.isOn];
-    [TapadIdentifiers sendAdvertisingIdentifier:self.didIdfaSwitch.isOn];
+    [TATapadIdentifiers sendOpenUDID:self.didOpenUdidSwitch.isOn];
+    [TATapadIdentifiers sendMD5HashedRawMAC:self.didMd5RawMacSwitch.isOn];
+    [TATapadIdentifiers sendSHA1HashedRawMAC:self.didSha1RawMacSwitch.isOn];
+    [TATapadIdentifiers sendMD5HashedMAC:self.didMd5MacSwitch.isOn];
+    [TATapadIdentifiers sendSHA1HashedMAC:self.didSha1MacSwitch.isOn];
+    [TATapadIdentifiers sendAdvertisingIdentifier:self.didIdfaSwitch.isOn];
     
-    TapestryClient* client = [TapestryClient initializeForRequest:req];
+    TATapestryClient* client = [TATapestryClient initializeForRequest:req];
     NSString* url = [[[client request] URL] absoluteString];
     
     self.apiRequest.text = url;
@@ -180,7 +180,7 @@
     [self.getDevicesSwitch setOn:NO];
     [self.apiRequest setText:@""];
     [self.apiResponse setText:@""];
-    [self.userIdInput setText:[TapestryRequestBuilder getUserId]];
+    [self.userIdInput setText:[TATapestryRequestBuilder getUserId]];
     
     [self.didOpenUdidSwitch setOn:YES];
     [self.didMd5RawMacSwitch setOn:YES];
@@ -192,7 +192,7 @@
 
 - (IBAction)unregisterUserId {
     [self.userIdInput setText:@""];
-    [TapestryRequestBuilder clearUserId];
+    [TATapestryRequestBuilder clearUserId];
 }
 
 - (void)threadsafeUpdateApiResponseView:(NSString*)jsonString {

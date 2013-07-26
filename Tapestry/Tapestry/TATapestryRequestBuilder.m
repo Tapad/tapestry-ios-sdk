@@ -2,11 +2,11 @@
 //  Copyright 2013 Tapad, Inc. All rights reserved.
 //
 
-#import "TapestryRequestBuilder.h"
-#import "TapadPreferences.h"
-#import "TapestryClient.h"
+#import "TATapestryRequestBuilder.h"
+#import "TATapadPreferences.h"
+#import "TATapestryClient.h"
 
-@implementation TapestryRequestBuilder
+@implementation TATapestryRequestBuilder
 
 @synthesize name;
 @synthesize partnerId;
@@ -21,20 +21,20 @@ static NSString* kPARTNER_USER_ID = @"Tapestry Partner User ID";
 
 - (id) init {
     self = [super init];
-    self.partnerId = [TapadPreferences getTapadPartnerId];
+    self.partnerId = [TATapadPreferences getTapadPartnerId];
     return self;
 }
 
 + (void) registerAppWithPartnerId:(NSString *)partnerId {
-    [TapadPreferences setTapadPartnerId:partnerId];
+    [TATapadPreferences setTapadPartnerId:partnerId];
 }
 
 + (void) registerUserId:(NSString*)uid {
-    [TapadPreferences setCustomDataForKey:kPARTNER_USER_ID value:uid];
+    [TATapadPreferences setCustomDataForKey:kPARTNER_USER_ID value:uid];
 }
 
 + (NSString*) getUserId {
-    id value = [TapadPreferences getCustomDataForKey:kPARTNER_USER_ID];
+    id value = [TATapadPreferences getCustomDataForKey:kPARTNER_USER_ID];
     if ([value isKindOfClass:[NSString class]]) {
         return (NSString*) value;
     } else {
@@ -43,7 +43,7 @@ static NSString* kPARTNER_USER_ID = @"Tapestry Partner User ID";
 }
 
 + (void) clearUserId {
-    [TapadPreferences removeCustomDataForKey:kPARTNER_USER_ID];
+    [TATapadPreferences removeCustomDataForKey:kPARTNER_USER_ID];
 }
 
 - (BOOL) send {
@@ -60,7 +60,7 @@ static NSString* kPARTNER_USER_ID = @"Tapestry Partner User ID";
     dispatch_block_t block = ^{
         // note: since we are referencing the req object instance within this
         // block, it will be retained by the block until freed
-        TapestryClient* client = [TapestryClient initializeForRequest:self];
+        TATapestryClient* client = [TATapestryClient initializeForRequest:self];
         NSString* response = [client getSynchronous]; // autoreleased string
         NSLog(@"Response from Tapestry: %@", response);
         if (callback != nil) {
@@ -93,14 +93,13 @@ static NSString* kPARTNER_USER_ID = @"Tapestry Partner User ID";
     };
 
     dispatch_async(tapadq, block);
-    dispatch_release(tapadq);
     return YES;
 }
 
 // the basic hook for global initializations
 // note that the method signature matches the one expected of app developers
 + (BOOL) applicationDidFinishLaunching:(UIApplication *)application {
-    [TapadPreferences registerDefaults];
+    [TATapadPreferences registerDefaults];
     return YES;
 }
 

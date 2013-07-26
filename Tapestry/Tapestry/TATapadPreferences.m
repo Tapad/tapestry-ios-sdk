@@ -5,10 +5,10 @@
 //  Copyright 2011 Tapad, Inc. All rights reserved.
 //
 
-#import "TapadPreferences.h"
+#import "TATapadPreferences.h"
 
 
-@implementation TapadPreferences
+@implementation TATapadPreferences
 
 static NSString* kTAPAD_OPT_OUT = @"Tapad Opt-out";
 static NSString* kTAPAD_GEO_OPT_IN = @"Tapad Geo Opt-in";
@@ -92,7 +92,7 @@ static NSString* kTAPAD_CUSTOM_DATA = @"Tapad Custom Data";
     NSMutableArray* params = [NSMutableArray arrayWithCapacity:[data count]]; // autoreleased
     for (id key in data) {
         id value = [data objectForKey:key];
-        [params addObject:[NSString stringWithFormat:@"%@:%@", [TapadPreferences encodeString:key], [TapadPreferences encodeString:value] ]];
+        [params addObject:[NSString stringWithFormat:@"%@:%@", [TATapadPreferences encodeString:key], [TATapadPreferences encodeString:value] ]];
     }
     if ([params count] == 0) {
         return NULL;
@@ -105,7 +105,7 @@ static NSString* kTAPAD_CUSTOM_DATA = @"Tapad Custom Data";
 + (NSString*) arrayAsEncodedCsvString:(NSArray*)data {
     NSMutableArray* params = [NSMutableArray arrayWithCapacity:[data count]]; // autoreleased
     for (id x in data) {
-        [params addObject:[TapadPreferences encodeString:x]];
+        [params addObject:[TATapadPreferences encodeString:x]];
     }
     if ([params count] == 0) {
         return NULL;

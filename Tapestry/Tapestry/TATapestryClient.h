@@ -4,11 +4,11 @@
 
 #import <Foundation/Foundation.h>
 
-// TapestryClient handles the transport of a TapestryRequest from the app to the API endpoint.
+// TATapestryClient handles the transport of a TATapestryRequest from the app to the API endpoint.
 
-@class TapestryRequestBuilder;
+@class TATapestryRequestBuilder;
 
-@interface TapestryClient : NSObject {}
+@interface TATapestryClient : NSObject {}
 
 // using its initialized state, makes a blocking GET request to the 
 // server, and formats the resulting raw data into an UTF8 encoded string
@@ -16,7 +16,7 @@
 - (NSString*) getSynchronous; 
 
 // returns autoreleased request object for event tracking such as install tracking
-+ (TapestryClient *)initializeForRequest:(TapestryRequestBuilder *)req;
++ (TATapestryClient *)initializeForRequest:(TATapestryRequestBuilder *)req;
 
 // in some cases you may want direct access to the request 
 @property (nonatomic,retain) NSURLRequest* request;

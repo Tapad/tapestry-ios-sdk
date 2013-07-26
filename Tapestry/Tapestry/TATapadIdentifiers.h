@@ -9,13 +9,10 @@
 
 // edit this header file to enable identifiers allowed for your app
 #import "MyEnabledTapadIdentifiers.h"
-
-#ifdef TAPAD_IDENTIFIER_ENABLE_ADVERTISING_IDENTIFIER
 #import <ADSupport/ASIdentifierManager.h>
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
-#endif
 
-@interface TapadIdentifiers : NSObject {}
+@interface TATapadIdentifiers : NSObject {}
 
 #ifdef TAPAD_IDENTIFIER_ENABLE_OPENUDID
 + (BOOL) willSendOpenUDID;
