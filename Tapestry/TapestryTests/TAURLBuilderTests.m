@@ -38,8 +38,8 @@
     TAURLBuilder *builder = [TAURLBuilder urlBuilderWithBaseURL:base];
     [builder appendParameterNamed:@"foo" withValue:@"bar1"];
     [builder appendParameterNamed:@"foo" withValue:@"bar2"];
-    [builder appendParameterNamed:@"test" withValue:@"1"];
-    NSString *expected = @"http://example.com?foo=bar1&foo=bar2&test=1";
+    [builder appendParameterNamed:@"test" withValue:@"[1,2]"];
+    NSString *expected = @"http://example.com?foo=bar1&foo=bar2&test=%5B1%2C2%5D";
     NSString *actual = [NSString stringWithString:[builder url]];
     STAssertTrue([actual isEqualToString:expected], [NSString stringWithFormat:@"Expected url '%@'; got '%@'", expected, actual]);
 }
