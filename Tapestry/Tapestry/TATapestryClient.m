@@ -6,7 +6,7 @@
 #import "TATapadPreferences.h"
 #import "TATapadIdentifiers.h"
 #import "TATapestryClient.h"
-#import "UIDevice-Hardware.h"
+#import "UIDevice+Hardware.h"
 
 #pragma mark private protocol for internal stuff
 
@@ -209,7 +209,7 @@ static const float kTimeout = 2.5;
     NSMutableArray* params = [NSMutableArray arrayWithCapacity:5]; // autoreleased
 
     [params addObject:[NSString stringWithFormat:@"%@=%@", ktypedUid, [TATapadIdentifiers deviceID] ]];
-    [params addObject:[NSString stringWithFormat:@"%@=%@", kplatform, [[UIDevice currentDevice] platformString] ]];
+    [params addObject:[NSString stringWithFormat:@"%@=%@", kplatform, [[UIDevice currentDevice] ta_platformString] ]];
 
     /* Add as needed
     NSBundle *bundle = [NSBundle mainBundle];

@@ -22,7 +22,7 @@
 		2F180BC917A1C64200EC3F5F /* TATapestryClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BBC17A1C64200EC3F5F /* TATapestryClient.m */; };
 		2F180BCA17A1C64200EC3F5F /* TATapestryRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BBE17A1C64200EC3F5F /* TATapestryRequestBuilder.m */; };
 		2F180BCB17A1C64200EC3F5F /* TAOpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BC217A1C64200EC3F5F /* TAOpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2F180BCC17A1C64200EC3F5F /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BC517A1C64200EC3F5F /* UIDevice-Hardware.m */; };
+		2F180BCC17A1C64200EC3F5F /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BC517A1C64200EC3F5F /* UIDevice+Hardware.m */; };
 		2F180BE317A1D0B900EC3F5F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F180BE217A1D0B900EC3F5F /* AdSupport.framework */; };
 		2F180BE517A1D90100EC3F5F /* TATapestryClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F180BBB17A1C64200EC3F5F /* TATapestryClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2F180BE717A1D91500EC3F5F /* TATapestryRequestBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F180BBD17A1C64200EC3F5F /* TATapestryRequestBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -78,8 +78,8 @@
 		2F180BBE17A1C64200EC3F5F /* TATapestryRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapestryRequestBuilder.m; sourceTree = "<group>"; };
 		2F180BC117A1C64200EC3F5F /* TAOpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAOpenUDID.h; sourceTree = "<group>"; };
 		2F180BC217A1C64200EC3F5F /* TAOpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAOpenUDID.m; sourceTree = "<group>"; };
-		2F180BC417A1C64200EC3F5F /* UIDevice-Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice-Hardware.h"; sourceTree = "<group>"; };
-		2F180BC517A1C64200EC3F5F /* UIDevice-Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice-Hardware.m"; sourceTree = "<group>"; };
+		2F180BC417A1C64200EC3F5F /* UIDevice+Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Hardware.h"; sourceTree = "<group>"; };
+		2F180BC517A1C64200EC3F5F /* UIDevice+Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Hardware.m"; sourceTree = "<group>"; };
 		2F180BE217A1D0B900EC3F5F /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -207,8 +207,8 @@
 		2F180BC317A1C64200EC3F5F /* UIDevice-Hardware */ = {
 			isa = PBXGroup;
 			children = (
-				2F180BC417A1C64200EC3F5F /* UIDevice-Hardware.h */,
-				2F180BC517A1C64200EC3F5F /* UIDevice-Hardware.m */,
+				2F180BC417A1C64200EC3F5F /* UIDevice+Hardware.h */,
+				2F180BC517A1C64200EC3F5F /* UIDevice+Hardware.m */,
 			);
 			path = "UIDevice-Hardware";
 			sourceTree = "<group>";
@@ -333,7 +333,7 @@
 				2F180BC917A1C64200EC3F5F /* TATapestryClient.m in Sources */,
 				2F180BCA17A1C64200EC3F5F /* TATapestryRequestBuilder.m in Sources */,
 				2F180BCB17A1C64200EC3F5F /* TAOpenUDID.m in Sources */,
-				2F180BCC17A1C64200EC3F5F /* UIDevice-Hardware.m in Sources */,
+				2F180BCC17A1C64200EC3F5F /* UIDevice+Hardware.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

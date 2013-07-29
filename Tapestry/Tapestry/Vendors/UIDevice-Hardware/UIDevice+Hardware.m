@@ -11,9 +11,9 @@
 #include <net/if.h>
 #include <net/if_dl.h>
 
-#import "UIDevice-Hardware.h"
+#import "UIDevice+Hardware.h"
 
-@implementation UIDevice (Hardware)
+@implementation UIDevice (TA_Hardware)
 /*
  Platforms
  
@@ -49,7 +49,7 @@
 
 
 #pragma mark sysctlbyname utils
-- (NSString *) getSysInfoByName:(char *)typeSpecifier
+- (NSString *) ta_getSysInfoByName:(char *)typeSpecifier
 {
     size_t size;
     sysctlbyname(typeSpecifier, NULL, &size, NULL, 0);
@@ -63,20 +63,20 @@
     return results;
 }
 
-- (NSString *) platform
+- (NSString *) ta_platform
 {
-    return [self getSysInfoByName:"hw.machine"];
+    return [self ta_getSysInfoByName:"hw.machine"];
 }
 
 
 // Thanks, Tom Harrington (Atomicbird)
-- (NSString *) hwmodel
+- (NSString *) ta_hwmodel
 {
-    return [self getSysInfoByName:"hw.model"];
+    return [self ta_getSysInfoByName:"hw.model"];
 }
 
 #pragma mark sysctl utils
-- (NSUInteger) getSysInfo: (uint) typeSpecifier
+- (NSUInteger) ta_getSysInfo: (uint) typeSpecifier
 {
     size_t size = sizeof(int);
     int results;
@@ -85,119 +85,119 @@
     return (NSUInteger) results;
 }
 
-- (NSUInteger) cpuFrequency
+- (NSUInteger) ta_cpuFrequency
 {
-    return [self getSysInfo:HW_CPU_FREQ];
+    return [self ta_getSysInfo:HW_CPU_FREQ];
 }
 
-- (NSUInteger) busFrequency
+- (NSUInteger) ta_busFrequency
 {
-    return [self getSysInfo:HW_BUS_FREQ];
+    return [self ta_getSysInfo:HW_BUS_FREQ];
 }
 
-- (NSUInteger) totalMemory
+- (NSUInteger) ta_totalMemory
 {
-    return [self getSysInfo:HW_PHYSMEM];
+    return [self ta_getSysInfo:HW_PHYSMEM];
 }
 
-- (NSUInteger) userMemory
+- (NSUInteger) ta_userMemory
 {
-    return [self getSysInfo:HW_USERMEM];
+    return [self ta_getSysInfo:HW_USERMEM];
 }
 
-- (NSUInteger) maxSocketBufferSize
+- (NSUInteger) ta_maxSocketBufferSize
 {
-    return [self getSysInfo:KIPC_MAXSOCKBUF];
+    return [self ta_getSysInfo:KIPC_MAXSOCKBUF];
 }
 
 #pragma mark file system -- Thanks Joachim Bean!
-- (NSNumber *) totalDiskSpace
+- (NSNumber *) ta_totalDiskSpace
 {
     NSDictionary *fattributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
     return [fattributes objectForKey:NSFileSystemSize];
 }
 
-- (NSNumber *) freeDiskSpace
+- (NSNumber *) ta_freeDiskSpace
 {
     NSDictionary *fattributes = [[NSFileManager defaultManager] attributesOfFileSystemForPath:NSHomeDirectory() error:nil];
     return [fattributes objectForKey:NSFileSystemFreeSize];
 }
 
 #pragma mark platform type and name utils
-- (NSUInteger) platformType
+- (NSUInteger) ta_platformType
 {
-    NSString *platform = [self platform];
+    NSString *platform = [self ta_platform];
 
     // The ever mysterious iFPGA
-    if ([platform isEqualToString:@"iFPGA"])        return UIDeviceIFPGA;
+    if ([platform isEqualToString:@"iFPGA"])        return TAUIDeviceIFPGA;
 
     // iPhone
-    if ([platform isEqualToString:@"iPhone1,1"])    return UIDevice1GiPhone;
-    if ([platform isEqualToString:@"iPhone1,2"])    return UIDevice3GiPhone;
-    if ([platform hasPrefix:@"iPhone2"])            return UIDevice3GSiPhone;
-    if ([platform hasPrefix:@"iPhone3"])            return UIDevice4iPhone;
-    if ([platform hasPrefix:@"iPhone4"])            return UIDevice5iPhone;
+    if ([platform isEqualToString:@"iPhone1,1"])    return TAUIDevice1GiPhone;
+    if ([platform isEqualToString:@"iPhone1,2"])    return TAUIDevice3GiPhone;
+    if ([platform hasPrefix:@"iPhone2"])            return TAUIDevice3GSiPhone;
+    if ([platform hasPrefix:@"iPhone3"])            return TAUIDevice4iPhone;
+    if ([platform hasPrefix:@"iPhone4"])            return TAUIDevice5iPhone;
     
     // iPod
-    if ([platform hasPrefix:@"iPod1"])             return UIDevice1GiPod;
-    if ([platform hasPrefix:@"iPod2"])              return UIDevice2GiPod;
-    if ([platform hasPrefix:@"iPod3"])              return UIDevice3GiPod;
-    if ([platform hasPrefix:@"iPod4"])              return UIDevice4GiPod;
+    if ([platform hasPrefix:@"iPod1"])             return TAUIDevice1GiPod;
+    if ([platform hasPrefix:@"iPod2"])              return TAUIDevice2GiPod;
+    if ([platform hasPrefix:@"iPod3"])              return TAUIDevice3GiPod;
+    if ([platform hasPrefix:@"iPod4"])              return TAUIDevice4GiPod;
 
     // iPad
-    if ([platform hasPrefix:@"iPad1"])              return UIDevice1GiPad;
-    if ([platform hasPrefix:@"iPad2"])              return UIDevice2GiPad;
-    if ([platform hasPrefix:@"iPad3"])              return UIDevice3GiPad;
+    if ([platform hasPrefix:@"iPad1"])              return TAUIDevice1GiPad;
+    if ([platform hasPrefix:@"iPad2"])              return TAUIDevice2GiPad;
+    if ([platform hasPrefix:@"iPad3"])              return TAUIDevice3GiPad;
     
     // Apple TV
-    if ([platform hasPrefix:@"AppleTV2"])           return UIDeviceAppleTV2;
+    if ([platform hasPrefix:@"AppleTV2"])           return TAUIDeviceAppleTV2;
 
-    if ([platform hasPrefix:@"iPhone"])             return UIDeviceUnknowniPhone;
-    if ([platform hasPrefix:@"iPod"])               return UIDeviceUnknowniPod;
-    if ([platform hasPrefix:@"iPad"])               return UIDeviceUnknowniPad;
+    if ([platform hasPrefix:@"iPhone"])             return TAUIDeviceUnknowniPhone;
+    if ([platform hasPrefix:@"iPod"])               return TAUIDeviceUnknowniPod;
+    if ([platform hasPrefix:@"iPad"])               return TAUIDeviceUnknowniPad;
     
      // Simulator thanks Jordan Breeding
     if ([platform hasSuffix:@"86"] || [platform isEqual:@"x86_64"])
     {
         BOOL smallerScreen = [[UIScreen mainScreen] bounds].size.width < 768;
-        return smallerScreen ? UIDeviceiPhoneSimulatoriPhone : UIDeviceiPhoneSimulatoriPad;
+        return smallerScreen ? TAUIDeviceiPhoneSimulatoriPhone : TAUIDeviceiPhoneSimulatoriPad;
     }
 
-    return UIDeviceUnknown;
+    return TAUIDeviceUnknown;
 }
 
-- (NSString *) platformString
+- (NSString *) ta_platformString
 {
-    switch ([self platformType])
+    switch ([self ta_platformType])
     {
-        case UIDevice1GiPhone: return IPHONE_1G_NAMESTRING;
-        case UIDevice3GiPhone: return IPHONE_3G_NAMESTRING;
-        case UIDevice3GSiPhone: return IPHONE_3GS_NAMESTRING;
-        case UIDevice4iPhone: return IPHONE_4_NAMESTRING;
-        case UIDevice5iPhone: return IPHONE_5_NAMESTRING;
-        case UIDeviceUnknowniPhone: return IPHONE_UNKNOWN_NAMESTRING;
+        case TAUIDevice1GiPhone: return TA_IPHONE_1G_NAMESTRING;
+        case TAUIDevice3GiPhone: return TA_IPHONE_3G_NAMESTRING;
+        case TAUIDevice3GSiPhone: return TA_IPHONE_3GS_NAMESTRING;
+        case TAUIDevice4iPhone: return TA_IPHONE_4_NAMESTRING;
+        case TAUIDevice5iPhone: return TA_IPHONE_5_NAMESTRING;
+        case TAUIDeviceUnknowniPhone: return TA_IPHONE_UNKNOWN_NAMESTRING;
         
-        case UIDevice1GiPod: return IPOD_1G_NAMESTRING;
-        case UIDevice2GiPod: return IPOD_2G_NAMESTRING;
-        case UIDevice3GiPod: return IPOD_3G_NAMESTRING;
-        case UIDevice4GiPod: return IPOD_4G_NAMESTRING;
-        case UIDeviceUnknowniPod: return IPOD_UNKNOWN_NAMESTRING;
+        case TAUIDevice1GiPod: return TA_IPOD_1G_NAMESTRING;
+        case TAUIDevice2GiPod: return TA_IPOD_2G_NAMESTRING;
+        case TAUIDevice3GiPod: return TA_IPOD_3G_NAMESTRING;
+        case TAUIDevice4GiPod: return TA_IPOD_4G_NAMESTRING;
+        case TAUIDeviceUnknowniPod: return TA_IPOD_UNKNOWN_NAMESTRING;
             
-        case UIDevice1GiPad : return IPAD_1G_NAMESTRING;
-        case UIDevice2GiPad : return IPAD_2G_NAMESTRING;
-        case UIDevice3GiPad : return IPAD_3G_NAMESTRING;
-        case UIDeviceUnknowniPad : return IPAD_UNKNOWN_NAMESTRING;
+        case TAUIDevice1GiPad : return TA_IPAD_1G_NAMESTRING;
+        case TAUIDevice2GiPad : return TA_IPAD_2G_NAMESTRING;
+        case TAUIDevice3GiPad : return TA_IPAD_3G_NAMESTRING;
+        case TAUIDeviceUnknowniPad : return TA_IPAD_UNKNOWN_NAMESTRING;
             
-        case UIDeviceAppleTV2 : return APPLETV_2G_NAMESTRING;
-        case UIDeviceUnknownAppleTV: return APPLETV_UNKNOWN_NAMESTRING;
+        case TAUIDeviceAppleTV2 : return TA_APPLETV_2G_NAMESTRING;
+        case TAUIDeviceUnknownAppleTV: return TA_APPLETV_UNKNOWN_NAMESTRING;
             
-        case UIDeviceiPhoneSimulator: return IPHONE_SIMULATOR_NAMESTRING;
-        case UIDeviceiPhoneSimulatoriPhone: return IPHONE_SIMULATOR_IPHONE_NAMESTRING;
-        case UIDeviceiPhoneSimulatoriPad: return IPHONE_SIMULATOR_IPAD_NAMESTRING;
+        case TAUIDeviceiPhoneSimulator: return TA_IPHONE_SIMULATOR_NAMESTRING;
+        case TAUIDeviceiPhoneSimulatoriPhone: return TA_IPHONE_SIMULATOR_IPHONE_NAMESTRING;
+        case TAUIDeviceiPhoneSimulatoriPad: return TA_IPHONE_SIMULATOR_IPAD_NAMESTRING;
             
-        case UIDeviceIFPGA: return IFPGA_NAMESTRING;
+        case TAUIDeviceIFPGA: return TA_IFPGA_NAMESTRING;
             
-        default: return IOS_FAMILY_UNKNOWN_DEVICE;
+        default: return TA_IOS_FAMILY_UNKNOWN_DEVICE;
     }
 }
 
@@ -205,7 +205,7 @@
 // Return the local MAC addy
 // Courtesy of FreeBSD hackers email list
 // Accidentally munged during previous update. Fixed thanks to mlamb.
-- (NSString *) macaddress
+- (NSString *) ta_macaddress
 {
     int                 mib[6];
     size_t              len;
@@ -254,7 +254,7 @@
 
 // duplicate of macaddress logic above except
 // returning the 6 bytes without printing it out into a human readable form
-- (BOOL) macaddressTo:(unsigned char*)charbuf
+- (BOOL) ta_macaddressTo:(unsigned char*)charbuf
 {
     int                 mib[6];
     size_t              len;
@@ -306,14 +306,4 @@
     return successful;
 }
 
-// Illicit Bluetooth check -- cannot be used in App Store
-/* 
-Class  btclass = NSClassFromString(@"GKBluetoothSupport");
-if ([btclass respondsToSelector:@selector(bluetoothStatus)])
-{
-    printf("BTStatus %d\n", ((int)[btclass performSelector:@selector(bluetoothStatus)] & 1) != 0);
-    bluetooth = ((int)[btclass performSelector:@selector(bluetoothStatus)] & 1) != 0;
-    printf("Bluetooth %s enabled\n", bluetooth ? "is" : "isn't");
-}
-*/
 @end
