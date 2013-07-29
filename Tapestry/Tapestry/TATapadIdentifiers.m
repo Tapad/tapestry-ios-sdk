@@ -113,7 +113,7 @@ static NSString* kTYPE_MD5_HASHED_MAC = @"md5mac"; // @"5";
         return [NSString stringWithFormat:@"%@:%@", kTYPE_MD5_HASHED_MAC, @"0"];
     }
     else {
-        return [NSString stringWithFormat:@"%@:%@", kTYPE_MD5_HASHED_MAC, [[[UIDevice currentDevice] macaddress] MD5]];
+        return [NSString stringWithFormat:@"%@:%@", kTYPE_MD5_HASHED_MAC, [[[UIDevice currentDevice] macaddress] ta_MD5]];
     }
 }
 
@@ -133,7 +133,7 @@ static NSString* kTYPE_SHA1_HASHED_MAC = @"sha1mac"; // @"6";
         return [NSString stringWithFormat:@"%@:%@", kTYPE_SHA1_HASHED_MAC, @"0"];
     }
     else {
-        return [NSString stringWithFormat:@"%@:%@", kTYPE_SHA1_HASHED_MAC, [[[UIDevice currentDevice] macaddress] SHA1]];
+        return [NSString stringWithFormat:@"%@:%@", kTYPE_SHA1_HASHED_MAC, [[[UIDevice currentDevice] macaddress] ta_SHA1]];
     }
 }
 
