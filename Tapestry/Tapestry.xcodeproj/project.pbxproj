@@ -33,6 +33,8 @@
 		2FC96E8E17A6C82700FA1C7D /* NSString+Tapad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC96E8C17A6C82700FA1C7D /* NSString+Tapad.m */; };
 		DAE8AF2B17A6B9EB000D0BAB /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F180BE217A1D0B900EC3F5F /* AdSupport.framework */; };
 		DAE8AF2E17A70328000D0BAB /* TAURLBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8AF2D17A70328000D0BAB /* TAURLBuilderTests.m */; };
+		DAE8AF3117A71025000D0BAB /* TAURLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8AF3017A71025000D0BAB /* TAURLHelper.m */; };
+		DAE8AF3417A710D7000D0BAB /* TAURLHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8AF3317A710D7000D0BAB /* TAURLHelperTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +95,10 @@
 		2FC96E8C17A6C82700FA1C7D /* NSString+Tapad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Tapad.m"; sourceTree = "<group>"; };
 		DAE8AF2C17A70328000D0BAB /* TAURLBuilderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAURLBuilderTests.h; sourceTree = "<group>"; };
 		DAE8AF2D17A70328000D0BAB /* TAURLBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAURLBuilderTests.m; sourceTree = "<group>"; };
+		DAE8AF2F17A71025000D0BAB /* TAURLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAURLHelper.h; sourceTree = "<group>"; };
+		DAE8AF3017A71025000D0BAB /* TAURLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAURLHelper.m; sourceTree = "<group>"; };
+		DAE8AF3217A710D7000D0BAB /* TAURLHelperTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAURLHelperTests.h; sourceTree = "<group>"; };
+		DAE8AF3317A710D7000D0BAB /* TAURLHelperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAURLHelperTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +193,10 @@
 			children = (
 				2F180B8F17A1C3F900EC3F5F /* TATapestryTests.h */,
 				2F180B9017A1C3F900EC3F5F /* TATapestryTests.m */,
+				DAE8AF2F17A71025000D0BAB /* TAURLHelper.h */,
+				DAE8AF3017A71025000D0BAB /* TAURLHelper.m */,
+				DAE8AF3217A710D7000D0BAB /* TAURLHelperTests.h */,
+				DAE8AF3317A710D7000D0BAB /* TAURLHelperTests.m */,
 				DAE8AF2C17A70328000D0BAB /* TAURLBuilderTests.h */,
 				DAE8AF2D17A70328000D0BAB /* TAURLBuilderTests.m */,
 				2F180B8A17A1C3F900EC3F5F /* Supporting Files */,
@@ -374,6 +384,8 @@
 			files = (
 				2F180B9117A1C3F900EC3F5F /* TATapestryTests.m in Sources */,
 				DAE8AF2E17A70328000D0BAB /* TAURLBuilderTests.m in Sources */,
+				DAE8AF3117A71025000D0BAB /* TAURLHelper.m in Sources */,
+				DAE8AF3417A710D7000D0BAB /* TAURLHelperTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

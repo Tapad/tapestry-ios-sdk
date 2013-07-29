@@ -34,7 +34,6 @@
     TATapestryClient* client = [[TATapestryClient alloc] init];
     NSString *requestUrl = [client buildRequestUrl:req];
     NSString *expectedBase = @"http://tapestry.tapad.com:80/tapestry/1";
-//    [self actualString:requestUrl matchesPattern:expectedBase];
     STAssertTrue([requestUrl hasPrefix:expectedBase], [NSString stringWithFormat:@"Request URL should default to %@", expectedBase]);
 }
 
