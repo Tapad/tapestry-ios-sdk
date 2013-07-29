@@ -71,44 +71,52 @@ static NSString*const kplatform      =@"ta_platform";
 - (id) initWithTapestryRequest:(TATapestryRequestBuilder *)req {
     if (self = [self init]) { // note: not super init!
         
-        NSString *urlString = [[NSString stringWithFormat:@"%@://%@%@/tapestry/%@?ta_partner_id=%@&%@",
-                                                 protocol, dns, port, apiVersion,
-                                                 req.partnerId,
-                                                 [self stringWithDeviceParams]]
-                               stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding ];
-        
-        NSString* userId = [TATapestryRequestBuilder getUserId];
-        if (userId != nil) {
-            urlString = [NSString stringWithFormat:@"%@%@%@:%@", urlString, @"&ta_partner_user_id=", req.partnerId,
-                         [userId stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        }
+        NSString *urlString = [self buildRequestUrl:req];
 
-        if (req.analytics) {
-            urlString = [NSString stringWithFormat:@"%@%@%@", urlString, @"&ta_analytics=", [TATapadPreferences dictionaryAsEncodedCsvString:req.analytics]];
-        }
-        if (req.shouldGetData) {
-            urlString = [NSString stringWithFormat:@"%@%@", urlString, @"&ta_get"];
-        }
-        if (req.shouldGetDevices) {
-            urlString = [NSString stringWithFormat:@"%@%@", urlString, @"&ta_list_devices"];
-        }
-        if ([req.dataToSet count] > 0) {
-            urlString = [NSString stringWithFormat:@"%@%@%@", urlString, @"&ta_set_data=", [TATapadPreferences dictionaryAsEncodedCsvString:req.dataToSet]];
-        }
-        if ([req.dataToAdd count] > 0) {
-            urlString = [NSString stringWithFormat:@"%@%@%@", urlString, @"&ta_add_data=", [TATapadPreferences dictionaryAsEncodedCsvString:req.dataToAdd]];
-        }
-        if ([req.audiencesToAdd count] > 0) {
-            urlString = [NSString stringWithFormat:@"%@%@%@", urlString, @"&ta_add_audiences=", [TATapadPreferences arrayAsEncodedCsvString:req.audiencesToAdd]];
-        }
-
-        NSLog(@"raw request=[%@]",urlString);
+        NSLog(@"raw request url=[%@]",urlString);
         
         NSURL* url =  [[NSURL alloc] initWithString:urlString];
         
         self.request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:kTimeout]; // autoreleased=>retained
     }
     return self;  
+}
+
+/**
+ * Generate the request URL using parameters from the given request builder.
+ */
+- (NSString*) buildRequestUrl:(TATapestryRequestBuilder *)req {
+    NSString *urlString = [[NSString stringWithFormat:@"%@://%@%@/tapestry/%@?ta_partner_id=%@&%@",
+                            protocol, dns, port, apiVersion,
+                            req.partnerId,
+                            [self stringWithDeviceParams]]
+                           stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding ];
+    
+    NSString* userId = [TATapestryRequestBuilder getUserId];
+    if (userId != nil) {
+        urlString = [NSString stringWithFormat:@"%@%@%@:%@", urlString, @"&ta_partner_user_id=", req.partnerId,
+                     [userId stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    }
+    
+    if (req.analytics) {
+        urlString = [NSString stringWithFormat:@"%@%@%@", urlString, @"&ta_analytics=", [TATapadPreferences dictionaryAsEncodedCsvString:req.analytics]];
+    }
+    if (req.shouldGetData) {
+        urlString = [NSString stringWithFormat:@"%@%@", urlString, @"&ta_get"];
+    }
+    if (req.shouldGetDevices) {
+        urlString = [NSString stringWithFormat:@"%@%@", urlString, @"&ta_list_devices"];
+    }
+    if ([req.dataToSet count] > 0) {
+        urlString = [NSString stringWithFormat:@"%@%@%@", urlString, @"&ta_set_data=", [TATapadPreferences dictionaryAsEncodedCsvString:req.dataToSet]];
+    }
+    if ([req.dataToAdd count] > 0) {
+        urlString = [NSString stringWithFormat:@"%@%@%@", urlString, @"&ta_add_data=", [TATapadPreferences dictionaryAsEncodedCsvString:req.dataToAdd]];
+    }
+    if ([req.audiencesToAdd count] > 0) {
+        urlString = [NSString stringWithFormat:@"%@%@%@", urlString, @"&ta_add_audiences=", [TATapadPreferences arrayAsEncodedCsvString:req.audiencesToAdd]];
+    }
+    return urlString;
 }
 
 static const float kTimeout = 2.5;

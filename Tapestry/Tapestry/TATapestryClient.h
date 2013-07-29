@@ -10,13 +10,22 @@
 
 @interface TATapestryClient : NSObject {}
 
-// using its initialized state, makes a blocking GET request to the 
-// server, and formats the resulting raw data into an UTF8 encoded string
-// the returned string will be autoreleased
-- (NSString*) getSynchronous; 
-
-// returns autoreleased request object for event tracking such as install tracking
+/**
+ * returns autoreleased request object for event tracking such as install tracking
+ */
 + (TATapestryClient *)initializeForRequest:(TATapestryRequestBuilder *)req;
+
+/**
+ * using its initialized state, makes a blocking GET request to the
+ * server, and formats the resulting raw data into an UTF8 encoded string
+ * the returned string will be autoreleased
+ */
+- (NSString*) getSynchronous;
+
+/**
+ * Build the request URL from the given request builder and the protocol/host/port information from this client.
+ */
+- (NSString*) buildRequestUrl:(TATapestryRequestBuilder *)req;
 
 // in some cases you may want direct access to the request 
 @property (nonatomic,retain) NSURLRequest* request;

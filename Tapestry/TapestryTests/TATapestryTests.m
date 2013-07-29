@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Tapad. All rights reserved.
 //
 
+#import "TATapestryRequestBuilder.h"
+#import "TATapestryClient.h"
 #import "TATapestryTests.h"
 
 @implementation TATapestryTests
@@ -15,18 +17,23 @@
     [super setUp];
     
     // Set-up code here.
+    req = [[TATapestryRequestBuilder alloc] init];
+    STAssertNotNil(req, @"Tapestry request should be initialized");
 }
 
 - (void)tearDown
 {
     // Tear-down code here.
+    req = Nil;
     
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testClientShouldHaveTheApiBaseUrlPreconfigured
 {
-    STFail(@"Unit tests are not implemented yet in TATapestryTests");
+    TATapestryClient* client = [TATapestryClient alloc];
+    NSString *requestUrl = [client buildRequestUrl:req];
+    STFail(@"Not implemented yet");
 }
 
 @end
