@@ -464,7 +464,7 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Tapestry/Tapestry-Prefix.pch";
+				GCC_PREFIX_HEADER = "Tapestry/TATapestry-Prefix.pch";
 				INFOPLIST_FILE = "TapestryTests/TapestryTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
@@ -479,7 +479,7 @@
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Tapestry/Tapestry-Prefix.pch";
+				GCC_PREFIX_HEADER = "Tapestry/TATapestry-Prefix.pch";
 				INFOPLIST_FILE = "TapestryTests/TapestryTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
