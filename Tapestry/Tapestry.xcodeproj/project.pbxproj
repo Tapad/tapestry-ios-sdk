@@ -66,8 +66,8 @@
 		2F180B8F17A1C3F900EC3F5F /* TATapestryTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TATapestryTests.h; sourceTree = "<group>"; };
 		2F180B9017A1C3F900EC3F5F /* TATapestryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TATapestryTests.m; sourceTree = "<group>"; };
 		2F180BB417A1C64200EC3F5F /* MyEnabledTapadIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEnabledTapadIdentifiers.h; sourceTree = "<group>"; };
-		2F180BB517A1C64200EC3F5F /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
-		2F180BB617A1C64200EC3F5F /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		2F180BB517A1C64200EC3F5F /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5.h"; path = "../NSString+MD5.h"; sourceTree = "<group>"; };
+		2F180BB617A1C64200EC3F5F /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MD5.m"; path = "../NSString+MD5.m"; sourceTree = "<group>"; };
 		2F180BB717A1C64200EC3F5F /* TATapadIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapadIdentifiers.h; sourceTree = "<group>"; };
 		2F180BB817A1C64200EC3F5F /* TATapadIdentifiers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapadIdentifiers.m; sourceTree = "<group>"; };
 		2F180BB917A1C64200EC3F5F /* TATapadPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapadPreferences.h; sourceTree = "<group>"; };
@@ -141,8 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				2F180BB417A1C64200EC3F5F /* MyEnabledTapadIdentifiers.h */,
-				2F180BB517A1C64200EC3F5F /* NSString+MD5.h */,
-				2F180BB617A1C64200EC3F5F /* NSString+MD5.m */,
 				2F180BB717A1C64200EC3F5F /* TATapadIdentifiers.h */,
 				2F180BB817A1C64200EC3F5F /* TATapadIdentifiers.m */,
 				2F180BB917A1C64200EC3F5F /* TATapadPreferences.h */,
@@ -189,6 +187,7 @@
 		2F180BBF17A1C64200EC3F5F /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				2FC96E8317A6BF3700FA1C7D /* MD5 */,
 				2F180BC017A1C64200EC3F5F /* OpenUDID */,
 				2F180BC317A1C64200EC3F5F /* UIDevice-Hardware */,
 			);
@@ -211,6 +210,15 @@
 				2F180BC517A1C64200EC3F5F /* UIDevice+Hardware.m */,
 			);
 			path = "UIDevice-Hardware";
+			sourceTree = "<group>";
+		};
+		2FC96E8317A6BF3700FA1C7D /* MD5 */ = {
+			isa = PBXGroup;
+			children = (
+				2F180BB517A1C64200EC3F5F /* NSString+MD5.h */,
+				2F180BB617A1C64200EC3F5F /* NSString+MD5.m */,
+			);
+			name = MD5;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
