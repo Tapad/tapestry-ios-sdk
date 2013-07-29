@@ -32,6 +32,7 @@
 		2FC96E8D17A6C82700FA1C7D /* NSString+Tapad.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FC96E8B17A6C82700FA1C7D /* NSString+Tapad.h */; };
 		2FC96E8E17A6C82700FA1C7D /* NSString+Tapad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC96E8C17A6C82700FA1C7D /* NSString+Tapad.m */; };
 		DAE8AF2B17A6B9EB000D0BAB /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F180BE217A1D0B900EC3F5F /* AdSupport.framework */; };
+		DAE8AF2E17A70328000D0BAB /* TAURLBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8AF2D17A70328000D0BAB /* TAURLBuilderTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		2FC96E8817A6C3B200FA1C7D /* TAURLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAURLBuilder.m; sourceTree = "<group>"; };
 		2FC96E8B17A6C82700FA1C7D /* NSString+Tapad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Tapad.h"; sourceTree = "<group>"; };
 		2FC96E8C17A6C82700FA1C7D /* NSString+Tapad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Tapad.m"; sourceTree = "<group>"; };
+		DAE8AF2C17A70328000D0BAB /* TAURLBuilderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAURLBuilderTests.h; sourceTree = "<group>"; };
+		DAE8AF2D17A70328000D0BAB /* TAURLBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAURLBuilderTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +187,8 @@
 			children = (
 				2F180B8F17A1C3F900EC3F5F /* TATapestryTests.h */,
 				2F180B9017A1C3F900EC3F5F /* TATapestryTests.m */,
+				DAE8AF2C17A70328000D0BAB /* TAURLBuilderTests.h */,
+				DAE8AF2D17A70328000D0BAB /* TAURLBuilderTests.m */,
 				2F180B8A17A1C3F900EC3F5F /* Supporting Files */,
 			);
 			path = TapestryTests;
@@ -368,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F180B9117A1C3F900EC3F5F /* TATapestryTests.m in Sources */,
+				DAE8AF2E17A70328000D0BAB /* TAURLBuilderTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
