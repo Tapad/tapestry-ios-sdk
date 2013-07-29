@@ -8,6 +8,10 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface TATapestryTests : SenTestCase
+@class TATapestryRequestBuilder;
+
+@interface TATapestryTests : SenTestCase {
+    TATapestryRequestBuilder *req;
+}
 
 @end
