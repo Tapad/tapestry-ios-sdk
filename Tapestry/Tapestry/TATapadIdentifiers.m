@@ -7,7 +7,7 @@
 
 #import <CommonCrypto/CommonDigest.h>
 
-#import "OpenUDID.h"
+#import "TAOpenUDID.h"
 #import "TATapadIdentifiers.h"
 #import "TATapadPreferences.h"
 #import "UIDevice-Hardware.h"
@@ -27,7 +27,7 @@ static NSString* kTYPE_OPENUDID = @"oudid"; // @"0";
 }
 
 + (NSString*) fetchOpenUDID {
-    return [NSString stringWithFormat:@"%@:%@", kTYPE_OPENUDID, [OpenUDID value]];
+    return [NSString stringWithFormat:@"%@:%@", kTYPE_OPENUDID, [TAOpenUDID value]];
 }
 
 static NSString* kMETHOD_MD5_HASHED_RAW_MAC = @"MD5 Hashed Raw MAC";
