@@ -27,6 +27,7 @@
 		2F180BE517A1D90100EC3F5F /* TATapestryClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F180BBB17A1C64200EC3F5F /* TATapestryClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2F180BE717A1D91500EC3F5F /* TATapestryRequestBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F180BBD17A1C64200EC3F5F /* TATapestryRequestBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2FA6A69017A302C80081BF75 /* TATapadIdentifiers.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F180BB717A1C64200EC3F5F /* TATapadIdentifiers.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAE8AF2B17A6B9EB000D0BAB /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F180BE217A1D0B900EC3F5F /* AdSupport.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAE8AF2B17A6B9EB000D0BAB /* AdSupport.framework in Frameworks */,
 				2F180B8217A1C3F900EC3F5F /* SenTestingKit.framework in Frameworks */,
 				2F180B8417A1C3F900EC3F5F /* UIKit.framework in Frameworks */,
 				2F180B8517A1C3F900EC3F5F /* Foundation.framework in Frameworks */,
