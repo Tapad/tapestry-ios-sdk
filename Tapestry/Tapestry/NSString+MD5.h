@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 
-@interface NSString (MD5)
+@interface NSString (TA_MD5)
 
-- (NSString *)MD5;
-- (NSString *)SHA1;
+- (NSString *)ta_MD5;
+- (NSString *)ta_SHA1;
 
 @end

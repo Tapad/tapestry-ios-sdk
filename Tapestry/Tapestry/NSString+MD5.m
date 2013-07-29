@@ -11,10 +11,10 @@
 #import <CommonCrypto/CommonDigest.h>
 
 
-@implementation NSString (MD5)
+@implementation NSString (TA_MD5)
 
 
-- (NSString*)MD5 {
+- (NSString*)ta_MD5 {
 
     // Create pointer to the string as UTF8
     const char *ptr = [self UTF8String];
@@ -35,7 +35,7 @@
     
 }
 
-- (NSString*)SHA1 {
+- (NSString*)ta_SHA1 {
     
     // Create pointer to the string as UTF8
     const char *ptr = [self UTF8String];

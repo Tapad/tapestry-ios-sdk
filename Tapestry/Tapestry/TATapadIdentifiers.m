@@ -7,10 +7,10 @@
 
 #import <CommonCrypto/CommonDigest.h>
 
-#import "OpenUDID.h"
+#import "TAOpenUDID.h"
 #import "TATapadIdentifiers.h"
 #import "TATapadPreferences.h"
-#import "UIDevice-Hardware.h"
+#import "UIDevice+Hardware.h"
 #import "NSString+MD5.h"
 
 @implementation TATapadIdentifiers
@@ -27,7 +27,7 @@ static NSString* kTYPE_OPENUDID = @"oudid"; // @"0";
 }
 
 + (NSString*) fetchOpenUDID {
-    return [NSString stringWithFormat:@"%@:%@", kTYPE_OPENUDID, [OpenUDID value]];
+    return [NSString stringWithFormat:@"%@:%@", kTYPE_OPENUDID, [TAOpenUDID value]];
 }
 
 static NSString* kMETHOD_MD5_HASHED_RAW_MAC = @"MD5 Hashed Raw MAC";
@@ -47,7 +47,7 @@ static NSString* kTYPE_MD5_HASHED_RAW_MAC = @"md5rmac"; // @"1";
     // storage of md5 output bytes
     unsigned char md5Buffer[CC_MD5_DIGEST_LENGTH];
     
-    if ([[UIDevice currentDevice] macaddressTo:macBuffer]) {
+    if ([[UIDevice currentDevice] ta_macaddressTo:macBuffer]) {
         // Create 16 byte MD5 hash value, store in buffer
         CC_MD5(macBuffer, 6, md5Buffer);
         
@@ -81,7 +81,7 @@ static NSString* kTYPE_SHA1_HASHED_RAW_MAC = @"sha1rmac"; // @"2";
     // storage of sha1 output bytes
     unsigned char sha1Buffer[CC_SHA1_DIGEST_LENGTH];
     
-    if ([[UIDevice currentDevice] macaddressTo:macBuffer]) {
+    if ([[UIDevice currentDevice] ta_macaddressTo:macBuffer]) {
         // Create 20 byte SHA1 hash value, store in buffer
         CC_SHA1(macBuffer, 6, sha1Buffer);
         
@@ -109,11 +109,11 @@ static NSString* kTYPE_MD5_HASHED_MAC = @"md5mac"; // @"5";
 }
 
 + (NSString*) fetchMD5HashedMAC {
-    if ([[UIDevice currentDevice] macaddress] == NULL) {
+    if ([[UIDevice currentDevice] ta_macaddress] == NULL) {
         return [NSString stringWithFormat:@"%@:%@", kTYPE_MD5_HASHED_MAC, @"0"];
     }
     else {
-        return [NSString stringWithFormat:@"%@:%@", kTYPE_MD5_HASHED_MAC, [[[UIDevice currentDevice] macaddress] MD5]];
+        return [NSString stringWithFormat:@"%@:%@", kTYPE_MD5_HASHED_MAC, [[[UIDevice currentDevice] ta_macaddress] ta_MD5]];
     }
 }
 
@@ -129,11 +129,11 @@ static NSString* kTYPE_SHA1_HASHED_MAC = @"sha1mac"; // @"6";
 }
 
 + (NSString*) fetchSHA1HashedMAC {
-    if ([[UIDevice currentDevice] macaddress] == NULL) {
+    if ([[UIDevice currentDevice] ta_macaddress] == NULL) {
         return [NSString stringWithFormat:@"%@:%@", kTYPE_SHA1_HASHED_MAC, @"0"];
     }
     else {
-        return [NSString stringWithFormat:@"%@:%@", kTYPE_SHA1_HASHED_MAC, [[[UIDevice currentDevice] macaddress] SHA1]];
+        return [NSString stringWithFormat:@"%@:%@", kTYPE_SHA1_HASHED_MAC, [[[UIDevice currentDevice] ta_macaddress] ta_SHA1]];
     }
 }
 
