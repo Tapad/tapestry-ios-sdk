@@ -31,9 +31,18 @@
 
 - (void)testClientShouldHaveTheApiBaseUrlPreconfigured
 {
-    TATapestryClient* client = [TATapestryClient alloc];
+    TATapestryClient* client = [[TATapestryClient alloc] init];
     NSString *requestUrl = [client buildRequestUrl:req];
-    STFail(@"Not implemented yet");
+    NSString *expectedBase = @"http://tapestry.tapad.com:80/tapestry/1";
+//    [self actualString:requestUrl matchesPattern:expectedBase];
+    STAssertTrue([requestUrl hasPrefix:expectedBase], [NSString stringWithFormat:@"Request URL should default to %@", expectedBase]);
+}
+
+- (void)actualString:(NSString*)actual matchesPattern:(NSString*)pattern
+{
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:0 error:NULL];
+    NSUInteger matches = [regex numberOfMatchesInString:actual options:0 range:NSMakeRange(0, [actual length])];
+    STAssertEquals(1, matches, [NSString stringWithFormat:@"Expected exactly one match of '%@' in '%@'", pattern, actual]);
 }
 
 @end
