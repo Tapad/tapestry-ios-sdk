@@ -178,12 +178,12 @@
     for (NSString* key in values)
     {
         NSString* value = [values valueForKey:key];
-        [components addObject:[NSString stringWithFormat:@"\"%@\"=\"%@\"",
+        [components addObject:[NSString stringWithFormat:@"\"%@\":\"%@\"",
                                 [key ta_URLEncodedString],
                                 [value ta_URLEncodedString]]];
     }
-    
-    return [components componentsJoinedByString:@","];
+    NSString* encodedValues = [components componentsJoinedByString:@","];
+    return [NSString stringWithFormat:@"%@=%@", [parameter ta_URLEncodedString], encodedValues];
 }
 
 - (NSString*)encodeArrayValue:(NSArray*)values forParameter:(NSString*)parameter
