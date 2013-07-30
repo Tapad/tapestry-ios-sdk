@@ -38,12 +38,12 @@
         map = [NSMutableDictionary dictionary];
         [self.parameters setValue:map forKey:key];
     }
-   // [map setValue:value forKey:key];
+    [map setValue:value forKey:key];
 }
 
 - (void)addArray:(NSArray*)array forParameter:(NSString*)parameter
 {
-    
+    [self.parameters setValue:array forKey:parameter];
 }
 
 - (void)addValue:(NSString*)value forParameter:(NSString*)parameter
@@ -53,7 +53,7 @@
 
 - (void)addData:(NSString*)data forKey:(NSString*)key
 {
-    
+    [self addMapParameter:@"ta_add_data" forKey:key andValue:data];
 }
 
 - (void)removeData:(NSString*)data forKey:(NSString*)key
@@ -78,7 +78,15 @@
 
 - (void)addAudiences:(NSString *)audiences, ...
 {
-    
+    NSMutableArray* array = [NSMutableArray array];
+    va_list args;
+    va_start(args, audiences);
+    for (NSString *audience = audiences; audience != nil; audience = va_arg(args, NSString*))
+    {
+        [array addObject:audience];
+    }
+    va_end(args);
+    [self addArray:array forParameter:@"ta_add_audiences"];
 }
 
 - (void)removeAudiences:(NSString *)audiences, ...
@@ -126,6 +134,10 @@
         NSObject* value = [parameters valueForKey:key];
         if ([value isKindOfClass:[NSString class]])
             [components addObject:[self encodeStringValue:(NSString*)value forParameter:key]];
+        else if ([value isKindOfClass:[NSDictionary class]])
+            [components addObject:[self encodeDictionaryValue:(NSDictionary*)value forParameter:key]];
+        else if ([value isKindOfClass:[NSArray class]])
+            [components addObject:[self encodeArrayValue:(NSArray*)value forParameter:key]];
     }
     
     return [components componentsJoinedByString:@"&"];
@@ -134,6 +146,33 @@
 - (NSString*)encodeStringValue:(NSString*)value forParameter:(NSString*)parameter
 {
     return [NSString stringWithFormat:@"%@=%@", [parameter ta_URLEncodedString], [value ta_URLEncodedString]];
+}
+
+- (NSString*)encodeDictionaryValue:(NSDictionary*)values forParameter:(NSString*)parameter
+{
+    NSMutableArray* components = [NSMutableArray array];
+    
+    for (NSString* key in values)
+    {
+        NSString* value = [values valueForKey:key];
+        [components addObject:[NSString stringWithFormat:@"\"%@\"=\"%@\"",
+                                [key ta_URLEncodedString],
+                                [value ta_URLEncodedString]]];
+    }
+    
+    return [components componentsJoinedByString:@","];
+}
+
+- (NSString*)encodeArrayValue:(NSArray*)values forParameter:(NSString*)parameter
+{
+    NSMutableString* buffer = [NSMutableString stringWithFormat:@"%@=", [parameter ta_URLEncodedString]];
+    for (NSInteger index=0; index<[values count]; index++)
+    {
+        [buffer appendString:[[values objectAtIndex:index] ta_URLEncodedString]];
+        if (index < [values count])
+            [buffer appendString:@","];
+    }
+    return buffer;
 }
 
 @end
