@@ -31,6 +31,8 @@
 		2FC96E8A17A6C3B200FA1C7D /* TAURLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC96E8817A6C3B200FA1C7D /* TAURLBuilder.m */; };
 		2FC96E8D17A6C82700FA1C7D /* NSString+Tapad.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FC96E8B17A6C82700FA1C7D /* NSString+Tapad.h */; };
 		2FC96E8E17A6C82700FA1C7D /* NSString+Tapad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC96E8C17A6C82700FA1C7D /* NSString+Tapad.m */; };
+		2FF0811817A812BA001F9AEA /* TATapestryRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FF0811617A812BA001F9AEA /* TATapestryRequest.h */; };
+		2FF0811917A812BA001F9AEA /* TATapestryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF0811717A812BA001F9AEA /* TATapestryRequest.m */; };
 		DAE8AF2B17A6B9EB000D0BAB /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F180BE217A1D0B900EC3F5F /* AdSupport.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +92,8 @@
 		2FC96E8817A6C3B200FA1C7D /* TAURLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAURLBuilder.m; sourceTree = "<group>"; };
 		2FC96E8B17A6C82700FA1C7D /* NSString+Tapad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Tapad.h"; sourceTree = "<group>"; };
 		2FC96E8C17A6C82700FA1C7D /* NSString+Tapad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Tapad.m"; sourceTree = "<group>"; };
+		2FF0811617A812BA001F9AEA /* TATapestryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapestryRequest.h; sourceTree = "<group>"; };
+		2FF0811717A812BA001F9AEA /* TATapestryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapestryRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,8 @@
 				2FC96E8717A6C3B200FA1C7D /* TAURLBuilder.h */,
 				2FC96E8817A6C3B200FA1C7D /* TAURLBuilder.m */,
 				2F180BBF17A1C64200EC3F5F /* Vendors */,
+				2FF0811617A812BA001F9AEA /* TATapestryRequest.h */,
+				2FF0811717A812BA001F9AEA /* TATapestryRequest.m */,
 			);
 			path = Tapestry;
 			sourceTree = "<group>";
@@ -247,6 +253,7 @@
 				2FA6A69017A302C80081BF75 /* TATapadIdentifiers.h in Headers */,
 				2FC96E8917A6C3B200FA1C7D /* TAURLBuilder.h in Headers */,
 				2FC96E8D17A6C82700FA1C7D /* NSString+Tapad.h in Headers */,
+				2FF0811817A812BA001F9AEA /* TATapestryRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +367,7 @@
 				2F180BCC17A1C64200EC3F5F /* UIDevice+Hardware.m in Sources */,
 				2FC96E8A17A6C3B200FA1C7D /* TAURLBuilder.m in Sources */,
 				2FC96E8E17A6C82700FA1C7D /* NSString+Tapad.m in Sources */,
+				2FF0811917A812BA001F9AEA /* TATapestryRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
