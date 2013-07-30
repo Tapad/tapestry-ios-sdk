@@ -1,5 +1,5 @@
 //
-//  TATapestryRequestTests.m
+//  TATapestryRequestTests_Generic.m
 //  Tapestry
 //
 //  Created by Sveinung Kval Bakken on 30.07.13.
@@ -7,13 +7,13 @@
 //
 
 #import "TATapestryRequest.h"
-#import "TATapestryRequestTests.h"
+#import "TATapestryRequestTests_Generic.h"
 
-@interface TATapestryRequestTests ()
+@interface TATapestryRequestTests_Generic ()
 @property(nonatomic, strong) TATapestryRequest* request;
 @end
 
-@implementation TATapestryRequestTests
+@implementation TATapestryRequestTests_Generic
 
 - (void)setUp
 {
