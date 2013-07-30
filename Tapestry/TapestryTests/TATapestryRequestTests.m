@@ -80,7 +80,7 @@
 
 - (void)testClearData
 {
-    [request clearData:self.val1, self.val2];
+    [request clearData:self.val1, self.val2, nil];
     [self assertArrayMatches:@"ta_clear_data"];
 }
 
@@ -93,13 +93,13 @@
 
 - (void)testAddAudiences
 {
-    [request addAudiences:self.val1, self.val2];
+    [request addAudiences:self.val1, self.val2, nil];
     [self assertArrayMatches:@"ta_add_audiences"];
 }
 
 - (void)testRemoveAudiences
 {
-    [request removeAudiences:self.val1, self.val2];
+    [request removeAudiences:self.val1, self.val2, nil];
     [self assertArrayMatches:@"ta_remove_audiences"];
 }
 
