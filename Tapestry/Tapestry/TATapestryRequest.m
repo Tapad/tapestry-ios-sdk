@@ -178,7 +178,7 @@
     for (NSString* key in values)
     {
         NSString* value = [values valueForKey:key];
-        [components addObject:[NSString stringWithFormat:@"\"%@\":\"%@\"",
+        [components addObject:[NSString stringWithFormat:@"%@:%@",
                                 [key ta_URLEncodedString],
                                 [value ta_URLEncodedString]]];
     }
