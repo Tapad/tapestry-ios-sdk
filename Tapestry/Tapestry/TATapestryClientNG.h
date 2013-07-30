@@ -7,9 +7,8 @@
 //
 
 #import "TATapestryRequest.h"
+#import "TATapestryResponse.h"
 #import <Foundation/Foundation.h>
-
-@class TATapestryResponse;
 
 typedef void(^TATapestryResponseHandler)(TATapestryResponse* response);
 

@@ -10,4 +10,9 @@
 
 @implementation TATapestryResponse
 
+- (BOOL)wasSuccess
+{
+    return YES;
+}
+
 @end

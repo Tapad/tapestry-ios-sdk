@@ -10,4 +10,6 @@
 
 @interface TATapestryResponse : NSDictionary
 
+- (BOOL)wasSuccess;
+
 @end

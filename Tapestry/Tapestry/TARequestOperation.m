@@ -31,9 +31,7 @@
     
     TATapestryResponse* response = nil;
     
-    if (self.handler) {
-        self.handler(response);
-    }
+    self.handler(response);
 }
 
 @end
