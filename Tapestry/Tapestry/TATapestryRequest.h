@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 /**
-  A mutable class for building requests that are sent with @see TATapestryClient.  Building a request adds parameters to the HTTP query string that will be sent to Tapestry Web API.
-
-  An example of building a request:
+ A mutable class for building requests that are sent with @see TATapestryClient.  Building a request adds parameters to the HTTP query string that will be sent to Tapestry Web API.
+ 
+ An example of building a request:
  
  	TATapestryRequest* request = [TATapestryRequest request];
     [request addAudiences:@"aud1", @"aud2", @"aud3"];
@@ -25,9 +25,24 @@
 
 + (TATapestryRequest*) request;
 - (void)addData:(NSString*)data forKey:(NSString*)key;
+- (void)removeData:(NSString*)data forKey:(NSString*)key;
+- (void)setData:(NSString*)data forKey:(NSString *)key;
+- (void)clearData:(NSString *)dataKeys, ...;
+- (void)addUniqueData:(NSString*)data forKey:(NSString*)key;
 - (void)addAudiences:(NSString *)audiences, ...;
+- (void)removeAudiences:(NSString *)audiences, ...;
 - (void)listDevices;
 - (void)setDepth:(NSInteger)depth;
+- (void)setPartnerId:(NSString*)partnedId;
+- (void)addUserId:(NSString*)userId forSource:(NSString*)source;
+- (void)setStrength:(NSInteger)strength;
+- (void)addTypedId:(NSString*)typedId forSource:(NSString*)source;
 
+
+/** Converts the request into a URL-encoded query string.
+ 
+ @return query string.
+ */
+- (NSString*)query;
 
 @end
