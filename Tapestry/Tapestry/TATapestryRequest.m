@@ -32,11 +32,11 @@
 
 - (void)addMapParameter:(NSString*)parameter forKey:(NSString*)key andValue:(NSString*)value
 {
-    NSMutableDictionary* map = [self.parameters objectForKey:key];
+    NSMutableDictionary* map = [self.parameters objectForKey:parameter];
     if (map == nil)
     {
         map = [NSMutableDictionary dictionary];
-        [self.parameters setValue:map forKey:key];
+        [self.parameters setValue:map forKey:parameter];
     }
     [map setValue:value forKey:key];
 }
