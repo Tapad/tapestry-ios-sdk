@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>TAURLHelper Class Reference</title>
+		<title>TATapestryRequestTests Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
@@ -17,7 +17,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">TAURLHelper Class Reference</h1>
+				<h1 class="hideInXcode">TATapestryRequestTests Class Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -30,19 +30,10 @@
 	
 	
 	
-	<option value="tasks">Tasks</option>
 	
 	
 	
 	
-	
-	
-	
-	<option value="class_methods">Class Methods</option>
-	
-	<option value="//api/name/paramsFromQuery:">&nbsp;&nbsp;&nbsp;&nbsp;+ paramsFromQuery:</option>
-	
-	<option value="//api/name/paramsFromUri:">&nbsp;&nbsp;&nbsp;&nbsp;+ paramsFromUri:</option>
 	
 	
 	
@@ -58,23 +49,11 @@
 
 
 
-<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
-	
-</ul></li>
 
 
 
 
 
-
-
-<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/paramsFromQuery:">paramsFromQuery:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/paramsFromUri:">paramsFromUri:</a></span></li>
-	
-</ul></li>
 
 
 
@@ -83,7 +62,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="TAURLHelper Class Reference" name="top"></a>
+				<a title="TATapestryRequestTests Class Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -92,7 +71,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">TAURLHelper Class Reference</h1>
+						<h1 class="title title-header">TATapestryRequestTests Class Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -100,10 +79,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<td class="specification-title">Inherits from</td>
-	<td class="specification-value">NSObject</td>
+	<td class="specification-value">SenTestCase</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">TAURLHelper.h<br />TAURLHelper.m</td>
+	<td class="specification-value">TATapestryRequestTests.h<br />TATapestryRequestTests.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -112,133 +91,11 @@
 					
 					
 					
-					<div class="section section-tasks">
-						<a title="Tasks" name="tasks"></a>
-						<h2 class="subtitle subtitle-tasks">Tasks</h2>
-						
-						
-						
-						
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/paramsFromUri:">+&nbsp;paramsFromUri:</a></code>
-		<span class="tooltip"><p>Return dictionary of parameters from the full uri directly.
-E.g. [TAURLHelper paramsFromQuery:@&ldquo;http://example.com?key=val&amp;foo=bar&rdquo;]<a href="http://example.com">http://example.com</a>?key=val&amp;foo=bar"]</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/paramsFromQuery:">+&nbsp;paramsFromQuery:</a></code>
-		<span class="tooltip"><p>Return dictionary of parameters from the querystring directly.
-E.g. [TAURLHelper paramsFromQuery:@&ldquo;key=val&amp;foo=bar&rdquo;]</p></span>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-					</div>
 					
 					
 					
 					
 					
-					
-					
-					<div class="section section-methods">
-						<a title="Class Methods" name="class_methods"></a>
-						<h2 class="subtitle subtitle-methods">Class Methods</h2>
-						
-						<div class="section-method">
-	<a name="//api/name/paramsFromQuery:" title="paramsFromQuery:"></a>
-	<h3 class="subsubtitle method-title">paramsFromQuery:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Return dictionary of parameters from the querystring directly.
-E.g. [TAURLHelper paramsFromQuery:@&ldquo;key=val&amp;foo=bar&rdquo;]</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)paramsFromQuery:(NSString *)<em>queryString</em></code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Return dictionary of parameters from the querystring directly.
-E.g. [TAURLHelper paramsFromQuery:@&ldquo;key=val&amp;foo=bar&rdquo;]</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TAURLHelper.m</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/paramsFromUri:" title="paramsFromUri:"></a>
-	<h3 class="subsubtitle method-title">paramsFromUri:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Return dictionary of parameters from the full uri directly.
-E.g. [TAURLHelper paramsFromQuery:@&ldquo;http://example.com?key=val&amp;foo=bar&rdquo;]<a href="http://example.com">http://example.com</a>?key=val&amp;foo=bar"]</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)paramsFromUri:(NSString *)<em>uri</em></code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Return dictionary of parameters from the full uri directly.
-E.g. [TAURLHelper paramsFromQuery:@&ldquo;http://example.com?key=val&amp;foo=bar&rdquo;]<a href="http://example.com">http://example.com</a>?key=val&amp;foo=bar"]</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TAURLHelper.m</code><br />
-	</div>				
-	
-	
-</div>
-						
-					</div>
 					
 					
 					

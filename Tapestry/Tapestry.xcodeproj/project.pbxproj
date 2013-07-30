@@ -37,6 +37,7 @@
 		DAE8AF2E17A70328000D0BAB /* TAURLBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8AF2D17A70328000D0BAB /* TAURLBuilderTests.m */; };
 		DAE8AF3117A71025000D0BAB /* TAURLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8AF3017A71025000D0BAB /* TAURLHelper.m */; };
 		DAE8AF3417A710D7000D0BAB /* TAURLHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8AF3317A710D7000D0BAB /* TAURLHelperTests.m */; };
+		DAE8AF3717A839D0000D0BAB /* TATapestryRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8AF3617A839D0000D0BAB /* TATapestryRequestTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,8 @@
 		DAE8AF3017A71025000D0BAB /* TAURLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAURLHelper.m; sourceTree = "<group>"; };
 		DAE8AF3217A710D7000D0BAB /* TAURLHelperTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAURLHelperTests.h; sourceTree = "<group>"; };
 		DAE8AF3317A710D7000D0BAB /* TAURLHelperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAURLHelperTests.m; sourceTree = "<group>"; };
+		DAE8AF3517A839CF000D0BAB /* TATapestryRequestTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapestryRequestTests.h; sourceTree = "<group>"; };
+		DAE8AF3617A839D0000D0BAB /* TATapestryRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapestryRequestTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +202,8 @@
 			children = (
 				2F180B8F17A1C3F900EC3F5F /* TATapestryTests.h */,
 				2F180B9017A1C3F900EC3F5F /* TATapestryTests.m */,
+				DAE8AF3517A839CF000D0BAB /* TATapestryRequestTests.h */,
+				DAE8AF3617A839D0000D0BAB /* TATapestryRequestTests.m */,
 				DAE8AF2F17A71025000D0BAB /* TAURLHelper.h */,
 				DAE8AF3017A71025000D0BAB /* TAURLHelper.m */,
 				DAE8AF3217A710D7000D0BAB /* TAURLHelperTests.h */,
@@ -394,6 +399,7 @@
 				DAE8AF2E17A70328000D0BAB /* TAURLBuilderTests.m in Sources */,
 				DAE8AF3117A71025000D0BAB /* TAURLHelper.m in Sources */,
 				DAE8AF3417A710D7000D0BAB /* TAURLHelperTests.m in Sources */,
+				DAE8AF3717A839D0000D0BAB /* TATapestryRequestTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

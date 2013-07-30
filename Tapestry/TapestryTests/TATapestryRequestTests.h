@@ -6,8 +6,11 @@
 //  Copyright (c) 2013 Tapad. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <SenTestingKit/SenTestingKit.h>
+#import "TATapestryRequest.h"
 
-@interface TATapestryRequestTests : NSObject
+@interface TATapestryRequestTests : SenTestCase {
+    TATapestryRequest *request;
+}
 
 @end
