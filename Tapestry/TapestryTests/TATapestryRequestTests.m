@@ -111,12 +111,14 @@
 
 - (void)testSetPartnerId
 {
-    #warning(@"todo");
+    [request setPartnerId:@"123"];
+    [self assertKey:@"ta_partner_id" hasValue:@"123"];
 }
 
 - (void)testAddUserId
 {
-    #warning(@"todo");
+    [request addUserId:@"testUid123@example.com" forSource:@"email"];
+    [self assertKey:@"ta_partner_user_id" hasValue:@"email:testUid123%40example.com"];
 }
 
 - (void)testSetStrength

@@ -127,7 +127,7 @@
 
 - (void)addUserId:(NSString*)userId forSource:(NSString*)source
 {
-    [self addMapParameter:@"ta_user_ids" forKey:source andValue:userId];
+    [self addMapParameter:@"ta_partner_user_id" forKey:source andValue:userId];
 }
 
 - (void)setStrength:(NSInteger)strength
