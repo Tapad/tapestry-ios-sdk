@@ -10,10 +10,6 @@
 
 @implementation TAURLHelper
 
-/**
- Return dictionary of parameters from the querystring directly.
- E.g. [TAURLHelper paramsFromQuery:@"key=val&foo=bar"]
- */
 + (NSDictionary*)paramsFromQuery:(NSString*)queryString
 {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
@@ -57,10 +53,6 @@
     
 }
 
-/**
- Return dictionary of parameters from the full uri directly.
- E.g. [TAURLHelper paramsFromQuery:@"http://example.com?key=val&foo=bar"]
- */
 + (NSDictionary*)paramsFromUri:(NSString*)uri
 {
     NSArray *parts = [uri componentsSeparatedByString:@"?"];
@@ -68,4 +60,5 @@
     NSString *queryString = [queryParts componentsJoinedByString:@"?"]; // queryParts should be length 1, but we can code defensively.
     return [TAURLHelper paramsFromQuery:queryString];
 }
+
 @end

@@ -27,6 +27,8 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 	
 	
 	
@@ -55,6 +57,8 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
 
 
 
@@ -110,6 +114,14 @@
 					
 					
 					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Helper to parse an NSDictionary of parameters out of a URI/queryString.</p>
+					</div>
+					
+					
+					
 					
 					
 					<div class="section section-tasks">
@@ -124,16 +136,14 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/paramsFromUri:">+&nbsp;paramsFromUri:</a></code>
-		<span class="tooltip"><p>Return dictionary of parameters from the full uri directly.
-E.g. [TAURLHelper paramsFromQuery:@&ldquo;http://example.com?key=val&amp;foo=bar&rdquo;]<a href="http://example.com">http://example.com</a>?key=val&amp;foo=bar"]</p></span>
+		<span class="tooltip"><p>Return dictionary of parameters from the full uri.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/paramsFromQuery:">+&nbsp;paramsFromQuery:</a></code>
-		<span class="tooltip"><p>Return dictionary of parameters from the querystring directly.
-E.g. [TAURLHelper paramsFromQuery:@&ldquo;key=val&amp;foo=bar&rdquo;]</p></span>
+		<span class="tooltip"><p>Return dictionary of parameters from the querystring directly.</p></span>
 	</span>
 	
 	
@@ -159,8 +169,7 @@ E.g. [TAURLHelper paramsFromQuery:@&ldquo;key=val&amp;foo=bar&rdquo;]</p></span>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Return dictionary of parameters from the querystring directly.
-E.g. [TAURLHelper paramsFromQuery:@&ldquo;key=val&amp;foo=bar&rdquo;]</p>
+		<p>Return dictionary of parameters from the querystring directly.</p>
 	</div>		
 	
     
@@ -177,8 +186,10 @@ E.g. [TAURLHelper paramsFromQuery:@&ldquo;key=val&amp;foo=bar&rdquo;]</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Return dictionary of parameters from the querystring directly.
-E.g. [TAURLHelper paramsFromQuery:@&ldquo;key=val&amp;foo=bar&rdquo;]</p>
+		<p>Return dictionary of parameters from the querystring directly.</p>
+
+<pre><code> [TAURLHelper paramsFromQuery:@"key=val&amp;foo=bar"]
+</code></pre>
 	</div>
 	
 	
@@ -189,7 +200,7 @@ E.g. [TAURLHelper paramsFromQuery:@&ldquo;key=val&amp;foo=bar&rdquo;]</p>
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TAURLHelper.m</code><br />
+		<code class="declared-in-ref">TAURLHelper.h</code><br />
 	</div>				
 	
 	
@@ -202,8 +213,7 @@ E.g. [TAURLHelper paramsFromQuery:@&ldquo;key=val&amp;foo=bar&rdquo;]</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Return dictionary of parameters from the full uri directly.
-E.g. [TAURLHelper paramsFromQuery:@&ldquo;http://example.com?key=val&amp;foo=bar&rdquo;]<a href="http://example.com">http://example.com</a>?key=val&amp;foo=bar"]</p>
+		<p>Return dictionary of parameters from the full uri.</p>
 	</div>		
 	
     
@@ -220,8 +230,10 @@ E.g. [TAURLHelper paramsFromQuery:@&ldquo;http://example.com?key=val&amp;foo=bar
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Return dictionary of parameters from the full uri directly.
-E.g. [TAURLHelper paramsFromQuery:@&ldquo;http://example.com?key=val&amp;foo=bar&rdquo;]<a href="http://example.com">http://example.com</a>?key=val&amp;foo=bar"]</p>
+		<p>Return dictionary of parameters from the full uri.</p>
+
+<pre><code>[TAURLHelper paramsFromQuery:@"http://example.com?key=val&amp;foo=bar"]http://example.com?key=val&amp;foo=bar"]
+</code></pre>
 	</div>
 	
 	
@@ -232,7 +244,7 @@ E.g. [TAURLHelper paramsFromQuery:@&ldquo;http://example.com?key=val&amp;foo=bar
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">TAURLHelper.m</code><br />
+		<code class="declared-in-ref">TAURLHelper.h</code><br />
 	</div>				
 	
 	

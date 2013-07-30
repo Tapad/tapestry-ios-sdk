@@ -8,7 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * Helper to parse an NSDictionary of parameters out of a URI/queryString.
+ */
 @interface TAURLHelper : NSObject
+
+/** Return dictionary of parameters from the full uri.
+
+    [TAURLHelper paramsFromQuery:@"http://example.com?key=val&foo=bar"]
+ */
 + (NSDictionary*)paramsFromUri:(NSString*)uri;
+
+/** Return dictionary of parameters from the querystring directly.
+
+     [TAURLHelper paramsFromQuery:@"key=val&foo=bar"]
+ */
 + (NSDictionary*)paramsFromQuery:(NSString*)queryString;
+
 @end
