@@ -26,6 +26,7 @@
     if (self != nil)
     {
         self.url = [baseURL mutableCopy];
+        self.gotParameters = NO;
     }
     return self;
 }
