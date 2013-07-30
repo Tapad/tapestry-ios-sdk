@@ -192,7 +192,7 @@
     for (NSInteger index=0; index<[values count]; index++)
     {
         [buffer appendString:[[values objectAtIndex:index] ta_URLEncodedString]];
-        if (index < [values count])
+        if (index + 1 < [values count])
             [buffer appendString:@","];
     }
     return buffer;
