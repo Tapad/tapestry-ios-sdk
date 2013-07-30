@@ -33,10 +33,10 @@
     self.val1 = @"v1";
     self.key2 = @"k2";
     self.val2 = @"v2";
-    self.mapAsEncodedJson = [[NSString stringWithFormat:@"{\"%@\":\"%@\",\"%@\":\"%@\"}", self.key1, self.val1, self.key2, self.val2] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    self.mapAsCsv = [NSString stringWithFormat:@"%@:%@,%@:%@", self.key1, self.val1, self.key2, self.val2];
-    self.arrayAsEncodedJson = [[NSString stringWithFormat:@"[\"%@\",\"%@\"]", self.val1, self.val2] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    self.arrayAsCsv = [NSString stringWithFormat:@"%@,%@", self.val1, self.val2];
+    self.mapAsEncodedJson = [[NSString stringWithFormat:@"{\"%@\":\"%@\",\"%@\":\"%@\"}", self.key2, self.val2, self.key1, self.val1] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    self.mapAsCsv = [NSString stringWithFormat:@"%@:%@,%@:%@", self.key2, self.val2, self.key1, self.val1];
+    self.arrayAsEncodedJson = [[NSString stringWithFormat:@"[\"%@\",\"%@\"]", self.val2, self.val1] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    self.arrayAsCsv = [NSString stringWithFormat:@"%@,%@", self.val2, self.val1];
 
     request = [TATapestryRequest request];
 }
