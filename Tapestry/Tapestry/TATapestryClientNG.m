@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Tapad. All rights reserved.
 //
 
+#import "TARequestOperation.h"
 #import "TATapestryClientNG.h"
 
 static NSString* const kTATapestryClientBaseURL = @"http://tapestry.tapad.com/tapestry/1";
@@ -57,7 +58,8 @@ static NSString* const kTATapestryClientBaseURL = @"http://tapestry.tapad.com/ta
 
 - (void)queueRequest:(TATapestryRequest*)request withResponseBlock:(TATapestryResponseHandler)handler
 {
-    
+    TARequestOperation* operation = [TARequestOperation operationWithRequest:request andHandler:handler];
+    [self.requestQueue addOperation:operation];
 }
 
 @end
