@@ -74,7 +74,6 @@ static NSDate *lastAnalyticsSend;
 
 - (void)dealloc {
     [[GANTracker sharedTracker] stopTracker];
-    [window_ release];
     [super dealloc];
 }
 @end
