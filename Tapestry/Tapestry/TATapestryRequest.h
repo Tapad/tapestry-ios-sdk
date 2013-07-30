@@ -46,3 +46,7 @@
 - (NSString*)query;
 
 @end
+
+@interface TATapestryRequest (Testing)
+- (NSDictionary*)test_parameters;
+@end
