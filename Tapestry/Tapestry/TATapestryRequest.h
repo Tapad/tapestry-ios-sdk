@@ -27,7 +27,7 @@
 - (void)addData:(NSString*)data forKey:(NSString*)key;
 - (void)removeData:(NSString*)data forKey:(NSString*)key;
 - (void)setData:(NSString*)data forKey:(NSString *)key;
-- (void)clearData:(NSString *)dataKeys, ... NS_REQUIRES_NIL_TERMINATION;
+- (void)clearData:(NSString *)firstDataKey, ... NS_REQUIRES_NIL_TERMINATION;
 - (void)addUniqueData:(NSString*)data forKey:(NSString*)key;
 - (void)addAudiences:(NSString *)audiences, ... NS_REQUIRES_NIL_TERMINATION;
 - (void)removeAudiences:(NSString *)audiences, ... NS_REQUIRES_NIL_TERMINATION;

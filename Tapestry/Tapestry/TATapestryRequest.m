@@ -58,22 +58,30 @@
 
 - (void)removeData:(NSString*)data forKey:(NSString*)key
 {
-    
+    [self addMapParameter:@"ta_remove_data" forKey:key andValue:data];
 }
 
 - (void)setData:(NSString*)data forKey:(NSString *)key
 {
-    
+    [self addMapParameter:@"ta_set_data" forKey:key andValue:data];
 }
 
-- (void)clearData:(NSString *)dataKeys, ...
+- (void)clearData:(NSString *)firstDataKey, ...
 {
-    
+    NSMutableArray* array = [NSMutableArray array];
+    va_list args;
+    va_start(args, firstDataKey);
+    for (NSString *dataKey = firstDataKey; dataKey != nil; dataKey = va_arg(args, NSString*))
+    {
+        [array addObject:dataKey];
+    }
+    va_end(args);
+    [self addArray:array forParameter:@"ta_clear_data"];
 }
 
 - (void)addUniqueData:(NSString*)data forKey:(NSString*)key
 {
-    
+    [self addMapParameter:@"ta_sadd_data" forKey:key andValue:data];
 }
 
 - (void)addAudiences:(NSString *)audiences, ...
@@ -91,7 +99,15 @@
 
 - (void)removeAudiences:(NSString *)audiences, ...
 {
-    
+    NSMutableArray* array = [NSMutableArray array];
+    va_list args;
+    va_start(args, audiences);
+    for (NSString *audience = audiences; audience != nil; audience = va_arg(args, NSString*))
+    {
+        [array addObject:audience];
+    }
+    va_end(args);
+    [self addArray:array forParameter:@"ta_remove_audiences"];
 }
 
 - (void)listDevices
@@ -111,7 +127,7 @@
 
 - (void)addUserId:(NSString*)userId forSource:(NSString*)source
 {
-    
+    [self addMapParameter:@"ta_user_ids" forKey:source andValue:userId];
 }
 
 - (void)setStrength:(NSInteger)strength
@@ -121,7 +137,7 @@
 
 - (void)addTypedId:(NSString*)typedId forSource:(NSString*)source
 {
-    
+    [self addMapParameter:@"ta_typed_did" forKey:source andValue:typedId];
 }
 
 - (NSString *)query
