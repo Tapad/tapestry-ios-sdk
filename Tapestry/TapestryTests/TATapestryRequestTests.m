@@ -105,7 +105,8 @@
 
 - (void)testSetDepth
 {
-    #warning(@"todo");
+    [request setDepth:3];
+    [self assertKey:@"ta_depth" hasValue:@"3"];
 }
 
 - (void)testSetPartnerId
@@ -120,7 +121,8 @@
 
 - (void)testSetStrength
 {
-    #warning(@"todo");
+    [request setStrength:2];
+    [self assertKey:@"ta_strength" hasValue:@"2"];
 }
 
 - (void)testAddTypedId
@@ -159,6 +161,13 @@
     NSDictionary *params = [TAURLHelper paramsFromQuery:[request query]];
     NSNumber* flagVal = [NSNumber numberWithBool:YES]; // from TAURLHelper. TODO move this into the interface.
     STAssertEqualObjects([params objectForKey:key], flagVal, @"Expected key to be present");
+}
+
+- (void)assertKey:(NSString*)key hasValue:(NSString*)val
+{
+    NSDictionary *params = [TAURLHelper paramsFromQuery:[request query]];
+    NSString *actual = [params objectForKey:key];
+    STAssertEqualObjects(actual, val, [NSString stringWithFormat:@"Expected key '%@' to equal '%@', got '%@'", key, val, actual]);
 }
 
 // END test helpers.
