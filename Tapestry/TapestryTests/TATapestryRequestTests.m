@@ -15,9 +15,7 @@
 @property (nonatomic, copy) NSString *val1;
 @property (nonatomic, copy) NSString *key2;
 @property (nonatomic, copy) NSString *val2;
-@property (nonatomic, copy) NSString *mapAsEncodedJson;
 @property (nonatomic, copy) NSString *mapAsCsv;
-@property (nonatomic, copy) NSString *arrayAsEncodedJson;
 @property (nonatomic, copy) NSString *arrayAsCsv;
 
 @end
@@ -33,9 +31,7 @@
     self.val1 = @"v1";
     self.key2 = @"k2";
     self.val2 = @"v2";
-    self.mapAsEncodedJson = [[NSString stringWithFormat:@"{\"%@\":\"%@\",\"%@\":\"%@\"}", self.key1, self.val1, self.key2, self.val2] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     self.mapAsCsv = [NSString stringWithFormat:@"%@:%@,%@:%@", self.key1, self.val1, self.key2, self.val2];
-    self.arrayAsEncodedJson = [[NSString stringWithFormat:@"[\"%@\",\"%@\"]", self.val1, self.val2] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     self.arrayAsCsv = [NSString stringWithFormat:@"%@,%@", self.val1, self.val2];
 
     request = [TATapestryRequest request];
@@ -49,9 +45,7 @@
     self.val1 = nil;
     self.key2 = nil;
     self.val2 = nil;
-    self.mapAsEncodedJson = nil;
     self.mapAsCsv = nil;
-    self.arrayAsEncodedJson = nil;
     self.arrayAsCsv = nil;
 
     [super tearDown];
@@ -67,7 +61,7 @@
 - (void)testRemoveData
 {
     [request removeData:self.val1 forKey:self.key1];
-    [request removeData:self.val1 forKey:self.key1];
+    [request removeData:self.val2 forKey:self.key2];
     [self assertMapMatches:@"ta_remove_data"];
 }
 
@@ -111,27 +105,33 @@
 
 - (void)testSetDepth
 {
-    STFail(@"todo");
+    [request setDepth:3];
+    [self assertKey:@"ta_depth" hasValue:@"3"];
 }
 
 - (void)testSetPartnerId
 {
-    STFail(@"todo");
+    [request setPartnerId:@"123"];
+    [self assertKey:@"ta_partner_id" hasValue:@"123"];
 }
 
 - (void)testAddUserId
 {
-    STFail(@"todo");
+    [request addUserId:@"testUid123@example.com" forSource:@"email"];
+    [self assertKey:@"ta_partner_user_id" hasValue:@"email:testUid123%40example.com"];
 }
 
 - (void)testSetStrength
 {
-    STFail(@"todo");
+    [request setStrength:2];
+    [self assertKey:@"ta_strength" hasValue:@"2"];
 }
 
 - (void)testAddTypedId
 {
-    STFail(@"todo");
+    [request addTypedId:self.val1 forSource:self.key1];
+    [request addTypedId:self.val2 forSource:self.key2];
+    [self assertMapMatches:@"ta_typed_did"];
 }
 
 // Helpers which use this class's various properties (key1, val1, request, etc).
@@ -139,15 +139,23 @@
 - (void)assertMapMatches:(NSString*)key
 {
     NSDictionary *params = [TAURLHelper paramsFromQuery:[request query]];
-    STAssertEqualObjects([params objectForKey:key], self.mapAsCsv, @"Expected comma-separated list of key-value pairs");
-    STAssertEqualObjects([params objectForKey:key], self.mapAsEncodedJson, @"Expected encoded json map");
+    NSSet *actualAsSet = [self stringToSet:[params objectForKey:key] withSeparator:@","];
+    NSSet *expectedAsSet = [self stringToSet:self.mapAsCsv withSeparator:@","];
+    STAssertEqualObjects(actualAsSet, expectedAsSet, @"Expected comma-separated list of key-value pairs");
 }
 
 - (void)assertArrayMatches:(NSString*)key
 {
     NSDictionary *params = [TAURLHelper paramsFromQuery:[request query]];
-    STAssertEqualObjects([params objectForKey:key], self.arrayAsCsv, @"Expected comma-separated list of values");
-    STAssertEqualObjects([params objectForKey:key], self.arrayAsEncodedJson, @"Expected encoded json array");
+    NSSet *actualAsSet = [self stringToSet:[params objectForKey:key] withSeparator:@","];
+    NSSet *expectedAsSet = [self stringToSet:self.arrayAsCsv withSeparator:@","];
+    STAssertEqualObjects(actualAsSet, expectedAsSet, @"Expected comma-separated list of values");
+}
+
+- (NSSet*)stringToSet:(NSString*)string withSeparator:(NSString*)separator
+{
+    NSArray *array = [string componentsSeparatedByString:separator];
+    return [NSSet setWithArray:array];
 }
 
 - (void)assertFlagPresent:(NSString*)key
@@ -155,6 +163,13 @@
     NSDictionary *params = [TAURLHelper paramsFromQuery:[request query]];
     NSNumber* flagVal = [NSNumber numberWithBool:YES]; // from TAURLHelper. TODO move this into the interface.
     STAssertEqualObjects([params objectForKey:key], flagVal, @"Expected key to be present");
+}
+
+- (void)assertKey:(NSString*)key hasValue:(NSString*)val
+{
+    NSDictionary *params = [TAURLHelper paramsFromQuery:[request query]];
+    NSString *actual = [params objectForKey:key];
+    STAssertEqualObjects(actual, val, [NSString stringWithFormat:@"Expected key '%@' to equal '%@', got '%@'", key, val, actual]);
 }
 
 // END test helpers.
