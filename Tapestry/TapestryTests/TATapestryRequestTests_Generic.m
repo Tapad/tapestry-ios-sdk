@@ -85,16 +85,16 @@
 {
     [self.request addData:@"value1" forKey:@"key1"];
     [self.request addData:@"value2" forKey:@"key2"];
-    [self assertQueryComponent:@"\"key1\"=\"value1\""];
-    [self assertQueryComponent:@"\"key2\"=\"value2\""];
+    [self assertQueryComponent:@"\"key1\":\"value1\""];
+    [self assertQueryComponent:@"\"key2\":\"value2\""];
 }
 
 - (void)testExtendedMapCharsetValues
 {
     [self.request addData:@"?abcÆØÅ" forKey:@"key1"];
     [self.request addData:@"value2" forKey:@"key2"];
-    [self assertQueryComponent:@"\"key1\"=\"%3Fabc%C3%86%C3%98%C3%85\""];
-    [self assertQueryComponent:@"\"key2\"=\"value2\""];
+    [self assertQueryComponent:@"\"key1\":\"%3Fabc%C3%86%C3%98%C3%85\""];
+    [self assertQueryComponent:@"\"key2\":\"value2\""];
 }
 
 - (void)testArrayValues
