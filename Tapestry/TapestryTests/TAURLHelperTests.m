@@ -26,14 +26,21 @@
 
 - (void)testMultiParams
 {
-//    NSDictionary *params = [TAURLHelper paramsFromUri:uri];
-    STFail(@"testMultiParams is not implemented yet");
+    NSDictionary *params = [TAURLHelper paramsFromUri:uri];
+    NSString *multi2Key = @"multi2[]";
+    NSArray *multi2Value = [NSArray arrayWithObjects:@"one", @"two", nil];
+    STAssertEqualObjects([params valueForKey:multi2Key], multi2Value, [NSString stringWithFormat:@"'%@' key should have value '%@'", multi2Key, multi2Value]);
+    NSString *multi3Key = @"multi3[]";
+    NSArray *multi3Value = [NSArray arrayWithObjects:@"a", @"b", @"c", nil];
+    STAssertEqualObjects([params valueForKey:multi3Key], multi3Value, [NSString stringWithFormat:@"'%@' key should have value '%@'", multi3Key, multi3Value]);
 }
 
 - (void)testUndefinedParams
 {
-//    NSDictionary *params = [TAURLHelper paramsFromUri:uri];
-    STFail(@"testUndefinedParams is not implemented yet");
+    NSDictionary *params = [TAURLHelper paramsFromUri:uri];
+    NSNumber* flagVal = [NSNumber numberWithBool:YES];
+    STAssertEqualObjects([params valueForKey:@"flag"], flagVal, [NSString stringWithFormat:@"'flag' key with unset value in query param should have value in dictionary '%@'", flagVal]);
+    STAssertEqualObjects([params valueForKey:@"unset"], flagVal, [NSString stringWithFormat:@"'unset' key with unset value in query param should have value in dictionary '%@'", flagVal]);
 }
 
 @end
