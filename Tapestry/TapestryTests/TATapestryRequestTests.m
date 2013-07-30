@@ -125,7 +125,9 @@
 
 - (void)testAddTypedId
 {
-    #warning(@"todo");
+    [request addTypedId:self.val1 forSource:self.key1];
+    [request addTypedId:self.val2 forSource:self.key2];
+    [self assertMapMatches:@"ta_typed_did"];
 }
 
 // Helpers which use this class's various properties (key1, val1, request, etc).
