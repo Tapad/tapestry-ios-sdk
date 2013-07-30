@@ -200,8 +200,6 @@
 
 @end
 
-#pragma mark - Test methods
-
 @implementation TATapestryRequest (Testing)
 
 - (NSDictionary *)test_parameters
