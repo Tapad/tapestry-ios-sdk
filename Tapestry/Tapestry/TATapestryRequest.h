@@ -48,5 +48,6 @@
 @end
 
 @interface TATapestryRequest (Testing)
+// Exposing the parameters dictionary for testing purpose.
 - (NSDictionary*)test_parameters;
 @end
