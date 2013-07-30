@@ -15,9 +15,7 @@
 @property (nonatomic, copy) NSString *val1;
 @property (nonatomic, copy) NSString *key2;
 @property (nonatomic, copy) NSString *val2;
-@property (nonatomic, copy) NSString *mapAsEncodedJson;
 @property (nonatomic, copy) NSString *mapAsCsv;
-@property (nonatomic, copy) NSString *arrayAsEncodedJson;
 @property (nonatomic, copy) NSString *arrayAsCsv;
 
 @end
@@ -33,9 +31,7 @@
     self.val1 = @"v1";
     self.key2 = @"k2";
     self.val2 = @"v2";
-    self.mapAsEncodedJson = [[NSString stringWithFormat:@"{\"%@\":\"%@\",\"%@\":\"%@\"}", self.key1, self.val1, self.key2, self.val2] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     self.mapAsCsv = [NSString stringWithFormat:@"%@:%@,%@:%@", self.key1, self.val1, self.key2, self.val2];
-    self.arrayAsEncodedJson = [[NSString stringWithFormat:@"[\"%@\",\"%@\"]", self.val1, self.val2] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     self.arrayAsCsv = [NSString stringWithFormat:@"%@,%@", self.val1, self.val2];
 
     request = [TATapestryRequest request];
@@ -49,9 +45,7 @@
     self.val1 = nil;
     self.key2 = nil;
     self.val2 = nil;
-    self.mapAsEncodedJson = nil;
     self.mapAsCsv = nil;
-    self.arrayAsEncodedJson = nil;
     self.arrayAsCsv = nil;
 
     [super tearDown];
@@ -67,7 +61,7 @@
 - (void)testRemoveData
 {
     [request removeData:self.val1 forKey:self.key1];
-    [request removeData:self.val1 forKey:self.key1];
+    [request removeData:self.val2 forKey:self.key2];
     [self assertMapMatches:@"ta_remove_data"];
 }
 
@@ -139,15 +133,23 @@
 - (void)assertMapMatches:(NSString*)key
 {
     NSDictionary *params = [TAURLHelper paramsFromQuery:[request query]];
-    STAssertEqualObjects([params objectForKey:key], self.mapAsCsv, @"Expected comma-separated list of key-value pairs");
-//    STAssertEqualObjects([params objectForKey:key], self.mapAsEncodedJson, @"Expected encoded json map");
+    NSSet *actualAsSet = [self stringToSet:[params objectForKey:key] withSeparator:@","];
+    NSSet *expectedAsSet = [self stringToSet:self.mapAsCsv withSeparator:@","];
+    STAssertEqualObjects(actualAsSet, expectedAsSet, @"Expected comma-separated list of key-value pairs");
 }
 
 - (void)assertArrayMatches:(NSString*)key
 {
     NSDictionary *params = [TAURLHelper paramsFromQuery:[request query]];
-    STAssertEqualObjects([params objectForKey:key], self.arrayAsCsv, @"Expected comma-separated list of values");
-//    STAssertEqualObjects([params objectForKey:key], self.arrayAsEncodedJson, @"Expected encoded json array");
+    NSSet *actualAsSet = [self stringToSet:[params objectForKey:key] withSeparator:@","];
+    NSSet *expectedAsSet = [self stringToSet:self.arrayAsCsv withSeparator:@","];
+    STAssertEqualObjects(actualAsSet, expectedAsSet, @"Expected comma-separated list of values");
+}
+
+- (NSSet*)stringToSet:(NSString*)string withSeparator:(NSString*)separator
+{
+    NSArray *array = [string componentsSeparatedByString:separator];
+    return [NSSet setWithArray:array];
 }
 
 - (void)assertFlagPresent:(NSString*)key
