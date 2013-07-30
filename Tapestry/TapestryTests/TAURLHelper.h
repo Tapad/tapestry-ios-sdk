@@ -10,4 +10,5 @@
 
 @interface TAURLHelper : NSObject
 + (NSDictionary*)paramsFromUri:(NSString*)uri;
++ (NSDictionary*)paramsFromQuery:(NSString*)queryString;
 @end

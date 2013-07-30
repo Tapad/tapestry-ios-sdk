@@ -9,16 +9,18 @@
 #import "TAURLHelper.h"
 
 @implementation TAURLHelper
-+ (NSDictionary*)paramsFromUri:(NSString*)uri
+
+/**
+ Return dictionary of parameters from the querystring directly.
+ E.g. [TAURLHelper paramsFromQuery:@"key=val&foo=bar"]
+ */
++ (NSDictionary*)paramsFromQuery:(NSString*)queryString
 {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     
     // This is used as the value for when a query parameter is present but has no value.
     id valForFlagKey = [NSNumber numberWithBool:YES];
     
-    NSArray *parts = [uri componentsSeparatedByString:@"?"];
-    NSArray *queryParts = [parts subarrayWithRange:NSMakeRange(1, [parts count] - 1)];
-    NSString *queryString = [queryParts componentsJoinedByString:@"?"]; // queryParts should be length 1, but we can code defensively.
     NSArray *kvPairs = [queryString componentsSeparatedByString:@"&"];
     for (int i = 0; i < [kvPairs count]; i++) {
         // Split on "=" to get key-value pair.
@@ -48,9 +50,22 @@
             }
         }
     }
-
+    
     
     // Return immutable copy
     return [NSDictionary dictionaryWithDictionary:params];
+    
+}
+
+/**
+ Return dictionary of parameters from the full uri directly.
+ E.g. [TAURLHelper paramsFromQuery:@"http://example.com?key=val&foo=bar"]
+ */
++ (NSDictionary*)paramsFromUri:(NSString*)uri
+{
+    NSArray *parts = [uri componentsSeparatedByString:@"?"];
+    NSArray *queryParts = [parts subarrayWithRange:NSMakeRange(1, [parts count] - 1)];
+    NSString *queryString = [queryParts componentsJoinedByString:@"?"]; // queryParts should be length 1, but we can code defensively.
+    return [TAURLHelper paramsFromQuery:queryString];
 }
 @end
