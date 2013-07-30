@@ -121,17 +121,6 @@ static NSString*const kplatform      =@"ta_platform";
 
 static const float kTimeout = 2.5;
 
-- (void) dealloc {
-    // will release as necessary
-    self.protocol=nil;
-    self.dns=nil;
-    self.port=nil;
-    self.lastError=nil;
-    self.lastResponse=nil;
-    self.request=nil;
-    self.apiVersion=nil;
-}
-
 // using the current request params, make a blocking call to the tapad server,
 // and turn the raw data into a string (we expect it to be a chunk of html)
 // the returned string will be marked for autorelease

@@ -27,6 +27,12 @@
 		2F180BE517A1D90100EC3F5F /* TATapestryClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F180BBB17A1C64200EC3F5F /* TATapestryClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2F180BE717A1D91500EC3F5F /* TATapestryRequestBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F180BBD17A1C64200EC3F5F /* TATapestryRequestBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2F91C18F17A8540C00A004FF /* TATapestryRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F91C18E17A8540C00A004FF /* TATapestryRequestTests.m */; };
+		2F91C19217A8697600A004FF /* TATapestryClientNG.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F91C19017A8697600A004FF /* TATapestryClientNG.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F91C19317A8697600A004FF /* TATapestryClientNG.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F91C19117A8697600A004FF /* TATapestryClientNG.m */; };
+		2F91C19617A86B2D00A004FF /* TATapestryResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F91C19417A86B2C00A004FF /* TATapestryResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F91C19717A86B2D00A004FF /* TATapestryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F91C19517A86B2D00A004FF /* TATapestryResponse.m */; };
+		2F91C19C17A86B8F00A004FF /* TARequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F91C19A17A86B8F00A004FF /* TARequestOperation.h */; };
+		2F91C19D17A86B8F00A004FF /* TARequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F91C19B17A86B8F00A004FF /* TARequestOperation.m */; };
 		2FA6A69017A302C80081BF75 /* TATapadIdentifiers.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F180BB717A1C64200EC3F5F /* TATapadIdentifiers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2FC96E8917A6C3B200FA1C7D /* TAURLBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FC96E8717A6C3B200FA1C7D /* TAURLBuilder.h */; };
 		2FC96E8A17A6C3B200FA1C7D /* TAURLBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC96E8817A6C3B200FA1C7D /* TAURLBuilder.m */; };
@@ -95,6 +101,12 @@
 		2F180BE217A1D0B900EC3F5F /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		2F91C18D17A8540C00A004FF /* TATapestryRequestTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapestryRequestTests.h; sourceTree = "<group>"; };
 		2F91C18E17A8540C00A004FF /* TATapestryRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapestryRequestTests.m; sourceTree = "<group>"; };
+		2F91C19017A8697600A004FF /* TATapestryClientNG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapestryClientNG.h; sourceTree = "<group>"; };
+		2F91C19117A8697600A004FF /* TATapestryClientNG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapestryClientNG.m; sourceTree = "<group>"; };
+		2F91C19417A86B2C00A004FF /* TATapestryResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapestryResponse.h; sourceTree = "<group>"; };
+		2F91C19517A86B2D00A004FF /* TATapestryResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapestryResponse.m; sourceTree = "<group>"; };
+		2F91C19A17A86B8F00A004FF /* TARequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TARequestOperation.h; sourceTree = "<group>"; };
+		2F91C19B17A86B8F00A004FF /* TARequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TARequestOperation.m; sourceTree = "<group>"; };
 		2FC96E8717A6C3B200FA1C7D /* TAURLBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAURLBuilder.h; sourceTree = "<group>"; };
 		2FC96E8817A6C3B200FA1C7D /* TAURLBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAURLBuilder.m; sourceTree = "<group>"; };
 		2FC96E8B17A6C82700FA1C7D /* NSString+Tapad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Tapad.h"; sourceTree = "<group>"; };
@@ -188,6 +200,12 @@
 				2F180BBF17A1C64200EC3F5F /* Vendors */,
 				2FF0811617A812BA001F9AEA /* TATapestryRequest.h */,
 				2FF0811717A812BA001F9AEA /* TATapestryRequest.m */,
+				2F91C19017A8697600A004FF /* TATapestryClientNG.h */,
+				2F91C19117A8697600A004FF /* TATapestryClientNG.m */,
+				2F91C19417A86B2C00A004FF /* TATapestryResponse.h */,
+				2F91C19517A86B2D00A004FF /* TATapestryResponse.m */,
+				2F91C19A17A86B8F00A004FF /* TARequestOperation.h */,
+				2F91C19B17A86B8F00A004FF /* TARequestOperation.m */,
 			);
 			path = Tapestry;
 			sourceTree = "<group>";
@@ -274,11 +292,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F180BE517A1D90100EC3F5F /* TATapestryClient.h in Headers */,
+				2F91C19617A86B2D00A004FF /* TATapestryResponse.h in Headers */,
 				2F180BE717A1D91500EC3F5F /* TATapestryRequestBuilder.h in Headers */,
+				2F91C19217A8697600A004FF /* TATapestryClientNG.h in Headers */,
 				2FF0811817A812BA001F9AEA /* TATapestryRequest.h in Headers */,
 				2FA6A69017A302C80081BF75 /* TATapadIdentifiers.h in Headers */,
 				2FC96E8917A6C3B200FA1C7D /* TAURLBuilder.h in Headers */,
 				2FC96E8D17A6C82700FA1C7D /* NSString+Tapad.h in Headers */,
+				2F91C19C17A86B8F00A004FF /* TARequestOperation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +414,9 @@
 				2FC96E8A17A6C3B200FA1C7D /* TAURLBuilder.m in Sources */,
 				2FC96E8E17A6C82700FA1C7D /* NSString+Tapad.m in Sources */,
 				2FF0811917A812BA001F9AEA /* TATapestryRequest.m in Sources */,
+				2F91C19317A8697600A004FF /* TATapestryClientNG.m in Sources */,
+				2F91C19717A86B2D00A004FF /* TATapestryResponse.m in Sources */,
+				2F91C19D17A86B8F00A004FF /* TARequestOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
