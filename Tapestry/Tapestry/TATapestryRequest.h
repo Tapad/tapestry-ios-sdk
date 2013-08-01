@@ -23,7 +23,30 @@
 
 @interface TATapestryRequest : NSObject
 
+/**---------------------------------------------------------------------------------------
+ * @name Creating a request
+ *  ---------------------------------------------------------------------------------------
+ */
+
+/**
+ Create and return a TATapestryRequest instance
+ */
 + (TATapestryRequest*) request;
+
+
+/**---------------------------------------------------------------------------------------
+ * @name Working with data
+ *  ---------------------------------------------------------------------------------------
+ */
+
+
+/**
+ Sets the value for a data key. This will overwrite any existing data for this key.
+ 
+ @param key   The data key
+ @param data  The value to set the key to
+ */
+- (void)setData:(NSString*)data forKey:(NSString *)key;
 
 /**
  Adds a value to a data key.  Only one value can be added per request, so calling this method with the same key
@@ -35,20 +58,20 @@
 - (void)addData:(NSString*)data forKey:(NSString*)key;
 
 /**
+ This method will add or set a unique value (set-add) for this key. No duplicates.
+ 
+ @param key   The data key
+ @param value The value to set-add to the key
+ */
+- (void)addUniqueData:(NSString*)data forKey:(NSString*)key;
+
+/**
  Removes the value for a data key.
  
  @param key     The data key
  @param data    The value to remove from the key
  */
 - (void)removeData:(NSString*)data forKey:(NSString*)key;
-
-/**
- Sets the value for a data key.
- 
- @param key   The data key
- @param data  The value to set the key to
- */
-- (void)setData:(NSString*)data forKey:(NSString *)key;
 
 /**
  Clear data removes all data from one or more keys.
@@ -58,12 +81,34 @@
 - (void)clearData:(NSString *)firstDataKey, ... NS_REQUIRES_NIL_TERMINATION;
 
 /**
- This method will add or set a unique value (set-add) for this key. No duplicates.
- 
- @param key   The data key
- @param value The value to set-add to the key
+ Tells Tapestry to return all the devices listed out as well as combined.
+ The list of devices can be accessed in the response.
  */
-- (void)addUniqueData:(NSString*)data forKey:(NSString*)key;
+- (void)listDevices;
+
+
+/**---------------------------------------------------------------------------------------
+ * @name Tuning the query
+ *  ---------------------------------------------------------------------------------------
+ */
+
+/**
+ Tells Tapestry to consider devices this many steps away from the source device.
+ 
+ @param depth The depth value between 0-2 inclusive.  Default is 1
+ */
+- (void)setDepth:(NSInteger)depth;
+
+/**
+ @param strength The strength value between 1-5 inclusive. Default is 2
+ */
+- (void)setStrength:(NSInteger)strength;
+
+
+/**---------------------------------------------------------------------------------------
+ * @name Working with audiences
+ *  ---------------------------------------------------------------------------------------
+ */
 
 /**
  Adds this device to one or more audiences.
@@ -79,18 +124,11 @@
  */
 - (void)removeAudiences:(NSString *)audiences, ... NS_REQUIRES_NIL_TERMINATION;
 
-/**
- Tells Tapestry to return all the devices listed out as well as combined.
- The list of devices can be accessed in the response.
- */
-- (void)listDevices;
 
-/**
- Tells Tapestry to consider devices this many steps away from the source device.
- 
- @param depth The depth value between 0-2 inclusive.  Default is 1
+/**---------------------------------------------------------------------------------------
+ * @name Working with IDs
+ *  ---------------------------------------------------------------------------------------
  */
-- (void)setDepth:(NSInteger)depth;
 
 /**
  Sets the partner ID for this request, will be set by the Tapestry SDK automatically.
@@ -106,17 +144,18 @@
 - (void)addUserId:(NSString*)userId forSource:(NSString*)source;
 
 /**
-  @param strength The strength value between 1-5 inclusive. Default is 2
- */
-- (void)setStrength:(NSInteger)strength;
-
-/**
  Add a typed device id, e.g. OpenUDID or IADF.
  
  @param typedId The typed id, e.g. ABCDEF-GHJID-FDSFASD
  @param source The source for this ID, e.g. OpenUDID
  */
 - (void)addTypedId:(NSString*)typedId forSource:(NSString*)source;
+
+
+/**---------------------------------------------------------------------------------------
+ * @name Other methods
+ *  ---------------------------------------------------------------------------------------
+ */
 
 /**
  Sets the analytics parameter for tracking in analytics platforms
