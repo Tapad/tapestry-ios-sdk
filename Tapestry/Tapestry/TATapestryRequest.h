@@ -16,7 +16,7 @@
  	TATapestryRequest* request = [TATapestryRequest request];
     [request addAudiences:@"aud1", @"aud2", @"aud3", nil];
     [request addData:@"blue" forKey:@"color"];
-    [request addData:@"ford" forKey:@"ford"];
+    [request addData:@"ford" forKey:@"make"];
     [request listDevices];
     [request depth:2];
  */
