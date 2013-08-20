@@ -8,8 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TATapestryResponse : NSDictionary
+@interface TATapestryResponse : NSObject
 
++ (TATapestryResponse*) responseWithDictionary:(NSDictionary*)dictionary;
 - (BOOL)wasSuccess;
+- (NSDictionary*)getIds;
+- (NSDictionary*)getData;
+- (NSArray*)getAudiences;
+- (NSArray*)getPlatforms;
+- (NSArray*)getErrors;
+- (NSArray*)getDevices;
 
 @end

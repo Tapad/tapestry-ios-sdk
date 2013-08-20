@@ -58,18 +58,18 @@ static NSString* const kTATapestryClientBaseURL = @"http://tapestry.tapad.com/ta
 
 - (void)queueRequest:(TATapestryRequest*)request withResponseBlock:(TATapestryResponseHandler)handler
 {
-    TATapestryResponseHandler innerHandler = ^(TATapestryResponse* response){
+    /*
+     TATapestryResponseHandler innerHandler = ^(TATapestryResponse* response){
+        NSLog(@"Response received for %@", [request query]);
+
         if (handler != nil)
         {
             // Call response handler
             handler(response);
         }
-        else if ([response wasSuccess])
-        {
-            
-        }
     };
-    TARequestOperation* operation = [TARequestOperation operationWithRequest:request andHandler:innerHandler];
+     */
+    TARequestOperation* operation = [TARequestOperation operationWithRequest:request andBaseUrl:kTATapestryClientBaseURL andHandler:handler];
     [self.requestQueue addOperation:operation];
 }
 

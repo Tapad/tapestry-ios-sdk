@@ -12,6 +12,6 @@
 
 @interface TARequestOperation : NSOperation
 
-+ (TARequestOperation*)operationWithRequest:(TATapestryRequest*)request andHandler:(TATapestryResponseHandler)handler;
++ (TARequestOperation*)operationWithRequest:(TATapestryRequest*)request andBaseUrl:(NSString*)baseUrl andHandler:(TATapestryResponseHandler)handler;
 
 @end
