@@ -24,14 +24,37 @@
     "\"make\": [\"volvo\", \"lambo\"]"
     "},"
     "\"audiences\": [],"
+    "\"platforms\": [\"Computer\"],"
+    "\"devices\": [{"
+    "\"ids\": {"
+    "\"idfa\": [\"12345\"]"
+    "},"
+    "\"data\": {"
+    "\"color\": [\"white\"],"
+    "\"make\": [\"volvo\"]"
+    "},"
+    "\"audiences\": [],"
     "\"platforms\": [\"Computer\"]"
-    "}";
+    "},"
+    "{"
+    "\"ids\": {"
+    "\"idfa\": [\"abc\"]"
+    "},"
+    "\"data\": {"
+    "\"make\": [\"lambo\"]"
+    "},"
+    "\"audiences\": [],"
+    "\"platforms\": []"
+    "}]"
+    "}"
+    ;
 
-    NSError *jsonParseError;
+    NSError *jsonParseError = nil;
     id json = [NSJSONSerialization
                JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding]
                options:0
                error:&jsonParseError];
+    STAssertNil(jsonParseError, @"JSON parsing failed in test setup");
     response = [TATapestryResponse responseWithDictionary:(NSDictionary*)json];
 }
 
@@ -86,10 +109,28 @@
     STAssertFalse([response wasSuccess], @"Response with errors should not be successful");
 }
 
-//- (void)testGetDevices // TODO
-//{
-//    NSArray *actual = [response getDevices];
-//    STAssertEqualObjects(expected, actual, @"Device list is incorrect.");
-//}
+- (void)testGetDevices
+{
+    NSDictionary *device1 = @{
+                              @"ids"  : @{ @"idfa" : @[ @"12345" ] },
+                              @"data" : @{
+                                      @"color" : @[@"white"],
+                                      @"make"  : @[@"volvo"]
+                                      },
+                              @"audiences" : @[],
+                              @"platforms" : @[ @"Computer"]
+                              };
+    NSDictionary *device2 = @{
+                              @"ids"  : @{ @"idfa" : @[ @"abc" ] },
+                              @"data" : @{
+                                      @"make" : @[@"lambo"]
+                                      },
+                              @"audiences" : @[],
+                              @"platforms" : @[]
+                              };
+    NSArray *expected = @[device1, device2];
+    NSArray *actual = [response getDevices];
+    STAssertEqualObjects(actual, expected, @"Device list is incorrect.");
+}
 
 @end
