@@ -15,7 +15,6 @@
 		2F180B8517A1C3F900EC3F5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F180B7217A1C3F900EC3F5F /* Foundation.framework */; };
 		2F180B8817A1C3F900EC3F5F /* libTapestry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F180B6F17A1C3F900EC3F5F /* libTapestry.a */; };
 		2F180B8E17A1C3F900EC3F5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F180B8C17A1C3F900EC3F5F /* InfoPlist.strings */; };
-		2F180B9117A1C3F900EC3F5F /* TATapestryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180B9017A1C3F900EC3F5F /* TATapestryTests.m */; };
 		2F180BC617A1C64200EC3F5F /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BB617A1C64200EC3F5F /* NSString+MD5.m */; };
 		2F180BC717A1C64200EC3F5F /* TATapadIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BB817A1C64200EC3F5F /* TATapadIdentifiers.m */; };
 		2F180BC817A1C64200EC3F5F /* TATapadPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BBA17A1C64200EC3F5F /* TATapadPreferences.m */; };
@@ -82,8 +81,6 @@
 		2F180B8317A1C3F900EC3F5F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		2F180B8B17A1C3F900EC3F5F /* TapestryTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TapestryTests-Info.plist"; sourceTree = "<group>"; };
 		2F180B8D17A1C3F900EC3F5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2F180B8F17A1C3F900EC3F5F /* TATapestryTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TATapestryTests.h; sourceTree = "<group>"; };
-		2F180B9017A1C3F900EC3F5F /* TATapestryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TATapestryTests.m; sourceTree = "<group>"; };
 		2F180BB417A1C64200EC3F5F /* MyEnabledTapadIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEnabledTapadIdentifiers.h; sourceTree = "<group>"; };
 		2F180BB517A1C64200EC3F5F /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5.h"; path = "../NSString+MD5.h"; sourceTree = "<group>"; };
 		2F180BB617A1C64200EC3F5F /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MD5.m"; path = "../NSString+MD5.m"; sourceTree = "<group>"; };
@@ -231,8 +228,6 @@
 				2F91C18E17A8540C00A004FF /* TATapestryRequestTests.m */,
 				2FF0811C17A81E77001F9AEA /* TATapestryRequestTests_Generic.h */,
 				2FF0811D17A81E77001F9AEA /* TATapestryRequestTests_Generic.m */,
-				2F180B8F17A1C3F900EC3F5F /* TATapestryTests.h */,
-				2F180B9017A1C3F900EC3F5F /* TATapestryTests.m */,
 				DAE8AF2C17A70328000D0BAB /* TAURLBuilderTests.h */,
 				DAE8AF2D17A70328000D0BAB /* TAURLBuilderTests.m */,
 				DAE8AF2F17A71025000D0BAB /* TAURLHelper.h */,
@@ -429,7 +424,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F180B9117A1C3F900EC3F5F /* TATapestryTests.m in Sources */,
 				DAE8AF2E17A70328000D0BAB /* TAURLBuilderTests.m in Sources */,
 				DAE8AF3117A71025000D0BAB /* TAURLHelper.m in Sources */,
 				DAE8AF3417A710D7000D0BAB /* TAURLHelperTests.m in Sources */,
