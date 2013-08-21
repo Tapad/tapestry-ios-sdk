@@ -9,8 +9,5 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import "TATapestryRequest.h"
 
-@interface TATapestryRequestTests : SenTestCase {
-    TATapestryRequest *request;
-}
-
+@interface TATapestryRequestTests : SenTestCase
 @end
