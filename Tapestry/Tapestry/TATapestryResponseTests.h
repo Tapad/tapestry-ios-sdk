@@ -12,6 +12,4 @@
 @interface TATapestryResponseTests : SenTestCase {
     TATapestryResponse *response;
 }
-
-
 @end
