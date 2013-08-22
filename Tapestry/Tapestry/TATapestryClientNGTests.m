@@ -69,16 +69,22 @@
     if (!hasCalledBack) { STFail(@"callback timed out after the expected 10s network timeout limit!"); }
 }
 
-- (void)testAutoIncluding
+- (void)testAutoIncludingTaGetParamIfHandlerProvided
 {
     __block BOOL hasCalledBack = NO;
     
     TATapestryRequest *request = [TATapestryRequest request];
     [request setPartnerId:@"12345"];
-    [[TATapestryClientNG sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error){
+    [[TATapestryClientNG sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error, long millisSinceInvoked){
         TALog(@"callback: %@", response);
         STAssertNotNil(response, @"Expected valid response.");
         STAssertNil(error, @"Did not expect an error in this callback.");
+        NSDictionary *data = [response getData];
+        NSString *echoedQueryString = [[data objectForKey:@"query"] objectAtIndex:0];
+        
+        NSRange match = [echoedQueryString rangeOfString:@"ta_get"];
+        STAssertTrue(match.location != NSNotFound, @"Expected \n'%@' to be part of query:\n'%@'", @"ta_get", echoedQueryString);
+        
         hasCalledBack = YES;
     }];
     
