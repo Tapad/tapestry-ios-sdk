@@ -149,7 +149,7 @@
 - (void)addUserId:(NSString*)userId forSource:(NSString*)source;
 
 /**
- Add a typed device id, e.g. OpenUDID or IADF.
+ Add a typed device id, e.g. OpenUDID or IDFA. The client sets these automatically; under normal circumstances it is not necessary to set your own.
  
  @param typedId The typed id, e.g. ABCDEF-GHJID-FDSFASD
  @param source The source for this ID, e.g. OpenUDID

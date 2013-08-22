@@ -7,7 +7,6 @@
 
 #import <Foundation/Foundation.h>
 
-// edit this header file to enable identifiers allowed for your app
 #import <ADSupport/ASIdentifierManager.h>
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
@@ -16,6 +15,7 @@
 + (void)setIdentifierEnabledMAC:(BOOL)enabled;
 + (void)setIdentifierEnabledOpenUDID:(BOOL)enabled;
 
-+ (NSString*) deviceIDs;
++ (NSString*) typedDeviceIDsAsCommaSeparatedString;
++ (NSDictionary*) typedDeviceIDs;
 
 @end

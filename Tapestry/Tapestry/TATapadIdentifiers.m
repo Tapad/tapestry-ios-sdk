@@ -25,7 +25,7 @@ static NSString* const kTypeMacRawSha1                  = @"sha1rmac";
 static NSString* const kIdentifierOpenUDID              = @"tapestry.identifier.openudid.disabled";
 static NSString* const kIdentifierMAC                   = @"tapestry.identifier.mac.disabled";
 
-static NSString* kDeviceIDs = nil;
+static NSDictionary* deviceIDs = nil;
 
 + (void)setIdentifierEnabledMAC:(BOOL)enabled
 {
@@ -56,42 +56,64 @@ static NSString* kDeviceIDs = nil;
     }
 }
 
+/** Clear the static representation of enabled ids. */
 + (void)invalidateIDs
 {
-    kDeviceIDs = nil;
+    deviceIDs = nil;
 }
 
-+ (NSString*) deviceIDs
+/** @return comma-separated list of enabled_id_type:id_value. */
++ (NSString*) typedDeviceIDsAsCommaSeparatedString
 {
-    if (kDeviceIDs == nil) {
-        kDeviceIDs = [self buildDeviceIDs];
+    return [TATapadPreferences dictionaryAsEncodedCsvString:[self typedDeviceIDs]];
+}
+
+/** @return dictionary of enabled id types -> id values. */
++ (NSDictionary*) typedDeviceIDs
+{
+    @synchronized(self)
+    {
+        if (deviceIDs == nil) {
+            deviceIDs = [self buildDeviceIDs];
+        }
     }
-    return kDeviceIDs;
+    return deviceIDs;
 }
 
-+ (NSString*)buildDeviceIDs
+/** @return dictionary of enabled id types -> id values. */
++ (NSDictionary*) buildDeviceIDs
 {
-    NSMutableArray* ids = [NSMutableArray array];
+    NSMutableDictionary *dids = [NSMutableDictionary dictionary];
     
-    [ids addObject:[self fetchAdvertisingIdentifier]];
-    [ids addObject:[self fetchOpenUDID]];
-    [ids addObject:[self fetchMD5HashedMAC]];
-    [ids addObject:[self fetchMD5HashedRawMAC]];
-    [ids addObject:[self fetchSHA1HashedMAC]];
-    [ids addObject:[self fetchSHA1HashedRawMAC]];
+    NSArray *ids = @[
+      [self fetchAdvertisingIdentifier],
+      [self fetchOpenUDID],
+      [self fetchMD5HashedMAC],
+      [self fetchMD5HashedRawMAC],
+      [self fetchSHA1HashedMAC],
+      [self fetchSHA1HashedRawMAC]
+    ];
     
-    return [ids componentsJoinedByString:@","];
+    for (NSArray* did in ids) {
+        if (did != nil) {
+            [dids setValue:[did objectAtIndex:1] forKey:[did objectAtIndex:0]];
+        }
+    }
+
+    return [NSDictionary dictionaryWithDictionary:dids];
 }
 
-+ (NSString*) fetchOpenUDID {
-    NSString* value = @"0";
+/** @return tuple of @[ open udid type, open udid value ], or nil if disabled */
++ (NSArray*) fetchOpenUDID {
     if ([self isIdentifierEnabled:kIdentifierOpenUDID]) {
-        value = [TAOpenUDID value];
+        return @[kTypeOpenUDID, [TAOpenUDID value]];
+    } else {
+        return nil;
     }
-    return [NSString stringWithFormat:@"%@:%@", kTypeOpenUDID, value];
 }
 
-+ (NSString*) fetchMD5HashedRawMAC {
+/** @return tuple of @[ md5 hashed raw mac type, md5 hashed raw mac value ], or nil if disabled. */
++ (NSArray*) fetchMD5HashedRawMAC {
     // storage of mac addy bytes
     unsigned char macBuffer[6];
     // storage of md5 output bytes
@@ -106,14 +128,15 @@ static NSString* kDeviceIDs = nil;
         for (int i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
             [output appendFormat:@"%02x",md5Buffer[i]];
         }
-        return [NSString stringWithFormat:@"%@:%@", kTypeMacRawMd5, output];
+        return @[kTypeMacRawMd5, output];
     }
     else {
-        return [NSString stringWithFormat:@"%@:%@", kTypeMacRawMd5, @"0"];
+        return nil;
     }
 }
 
-+ (NSString*) fetchSHA1HashedRawMAC {
+/** @return tuple of @[ sha1 hashed raw mac type, sha1 hashed raw mac value ], or nil if disabled */
++ (NSArray*) fetchSHA1HashedRawMAC {
     // storage of mac addy bytes
     unsigned char macBuffer[6];
     // storage of sha1 output bytes
@@ -128,40 +151,43 @@ static NSString* kDeviceIDs = nil;
         for (int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++) {
             [output appendFormat:@"%02x",sha1Buffer[i]];
         }
-        return [NSString stringWithFormat:@"%@:%@", kTypeMacRawSha1, output];
+        return @[kTypeMacRawSha1, output];
     }
     else {
-        return [NSString stringWithFormat:@"%@:%@", kTypeMacRawSha1, @"0"];
+        return nil;
     }
 }
 
-+ (NSString*) fetchMD5HashedMAC {
-    NSString* value = @"0";
+/** @return tuple of @[ md5 hashed mac type, md5 hashed mac value ], or nil if disabled */
++ (NSArray*) fetchMD5HashedMAC {
     if ([self isIdentifierEnabled:kIdentifierMAC] && [[UIDevice currentDevice] ta_macaddress] != nil) {
-        value = [[[UIDevice currentDevice] ta_macaddress] ta_MD5];
+        return @[kTypeMacMd5, [[[UIDevice currentDevice] ta_macaddress] ta_MD5]];
+    } else {
+        return nil;
     }
-    return [NSString stringWithFormat:@"%@:%@", kTypeMacMd5, value];
 }
 
-+ (NSString*) fetchSHA1HashedMAC {
-    NSString* value = @"0";
+/** @return tuple of @[ sha1 hashed mac type, sha1 hashed mac value ], or nil if disabled */
++ (NSArray*) fetchSHA1HashedMAC {
     if ([self isIdentifierEnabled:kIdentifierMAC] && [[UIDevice currentDevice] ta_macaddress] != nil) {
-        value = [[[UIDevice currentDevice] ta_macaddress] ta_SHA1];
+        return @[kTypeMacSha1, [[[UIDevice currentDevice] ta_macaddress] ta_SHA1]];
+    } else {
+        return nil;
     }
-    return [NSString stringWithFormat:@"%@:%@", kTypeMacSha1, value];
 }
 
-+ (NSString*) fetchAdvertisingIdentifier {
+/** @return tuple of @[ idfa type, idfa value ], or nil if disabled or unavailable **/
++ (NSArray*) fetchAdvertisingIdentifier {
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")) {
         if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
-            return [NSString stringWithFormat:@"%@:%@", kTypeAdvertisingIdentifier, [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString]];
+            return @[kTypeAdvertisingIdentifier, [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString]];
         }
         else {
-            return [NSString stringWithFormat:@"%@:%@", kTypeAdvertisingIdentifier, @"0"];
+            return nil;
         }
     }
     else {
-        return [NSString stringWithFormat:@"%@:%@", kTypeAdvertisingIdentifier, @"0"];
+        return nil;
     }
 }
 
