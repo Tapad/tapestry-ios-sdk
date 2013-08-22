@@ -82,7 +82,7 @@ static NSString* const kTATapestryClientBaseURL = @"http://tapestry.tapad.com/ta
     
     TALog(@"TATapestryClientNG queueRequest %@", request);
     
-    TATapestryResponseHandler innerHandler = ^(TATapestryResponse* response, NSError *error){
+    TATapestryResponseHandler innerHandler = ^(TATapestryResponse* response, NSError *error, long millis){
         TALog(@"Inner handler: response received for request:\n%@\nresponse:\n%@\nerror:\n%@", request, response, error);
         
         if (error != nil && [NSURLErrorDomain isEqualToString:error.domain]) {
@@ -90,14 +90,14 @@ static NSString* const kTATapestryClientBaseURL = @"http://tapestry.tapad.com/ta
             if (handler != nil)
             {
                 // Call response handler
-                handler(response, error);
+                handler(response, error, 0 /* FIXME */);
             }
         }
         
         else if (handler != nil)
         {
             // Call response handler
-            handler(response, error);
+            handler(response, error, 0 /* FIXME */);
         }
     };
     

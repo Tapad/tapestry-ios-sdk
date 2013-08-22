@@ -46,7 +46,7 @@
     
     if (networkError) {
        TALog(@"There was an error when retrieving %@ (%@)", url, [networkError domain]);
-        self.handler(nil, networkError);
+        self.handler(nil, networkError, 0 /* FIXME */);
     } else {
         // If there's no error, extract the response string.
         NSString *responseString = [[NSString alloc] initWithBytes:[data bytes]
@@ -76,14 +76,14 @@
             if (jsonError) {
                 // JSON was malformed.
                 TALog(@"Unable to parse Tapestry response as JSON: %@", responseString);
-                self.handler(nil, jsonError);
+                self.handler(nil, jsonError, 0 /* FIXME */);
             } else if([json isKindOfClass:[NSDictionary class]]) {
                 // Good response. Invoke the callback!
                 TATapestryResponse* response = [TATapestryResponse responseWithDictionary:(NSDictionary*)json];
-                self.handler(response, nil);
+                self.handler(response, nil, 0 /* FIXME */);
             } else {
                 TALog(@"Received unexpected JSON response: %@", responseString);
-                self.handler(nil, [NSError errorWithDomain:@"com.tapad" code:1 userInfo:@{NSLocalizedDescriptionKey: @"Unexpected JSON response"}]);
+                self.handler(nil, [NSError errorWithDomain:@"com.tapad" code:1 userInfo:@{NSLocalizedDescriptionKey: @"Unexpected JSON response"}], 0 /* FIXME */);
             }
         }
     }

@@ -264,7 +264,7 @@
 - (void)assertFlagPresent:(NSString*)key
 {
     NSDictionary *params = [TAURLHelper paramsFromQuery:[self.request query]];
-    NSNumber* flagVal = [NSNumber numberWithBool:YES]; // from TAURLHelper. TODO move this into the interface.
+    NSNumber* flagVal = [NSNumber numberWithBool:YES]; // from TAURLHelper
     STAssertEqualObjects([params objectForKey:key], flagVal, @"Expected key to be present");
 }
 
