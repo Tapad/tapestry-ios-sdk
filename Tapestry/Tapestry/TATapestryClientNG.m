@@ -8,6 +8,7 @@
 
 #import "TARequestOperation.h"
 #import "TATapadIdentifiers.h"
+#import "UIDevice+Hardware.h"
 #import "TATapestryClientNG.h"
 #import "TAMacros.h"
 
@@ -76,7 +77,8 @@ static NSString* const kTATapestryClientBaseURL = @"http://tapestry.tapad.com/ta
         [request getData];
     }
 
-//    [params addObject:[NSString stringWithFormat:@"%@=%@", kplatform, [[UIDevice currentDevice] ta_platform] ]];
+    // Set the platform parameter, because we don't control the user agent header.
+    [request setPlatform:[[UIDevice currentDevice] ta_platform]];
     
     TALog(@"TATapestryClientNG queueRequest %@", request);
     

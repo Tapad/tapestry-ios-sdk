@@ -16,7 +16,7 @@
 - (void)setUp
 {
     [super setUp];
-    [[TATapestryClientNG sharedClient] setBaseURL:@"http://localhost:3000/tapestry/1"];
+    [[TATapestryClientNG sharedClient] setBaseURL:@"http://localhost:4567/tapestry/1"];
 }
 
 - (void)tearDown
@@ -109,6 +109,33 @@
         NSDictionary *data = [response getData];
         NSString *echoedQueryString = [[data objectForKey:@"query"] objectAtIndex:0];
         NSString *expected = @"ta_typed_did";
+        NSRange match = [echoedQueryString rangeOfString:expected];
+        STAssertTrue(match.location != NSNotFound, @"Expected \n'%@' to be part of query:\n'%@'", expected, echoedQueryString);
+        
+        hasCalledBack = YES;
+    }];
+    
+    NSDate *loopUntil = [NSDate dateWithTimeIntervalSinceNow:5];
+    while (hasCalledBack == NO && [loopUntil timeIntervalSinceNow] > 0) {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
+                                 beforeDate:loopUntil];
+    }
+    if (!hasCalledBack) { STFail(@"callback timed out!"); }
+}
+
+- (void)testAutoIncludingPlatforms
+{
+    __block BOOL hasCalledBack = NO;
+    
+    TATapestryRequest *request = [TATapestryRequest request];
+    [request setPartnerId:@"12345"];
+    [[TATapestryClientNG sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error){
+        TALog(@"callback: %@", response);
+        STAssertNotNil(response, @"Expected valid response.");
+        STAssertNil(error, @"Did not expect an error in this callback.");
+        NSDictionary *data = [response getData];
+        NSString *echoedQueryString = [[data objectForKey:@"query"] objectAtIndex:0];
+        NSString *expected = @"ta_platform";
         NSRange match = [echoedQueryString rangeOfString:expected];
         STAssertTrue(match.location != NSNotFound, @"Expected \n'%@' to be part of query:\n'%@'", expected, echoedQueryString);
         
