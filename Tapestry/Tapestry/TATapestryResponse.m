@@ -64,4 +64,9 @@
     return [self.response objectForKey:@"devices"];
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ with data: \n%@", NSStringFromClass(self.class), [self.response description]];
+}
+
 @end
