@@ -16,14 +16,4 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-- (void) resetIdentifierConfig;
-- (void) testEventWithNoIdentifier;
-- (void) testEventWithOpenUDID;
-- (void) testEventWithMD5HashedRawMAC;
-- (void) testEventWithSHA1HashedRawMAC;
-- (void) testEventWithMD5HashedMAC;
-- (void) testEventWithSHA1HashedMAC;
-- (void) testEventWithAdvertisingIdentifier;
-- (void) testEventWithAllIdentifiers;
-
 @end

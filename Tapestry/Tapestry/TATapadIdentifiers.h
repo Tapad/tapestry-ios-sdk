@@ -8,42 +8,14 @@
 #import <Foundation/Foundation.h>
 
 // edit this header file to enable identifiers allowed for your app
-#import "MyEnabledTapadIdentifiers.h"
 #import <ADSupport/ASIdentifierManager.h>
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
-@interface TATapadIdentifiers : NSObject {}
+@interface TATapadIdentifiers : NSObject
 
-#ifdef TAPAD_IDENTIFIER_ENABLE_OPENUDID
-+ (BOOL) willSendOpenUDID;
-+ (void) sendOpenUDID:(BOOL)state;
-#endif
++ (void)setIdentifierEnabledMAC:(BOOL)enabled;
++ (void)setIdentifierEnabledOpenUDID:(BOOL)enabled;
 
-#ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_RAW_MAC
-+ (BOOL) willSendMD5HashedRawMAC;
-+ (void) sendMD5HashedRawMAC:(BOOL)state;
-#endif
-
-#ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_RAW_MAC
-+ (BOOL) willSendSHA1HashedRawMAC;
-+ (void) sendSHA1HashedRawMAC:(BOOL)state;
-#endif
-
-#ifdef TAPAD_IDENTIFIER_ENABLE_MD5_HASHED_MAC
-+ (BOOL) willSendMD5HashedMAC;
-+ (void) sendMD5HashedMAC:(BOOL)state;
-#endif
-
-#ifdef TAPAD_IDENTIFIER_ENABLE_SHA1_HASHED_MAC
-+ (BOOL) willSendSHA1HashedMAC;
-+ (void) sendSHA1HashedMAC:(BOOL)state;
-#endif
-
-#ifdef TAPAD_IDENTIFIER_ENABLE_ADVERTISING_IDENTIFIER
-+ (BOOL) willSendAdvertisingIdentifier;
-+ (void) sendAdvertisingIdentifier:(BOOL)state;
-#endif
-
-+ (NSString*) deviceID;
++ (NSString*) deviceIDs;
 
 @end

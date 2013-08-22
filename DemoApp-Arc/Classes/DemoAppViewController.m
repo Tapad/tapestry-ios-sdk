@@ -7,9 +7,7 @@
 //
 
 #import "DemoAppViewController.h"
-#import "TATapestryRequestBuilder.h"
-#import "TATapestryClient.h"
-#import "TATapadIdentifiers.h"
+#import "Tapestry/TATapestry.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation DemoAppViewController
@@ -113,60 +111,7 @@
 - (IBAction)sendRequest {
     [self hideKeyboard];
     
-    TATapestryRequestBuilder* req = [[TATapestryRequestBuilder alloc] init];
     
-    [req setShouldGetData:self.getDataSwitch.isOn];
-    [req setShouldGetDevices:self.getDevicesSwitch.isOn];
-    
-    if ([self.setDataKey.text length] > 0 && [self.setDataValue.text length] > 0) {
-        NSDictionary *dataToSet = [NSDictionary dictionaryWithObjectsAndKeys:self.setDataValue.text, self.setDataKey.text, nil];
-        [req setDataToSet:dataToSet];
-    }
-    
-    if ([self.addDataKey.text length] > 0 && [self.addDataValue.text length] > 0) {
-        NSDictionary *dataToAdd = [NSDictionary dictionaryWithObjectsAndKeys:self.addDataValue.text, self.addDataKey.text, nil];
-        [req setDataToAdd:dataToAdd];
-    }
-    
-    if (self.audienceInput.text.length > 0) {
-        [req setAudiencesToAdd:[NSArray arrayWithObject:self.audienceInput.text]];
-    }
-    
-    if (self.userIdInput.text.length > 0) {
-        // Register this user id. It is pulled out of the preferences when the query is constructed.
-        [TATapestryRequestBuilder registerUserId:self.userIdInput.text];
-    }
-    
-    [TATapadIdentifiers sendOpenUDID:self.didOpenUdidSwitch.isOn];
-    [TATapadIdentifiers sendMD5HashedRawMAC:self.didMd5RawMacSwitch.isOn];
-    [TATapadIdentifiers sendSHA1HashedRawMAC:self.didSha1RawMacSwitch.isOn];
-    [TATapadIdentifiers sendMD5HashedMAC:self.didMd5MacSwitch.isOn];
-    [TATapadIdentifiers sendSHA1HashedMAC:self.didSha1MacSwitch.isOn];
-    [TATapadIdentifiers sendAdvertisingIdentifier:self.didIdfaSwitch.isOn];
-    
-    TATapestryClient* client = [TATapestryClient initializeForRequest:req];
-    NSString* url = [[[client request] URL] absoluteString];
-    
-    self.apiRequest.text = url;
-
-    // This is how you would get the raw response string.
-    // NSString *response = [client getSynchronous];
-    
-    // Get response with callback, turn the data back into a pretty json string.
-    [req sendWithCallback:^(NSDictionary *response) {
-        NSError *error = nil;
-        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:response options:NSJSONWritingPrettyPrinted error:&error];
-        if (jsonData) {
-            NSString *prettyJson = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-            [self threadsafeUpdateApiResponseView:prettyJson];
-        } else {
-            [self threadsafeUpdateApiResponseView:@"Error - got a response but it wasn't json."];
-            NSLog(@"Error converting callback data back into json");
-        }
-    }];
-
-    
-    NSLog(@"Request URL is %@", url);
 }
 
 - (IBAction)resetForm {
@@ -180,7 +125,6 @@
     [self.getDevicesSwitch setOn:NO];
     [self.apiRequest setText:@""];
     [self.apiResponse setText:@""];
-    [self.userIdInput setText:[TATapestryRequestBuilder getUserId]];
     
     [self.didOpenUdidSwitch setOn:YES];
     [self.didMd5RawMacSwitch setOn:YES];
@@ -192,7 +136,6 @@
 
 - (IBAction)unregisterUserId {
     [self.userIdInput setText:@""];
-    [TATapestryRequestBuilder clearUserId];
 }
 
 - (void)threadsafeUpdateApiResponseView:(NSString*)jsonString {
