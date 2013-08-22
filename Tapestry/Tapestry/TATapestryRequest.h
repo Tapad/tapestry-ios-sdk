@@ -176,6 +176,13 @@
  */
 - (NSString*)query;
 
+/**
+ Sets the platform query parameter to better identify the device type. This is set automatically by the client.
+ 
+ @param platform The platform string, like a user agent
+ */
+- (void)setPlatform:(NSString*)platform;
+
 @end
 
 @interface TATapestryRequest (Testing)

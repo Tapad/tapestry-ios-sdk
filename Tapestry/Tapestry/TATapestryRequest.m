@@ -150,6 +150,11 @@
     [self addValue:isNewSession ? @"true" : @"false" forParameter:@"ta_analytics"];
 }
 
+- (void)setPlatform:(NSString*)platform
+{
+    [self addValue:platform forParameter:@"ta_platform"];
+}
+
 #pragma mark - Build query
 
 - (NSString *)query

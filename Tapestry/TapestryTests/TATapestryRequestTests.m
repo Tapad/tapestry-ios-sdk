@@ -135,6 +135,12 @@
     [self assertMapMatches:@"ta_typed_did"];
 }
 
+- (void)testSetPlatform
+{
+    [self.request setPlatform:@"iPhone 1.2,3"];
+    [self assertKey:@"ta_platform" hasValue:@"iPhone%201.2%2C3"];
+}
+
 
 - (void)testEmpty
 {
