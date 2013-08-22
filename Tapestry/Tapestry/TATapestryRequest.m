@@ -110,6 +110,11 @@
     [self addArray:array forParameter:@"ta_remove_audiences"];
 }
 
+- (void)getData
+{
+    [self addValue:@"" forParameter:@"ta_get"];
+}
+
 - (void)getDevices
 {
     [self addValue:@"" forParameter:@"ta_get_devices"];

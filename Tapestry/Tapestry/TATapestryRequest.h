@@ -81,6 +81,11 @@
 - (void)clearData:(NSString *)firstDataKey, ... NS_REQUIRES_NIL_TERMINATION;
 
 /**
+ Tells Tapestry to return data (for use in a callback). This is automatically set by the client when a handler is present.
+ */
+- (void)getData;
+
+/**
  Tells Tapestry to return all the devices listed out as well as combined.
  The list of devices can be accessed in the response.
  */

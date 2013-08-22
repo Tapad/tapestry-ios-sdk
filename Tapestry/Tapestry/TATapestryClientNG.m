@@ -65,7 +65,11 @@ static NSString* const kTATapestryClientBaseURL = @"http://tapestry.tapad.com/ta
 - (void)queueRequest:(TATapestryRequest*)request withResponseBlock:(TATapestryResponseHandler)handler
 {
     // TODO add typed device ids
-    // TODO add ta_get if there is a handler
+
+    // If there's a handler, then we want data back.
+    if (handler != nil) {
+        [request getData];
+    }
     
 //    [params addObject:[NSString stringWithFormat:@"%@=%@", ktypedUid, [TATapadIdentifiers deviceIDs] ]];
 //    [params addObject:[NSString stringWithFormat:@"%@=%@", kplatform, [[UIDevice currentDevice] ta_platform] ]];
