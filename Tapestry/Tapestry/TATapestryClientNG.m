@@ -8,6 +8,7 @@
 
 #import "TARequestOperation.h"
 #import "TATapestryClientNG.h"
+#import "TAMacros.h"
 
 static NSString* const kTATapestryClientBaseURL = @"http://tapestry.tapad.com/tapestry/1";
 
@@ -58,6 +59,7 @@ static NSString* const kTATapestryClientBaseURL = @"http://tapestry.tapad.com/ta
 
 - (void)queueRequest:(TATapestryRequest*)request withResponseBlock:(TATapestryResponseHandler)handler
 {
+    TALog(@"XXX TATapestryClientNG queueRequest: %@", request);
     /*
      TATapestryResponseHandler innerHandler = ^(TATapestryResponse* response){
         NSLog(@"Response received for %@", [request query]);
