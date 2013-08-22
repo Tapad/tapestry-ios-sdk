@@ -52,6 +52,11 @@ static NSString* const kTATapestryClientBaseURL = @"http://tapestry.tapad.com/ta
     _baseURL = baseURL;
 }
 
+- (void)setDefaultBaseURL
+{
+    _baseURL = kTATapestryClientBaseURL;
+}
+
 - (void)queueRequest:(TATapestryRequest*)request
 {
     [self queueRequest:request withResponseBlock:nil];
@@ -59,19 +64,34 @@ static NSString* const kTATapestryClientBaseURL = @"http://tapestry.tapad.com/ta
 
 - (void)queueRequest:(TATapestryRequest*)request withResponseBlock:(TATapestryResponseHandler)handler
 {
-    TALog(@"XXX TATapestryClientNG queueRequest: %@", request);
-    /*
-     TATapestryResponseHandler innerHandler = ^(TATapestryResponse* response){
-        NSLog(@"Response received for %@", [request query]);
-
-        if (handler != nil)
+    // TODO add typed device ids
+    // TODO add ta_get if there is a handler
+    
+//    [params addObject:[NSString stringWithFormat:@"%@=%@", ktypedUid, [TATapadIdentifiers deviceIDs] ]];
+//    [params addObject:[NSString stringWithFormat:@"%@=%@", kplatform, [[UIDevice currentDevice] ta_platform] ]];
+    
+    TALog(@"TATapestryClientNG queueRequest %@", request);
+    
+    TATapestryResponseHandler innerHandler = ^(TATapestryResponse* response, NSError *error){
+        TALog(@"Inner handler: response received for request:\n%@\nresponse:\n%@\nerror:\n%@", request, response, error);
+        
+        if (error != nil && [NSURLErrorDomain isEqualToString:error.domain]) {
+            // TODO Network error. Pause and retry using a time-since-first-failure backoff strategy.
+            if (handler != nil)
+            {
+                // Call response handler
+                handler(response, error);
+            }
+        }
+        
+        else if (handler != nil)
         {
             // Call response handler
-            handler(response);
+            handler(response, error);
         }
     };
-     */
-    TARequestOperation* operation = [TARequestOperation operationWithRequest:request andBaseUrl:kTATapestryClientBaseURL andHandler:handler];
+    
+    TARequestOperation* operation = [TARequestOperation operationWithRequest:request andBaseUrl:self.baseURL andHandler:handler];
     [self.requestQueue addOperation:operation];
 }
 

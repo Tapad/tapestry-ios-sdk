@@ -10,13 +10,14 @@
 #import "TATapestryResponse.h"
 #import <Foundation/Foundation.h>
 
-typedef void(^TATapestryResponseHandler)(TATapestryResponse* response);
+typedef void(^TATapestryResponseHandler)(TATapestryResponse* response, NSError* error);
 
 @interface TATapestryClientNG : NSObject
 
 + (TATapestryClientNG*)sharedClient;
 - (void)setPartnerId:(NSString*)partnerId;
 - (void)setBaseURL:(NSString*)baseURL;
+- (void)setDefaultBaseURL;
 - (void)queueRequest:(TATapestryRequest*)request;
 - (void)queueRequest:(TATapestryRequest*)request withResponseBlock:(TATapestryResponseHandler)handler;
 

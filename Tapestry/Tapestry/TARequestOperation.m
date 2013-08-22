@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Tapad. All rights reserved.
 //
 
+#import "TAMacros.h"
 #import "TARequestOperation.h"
 
 @interface TARequestOperation ()
@@ -27,31 +28,31 @@
 
 - (void)main
 {
-    NSError* synchronousError=nil;
-    NSHTTPURLResponse* synchronousResponse=nil;
-    
     // Full URL of request.
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@", self.baseUrl, self.request.query]];
     
-    // Non-caching request with 2-second timeout.
+    // Non-caching request with 10s timeout.
     NSURLRequest *req = [NSURLRequest requestWithURL:url
                                          cachePolicy:NSURLRequestReloadIgnoringCacheData
-                                     timeoutInterval:2 /* seconds */];
-    NSLog(@"Going to request %@", req);
+                                     timeoutInterval:10.0];
+    TALog(@"Going to request %@", req);
     
     // Synchronous request.
+    NSError* networkError=nil;
+    NSHTTPURLResponse* networkResponse=nil;
     NSData *data = [NSURLConnection sendSynchronousRequest:req
-                                         returningResponse:&synchronousResponse
-                                                     error:&synchronousError];
+                                         returningResponse:&networkResponse
+                                                     error:&networkError];
     
-    if (synchronousError) {
-       NSLog(@"There was an error when retrieving %@ (%@)", url, synchronousError);
+    if (networkError) {
+       TALog(@"There was an error when retrieving %@ (%@)", url, [networkError domain]);
+        self.handler(nil, networkError);
     } else {
         // If there's no error, extract the response string.
         NSString *responseString = [[NSString alloc] initWithBytes:[data bytes]
                                                        length:[data length]
                                                      encoding:NSUTF8StringEncoding];
-        NSLog(@"Response from Tapestry: %@", responseString);
+        TALog(@"Response from Tapestry: %@", responseString);
         
         if (self.handler != nil) {
             // If we have a handler, then parse the JSON response. It should look something like this:
@@ -67,24 +68,25 @@
                 "platforms": ["iPhone", "Computer"]
              }
              */
-            NSError* error = nil;
+            NSError* jsonError=nil;
             id json = [NSJSONSerialization
                        JSONObjectWithData:[responseString dataUsingEncoding:NSUTF8StringEncoding]
                        options:0
-                       error:&error];
-            if (error) {
+                       error:&jsonError];
+            if (jsonError) {
                 // JSON was malformed.
-                NSLog(@"Unable to parse Tapestry response as JSON: %@", responseString);
+                TALog(@"Unable to parse Tapestry response as JSON: %@", responseString);
+                self.handler(nil, jsonError);
             } else if([json isKindOfClass:[NSDictionary class]]) {
                 // Good response. Invoke the callback!
                 TATapestryResponse* response = [TATapestryResponse responseWithDictionary:(NSDictionary*)json];
-                self.handler(response);
+                self.handler(response, nil);
             } else {
-                NSLog(@"Received unexpected JSON response: %@", responseString);
+                TALog(@"Received unexpected JSON response: %@", responseString);
+                self.handler(nil, [NSError errorWithDomain:@"com.tapad" code:1 userInfo:@{NSLocalizedDescriptionKey: @"Unexpected JSON response"}]);
             }
         }
     }
-
 }
 
 @end
