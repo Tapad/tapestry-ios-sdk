@@ -84,7 +84,7 @@
  Tells Tapestry to return all the devices listed out as well as combined.
  The list of devices can be accessed in the response.
  */
-- (void)listDevices;
+- (void)getDevices;
 
 
 /**---------------------------------------------------------------------------------------

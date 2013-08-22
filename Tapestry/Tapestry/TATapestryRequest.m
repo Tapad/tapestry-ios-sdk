@@ -110,9 +110,9 @@
     [self addArray:array forParameter:@"ta_remove_audiences"];
 }
 
-- (void)listDevices
+- (void)getDevices
 {
-    [self addValue:@"" forParameter:@"ta_list_devices"];
+    [self addValue:@"" forParameter:@"ta_get_devices"];
 }
 
 - (void)setDepth:(NSInteger)depth

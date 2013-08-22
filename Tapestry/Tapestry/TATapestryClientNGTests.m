@@ -75,7 +75,7 @@
     
     TATapestryRequest *request = [TATapestryRequest request];
     [request setPartnerId:@"12345"];
-    [[TATapestryClientNG sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error, long millisSinceInvoked){
+    [[TATapestryClientNG sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error){
         TALog(@"callback: %@", response);
         STAssertNotNil(response, @"Expected valid response.");
         STAssertNil(error, @"Did not expect an error in this callback.");

@@ -100,8 +100,8 @@
 
 - (void)testListDevices;
 {
-    [self.request listDevices];
-    [self assertFlagPresent:@"ta_list_devices"];
+    [self.request getDevices];
+    [self assertFlagPresent:@"ta_get_devices"];
 }
 
 - (void)testSetDepth
@@ -164,9 +164,9 @@
 
 - (void)testParameterFlag
 {
-    [self.request listDevices];
-    [self assertStringValue:@"" forKey:@"ta_list_devices"];
-    [self assertQuery:@"ta_list_devices="];
+    [self.request getDevices];
+    [self assertStringValue:@"" forKey:@"ta_get_devices"];
+    [self assertQuery:@"ta_get_devices="];
 }
 
 - (void)testParameterWithValue
