@@ -198,6 +198,11 @@
     return buffer;
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ with query: \n%@", NSStringFromClass(self.class), [self.query description]];
+}
+
 @end
 
 @implementation TATapestryRequest (Testing)
