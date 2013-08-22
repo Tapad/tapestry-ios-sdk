@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TATapadIdentifiers.h"
+#import "TATapestryClient.h"
 
 @interface TATapestry : NSObject
 

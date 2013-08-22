@@ -3,7 +3,6 @@
 //
 #import "AppDelegate.h"
 #import "GANTracker.h"
-#import "TATapestryRequestBuilder.h"
 
 @implementation AppDelegate
 

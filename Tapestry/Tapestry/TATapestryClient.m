@@ -205,7 +205,7 @@ static const float kTimeout = 2.5;
 
     NSMutableArray* params = [NSMutableArray arrayWithCapacity:5]; // autoreleased
 
-    [params addObject:[NSString stringWithFormat:@"%@=%@", ktypedUid, [TATapadIdentifiers deviceID] ]];
+    [params addObject:[NSString stringWithFormat:@"%@=%@", ktypedUid, [TATapadIdentifiers deviceIDs] ]];
     [params addObject:[NSString stringWithFormat:@"%@=%@", kplatform, [[UIDevice currentDevice] ta_platformString] ]];
 
     /* Add as needed
