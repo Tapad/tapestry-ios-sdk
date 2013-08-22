@@ -9,7 +9,6 @@
 
 #import "TAOpenUDID.h"
 #import "TATapadIdentifiers.h"
-#import "TATapadPreferences.h"
 #import "UIDevice+Hardware.h"
 #import "NSString+MD5.h"
 
@@ -65,7 +64,7 @@ static NSDictionary* deviceIDs = nil;
 /** @return comma-separated list of enabled_id_type:id_value. */
 + (NSString*) typedDeviceIDsAsCommaSeparatedString
 {
-    return [TATapadPreferences dictionaryAsEncodedCsvString:[self typedDeviceIDs]];
+    return [self dictionaryAsEncodedCsvString:[self typedDeviceIDs]];
 }
 
 /** @return dictionary of enabled id types -> id values. */
@@ -189,6 +188,41 @@ static NSDictionary* deviceIDs = nil;
     else {
         return nil;
     }
+}
+
++ (NSString*) dictionaryAsEncodedCsvString:(NSDictionary*)data {
+    NSMutableArray* params = [NSMutableArray arrayWithCapacity:[data count]];
+    for (id key in data) {
+        id value = [data objectForKey:key];
+        [params addObject:[NSString stringWithFormat:@"%@:%@", [self encodeString:key], [self encodeString:value] ]];
+    }
+    if ([params count] == 0) {
+        return NULL;
+    }
+    else {
+        return [params componentsJoinedByString:@","];
+    }
+}
+
++ (NSString*) arrayAsEncodedCsvString:(NSArray*)data {
+    NSMutableArray* params = [NSMutableArray arrayWithCapacity:[data count]];
+    for (id x in data) {
+        [params addObject:[self encodeString:x]];
+    }
+    if ([params count] == 0) {
+        return NULL;
+    }
+    else {
+        return [params componentsJoinedByString:@","];
+    }
+}
+
++ (NSString*) encodeString: (id) unencodedString {
+    return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(NULL,
+                                                                                 (CFStringRef)unencodedString,
+                                                                                 NULL,
+                                                                                 (CFStringRef)@"!*'();:@&=+$,/?%#[]",
+                                                                                 kCFStringEncodingUTF8));
 }
 
 @end
