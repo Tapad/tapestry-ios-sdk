@@ -29,7 +29,7 @@
 
     TATapestryRequest *request = [TATapestryRequest request];
     [request setPartnerId:@"12345"];
-    [[TATapestryClientNG sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response){
+    [[TATapestryClientNG sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error){
         TALog(@"callback: %@", response);
         hasCalledBack = YES;
     }];

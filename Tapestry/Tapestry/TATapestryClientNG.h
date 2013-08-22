@@ -10,7 +10,7 @@
 #import "TATapestryResponse.h"
 #import <Foundation/Foundation.h>
 
-typedef void(^TATapestryResponseHandler)(TATapestryResponse* response);
+typedef void(^TATapestryResponseHandler)(TATapestryResponse* response, NSError* error);
 
 @interface TATapestryClientNG : NSObject
 

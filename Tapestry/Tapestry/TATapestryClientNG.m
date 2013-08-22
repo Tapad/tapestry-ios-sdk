@@ -70,7 +70,7 @@ static NSString* const kTATapestryClientBaseURL = @"http://tapestry.tapad.com/ta
             handler(response);
         }
     };
-     */
+    
     TARequestOperation* operation = [TARequestOperation operationWithRequest:request andBaseUrl:kTATapestryClientBaseURL andHandler:handler];
     [self.requestQueue addOperation:operation];
 }
