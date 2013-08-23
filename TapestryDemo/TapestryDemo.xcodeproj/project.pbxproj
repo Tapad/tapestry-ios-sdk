@@ -1,0 +1,387 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DABE4D4617C6E76000961521 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DABE4D4517C6E76000961521 /* UIKit.framework */; };
+		DABE4D4817C6E76000961521 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DABE4D4717C6E76000961521 /* Foundation.framework */; };
+		DABE4D4A17C6E76000961521 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DABE4D4917C6E76000961521 /* CoreGraphics.framework */; };
+		DABE4D5017C6E76000961521 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DABE4D4E17C6E76000961521 /* InfoPlist.strings */; };
+		DABE4D5217C6E76000961521 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DABE4D5117C6E76000961521 /* main.m */; };
+		DABE4D5617C6E76000961521 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DABE4D5517C6E76000961521 /* AppDelegate.m */; };
+		DABE4D5817C6E76000961521 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DABE4D5717C6E76000961521 /* Default.png */; };
+		DABE4D5A17C6E76000961521 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DABE4D5917C6E76000961521 /* Default@2x.png */; };
+		DABE4D5C17C6E76000961521 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DABE4D5B17C6E76000961521 /* Default-568h@2x.png */; };
+		DABE4D5F17C6E76000961521 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DABE4D5E17C6E76000961521 /* ViewController.m */; };
+		DABE4D6217C6E76000961521 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DABE4D6017C6E76000961521 /* ViewController.xib */; };
+		DABE4D7317C6E7AE00961521 /* libTapestry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DABE4D6E17C6E77800961521 /* libTapestry.a */; };
+		DABE4D7817C6EA5D00961521 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DABE4D7717C6EA5D00961521 /* AdSupport.framework */; };
+		DABE4D7A17C6EA6300961521 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DABE4D7917C6EA6300961521 /* SystemConfiguration.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DABE4D6D17C6E77800961521 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DABE4D6817C6E77800961521 /* Tapestry.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2F180B6F17A1C3F900EC3F5F;
+			remoteInfo = Tapestry;
+		};
+		DABE4D6F17C6E77800961521 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DABE4D6817C6E77800961521 /* Tapestry.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2F180B8017A1C3F900EC3F5F;
+			remoteInfo = TapestryTests;
+		};
+		DABE4D7117C6E7A900961521 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DABE4D6817C6E77800961521 /* Tapestry.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F180B6E17A1C3F900EC3F5F;
+			remoteInfo = Tapestry;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DABE4D4217C6E76000961521 /* TapestryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapestryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DABE4D4517C6E76000961521 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DABE4D4717C6E76000961521 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DABE4D4917C6E76000961521 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DABE4D4D17C6E76000961521 /* TapestryDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TapestryDemo-Info.plist"; sourceTree = "<group>"; };
+		DABE4D4F17C6E76000961521 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DABE4D5117C6E76000961521 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DABE4D5317C6E76000961521 /* TapestryDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TapestryDemo-Prefix.pch"; sourceTree = "<group>"; };
+		DABE4D5417C6E76000961521 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DABE4D5517C6E76000961521 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DABE4D5717C6E76000961521 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		DABE4D5917C6E76000961521 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		DABE4D5B17C6E76000961521 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DABE4D5D17C6E76000961521 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DABE4D5E17C6E76000961521 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DABE4D6117C6E76000961521 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		DABE4D6817C6E77800961521 /* Tapestry.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Tapestry.xcodeproj; path = ../Tapestry/Tapestry.xcodeproj; sourceTree = "<group>"; };
+		DABE4D7717C6EA5D00961521 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		DABE4D7917C6EA6300961521 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DABE4D3F17C6E76000961521 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DABE4D7A17C6EA6300961521 /* SystemConfiguration.framework in Frameworks */,
+				DABE4D7817C6EA5D00961521 /* AdSupport.framework in Frameworks */,
+				DABE4D7317C6E7AE00961521 /* libTapestry.a in Frameworks */,
+				DABE4D4617C6E76000961521 /* UIKit.framework in Frameworks */,
+				DABE4D4817C6E76000961521 /* Foundation.framework in Frameworks */,
+				DABE4D4A17C6E76000961521 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DABE4D3917C6E76000961521 = {
+			isa = PBXGroup;
+			children = (
+				DABE4D6817C6E77800961521 /* Tapestry.xcodeproj */,
+				DABE4D4B17C6E76000961521 /* TapestryDemo */,
+				DABE4D4417C6E76000961521 /* Frameworks */,
+				DABE4D4317C6E76000961521 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DABE4D4317C6E76000961521 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DABE4D4217C6E76000961521 /* TapestryDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DABE4D4417C6E76000961521 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DABE4D7917C6EA6300961521 /* SystemConfiguration.framework */,
+				DABE4D7717C6EA5D00961521 /* AdSupport.framework */,
+				DABE4D4517C6E76000961521 /* UIKit.framework */,
+				DABE4D4717C6E76000961521 /* Foundation.framework */,
+				DABE4D4917C6E76000961521 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DABE4D4B17C6E76000961521 /* TapestryDemo */ = {
+			isa = PBXGroup;
+			children = (
+				DABE4D5417C6E76000961521 /* AppDelegate.h */,
+				DABE4D5517C6E76000961521 /* AppDelegate.m */,
+				DABE4D5D17C6E76000961521 /* ViewController.h */,
+				DABE4D5E17C6E76000961521 /* ViewController.m */,
+				DABE4D6017C6E76000961521 /* ViewController.xib */,
+				DABE4D4C17C6E76000961521 /* Supporting Files */,
+			);
+			path = TapestryDemo;
+			sourceTree = "<group>";
+		};
+		DABE4D4C17C6E76000961521 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DABE4D4D17C6E76000961521 /* TapestryDemo-Info.plist */,
+				DABE4D4E17C6E76000961521 /* InfoPlist.strings */,
+				DABE4D5117C6E76000961521 /* main.m */,
+				DABE4D5317C6E76000961521 /* TapestryDemo-Prefix.pch */,
+				DABE4D5717C6E76000961521 /* Default.png */,
+				DABE4D5917C6E76000961521 /* Default@2x.png */,
+				DABE4D5B17C6E76000961521 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DABE4D6917C6E77800961521 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DABE4D6E17C6E77800961521 /* libTapestry.a */,
+				DABE4D7017C6E77800961521 /* TapestryTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DABE4D4117C6E76000961521 /* TapestryDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DABE4D6517C6E76000961521 /* Build configuration list for PBXNativeTarget "TapestryDemo" */;
+			buildPhases = (
+				DABE4D3E17C6E76000961521 /* Sources */,
+				DABE4D3F17C6E76000961521 /* Frameworks */,
+				DABE4D4017C6E76000961521 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DABE4D7217C6E7A900961521 /* PBXTargetDependency */,
+			);
+			name = TapestryDemo;
+			productName = TapestryDemo;
+			productReference = DABE4D4217C6E76000961521 /* TapestryDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DABE4D3A17C6E76000961521 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = TapAd;
+			};
+			buildConfigurationList = DABE4D3D17C6E76000961521 /* Build configuration list for PBXProject "TapestryDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DABE4D3917C6E76000961521;
+			productRefGroup = DABE4D4317C6E76000961521 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DABE4D6917C6E77800961521 /* Products */;
+					ProjectRef = DABE4D6817C6E77800961521 /* Tapestry.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				DABE4D4117C6E76000961521 /* TapestryDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		DABE4D6E17C6E77800961521 /* libTapestry.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libTapestry.a;
+			remoteRef = DABE4D6D17C6E77800961521 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DABE4D7017C6E77800961521 /* TapestryTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TapestryTests.octest;
+			remoteRef = DABE4D6F17C6E77800961521 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DABE4D4017C6E76000961521 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DABE4D5017C6E76000961521 /* InfoPlist.strings in Resources */,
+				DABE4D5817C6E76000961521 /* Default.png in Resources */,
+				DABE4D5A17C6E76000961521 /* Default@2x.png in Resources */,
+				DABE4D5C17C6E76000961521 /* Default-568h@2x.png in Resources */,
+				DABE4D6217C6E76000961521 /* ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DABE4D3E17C6E76000961521 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DABE4D5217C6E76000961521 /* main.m in Sources */,
+				DABE4D5617C6E76000961521 /* AppDelegate.m in Sources */,
+				DABE4D5F17C6E76000961521 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DABE4D7217C6E7A900961521 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Tapestry;
+			targetProxy = DABE4D7117C6E7A900961521 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DABE4D4E17C6E76000961521 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DABE4D4F17C6E76000961521 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DABE4D6017C6E76000961521 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DABE4D6117C6E76000961521 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DABE4D6317C6E76000961521 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DABE4D6417C6E76000961521 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "${BUILT_PRODUCTS_DIR}/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DABE4D6617C6E76000961521 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TapestryDemo/TapestryDemo-Prefix.pch";
+				INFOPLIST_FILE = "TapestryDemo/TapestryDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DABE4D6717C6E76000961521 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TapestryDemo/TapestryDemo-Prefix.pch";
+				INFOPLIST_FILE = "TapestryDemo/TapestryDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DABE4D3D17C6E76000961521 /* Build configuration list for PBXProject "TapestryDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DABE4D6317C6E76000961521 /* Debug */,
+				DABE4D6417C6E76000961521 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DABE4D6517C6E76000961521 /* Build configuration list for PBXNativeTarget "TapestryDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DABE4D6617C6E76000961521 /* Debug */,
+				DABE4D6717C6E76000961521 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DABE4D3A17C6E76000961521 /* Project object */;
+}
