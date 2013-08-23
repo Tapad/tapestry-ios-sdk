@@ -48,25 +48,32 @@
 
 - (void)testTimeoutResponseCallback
 {
+    [[[TATapestryClientNG sharedClient] test_requestQueue] setSuspended:YES];
     __block BOOL hasCalledBack = NO;
     
     TATapestryRequest *request = [TATapestryRequest request];
     [request setPartnerId:@"12345"];
     // Setting an integrer as the data for key "sleep" will cause the test server to sleep for that many seconds before returning.
-    [request setData:@"11" forKey:@"sleep"];
+
     [[TATapestryClientNG sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error, NSTimeInterval sinceQueued){
         TALog(@"callback: %@", response);
-        STAssertNil(response, @"Did not expected valid response.");
-        STAssertNotNil(error, @"Expected to receive a network failure error in this callback (because of request timeout).");
+        STAssertNotNil(response, @"Did not expected valid response.");
+        STAssertNil(error, @"Expected to receive a network failure error in this callback (because of request timeout).");
         hasCalledBack = YES;
+        
+        STAssertTrue(sinceQueued >= 5.0, @"Expected this request to take more than or 5s");
     }];
     
-    NSDate *loopUntil = [NSDate dateWithTimeIntervalSinceNow:15];
-    while (hasCalledBack == NO && [loopUntil timeIntervalSinceNow] > 0) {
-        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
-                                 beforeDate:loopUntil];
-    }
-    if (!hasCalledBack) { STFail(@"callback timed out after the expected 10s network timeout limit!"); }
+    sleep(5);
+    [[[TATapestryClientNG sharedClient] test_requestQueue] setSuspended:NO];
+    
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        if (!hasCalledBack) {
+            STFail(@"callback timed out after the expected 5s network timeout limit!");
+        }
+    });
 }
 
 - (void)testAutoIncludingTaGetParamIfHandlerProvided

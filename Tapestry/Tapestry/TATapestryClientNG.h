@@ -27,4 +27,8 @@ typedef void(^TATapestryResponseHandler)(TATapestryResponse* response, NSError* 
 - (void)queueRequest:(TATapestryRequest*)request;
 - (void)queueRequest:(TATapestryRequest*)request withResponseBlock:(TATapestryResponseHandler)handler;
 
+
+// Exposed for testing
+- (NSOperationQueue*)test_requestQueue;
+
 @end

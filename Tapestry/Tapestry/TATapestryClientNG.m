@@ -139,6 +139,11 @@ static NSString* const kTATapestryConnectivityTestHostname = @"google.com";
     }
 }
 
+- (NSOperationQueue *)test_requestQueue
+{
+    return self.requestQueue;
+}
+
 #pragma mark - Network connectivity
 
 - (void)startMonitoringNetworkConnectivity
