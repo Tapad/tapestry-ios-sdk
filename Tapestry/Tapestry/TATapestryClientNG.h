@@ -30,7 +30,7 @@ typedef void(^TATapestryResponseHandler)(TATapestryResponse* response, NSError* 
 + (TATapestryClientNG*)sharedClient;
 
 /**
- Convenience function to set partner ID once, instead of on each request
+ Convenience function to set default partner ID once, instead of on each request. This partner ID will be added to each request, unless the request itself has one set.
  @param partnerId The partner ID
  */
 - (void)setPartnerId:(NSString*)partnerId;

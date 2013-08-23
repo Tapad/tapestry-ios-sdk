@@ -47,6 +47,19 @@
 	
 	
 	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/queueRequest:">&nbsp;&nbsp;&nbsp;&nbsp;- queueRequest:</option>
+	
+	<option value="//api/name/queueRequest:withResponseBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- queueRequest:withResponseBlock:</option>
+	
+	<option value="//api/name/setBaseURL:">&nbsp;&nbsp;&nbsp;&nbsp;- setBaseURL:</option>
+	
+	<option value="//api/name/setDefaultBaseURL">&nbsp;&nbsp;&nbsp;&nbsp;- setDefaultBaseURL</option>
+	
+	<option value="//api/name/setPartnerId:">&nbsp;&nbsp;&nbsp;&nbsp;- setPartnerId:</option>
+	
+	
 	
 </select>
 				</li>
@@ -77,6 +90,20 @@
 </ul></li>
 
 
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/queueRequest:">queueRequest:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/queueRequest:withResponseBlock:">queueRequest:withResponseBlock:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setBaseURL:">setBaseURL:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDefaultBaseURL">setDefaultBaseURL</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setPartnerId:">setPartnerId:</a></span></li>
+	
+</ul></li>
 
 
 			</ul>
@@ -134,6 +161,41 @@ It queues requests to execute asyncronously and concurrently, and handles retrie
 	<span class="tooltip">
 		<code><a href="#//api/name/sharedClient">+&nbsp;sharedClient</a></code>
 		<span class="tooltip"><p>The shared client. Created exactly once.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setPartnerId:">&ndash;&nbsp;setPartnerId:</a></code>
+		<span class="tooltip"><p>Convenience function to set default partner ID once, instead of on each request. This partner ID will be added to each request, unless the request itself has one set.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setBaseURL:">&ndash;&nbsp;setBaseURL:</a></code>
+		<span class="tooltip"><p>Override the default base URL.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setDefaultBaseURL">&ndash;&nbsp;setDefaultBaseURL</a></code>
+		<span class="tooltip"><p>Reset the default base URL.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/queueRequest:">&ndash;&nbsp;queueRequest:</a></code>
+		<span class="tooltip"><p>Queue and send a request, with no callback. If the network is unavilable, it will be automatically retried when the network becomes available again.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/queueRequest:withResponseBlock:">&ndash;&nbsp;queueRequest:withResponseBlock:</a></code>
+		<span class="tooltip"><p>Queue and send a request, with a callback. If the network is unavilable, it will be automatically retried when the network becomes available again. The callback includes an &ldquo;interval since first queued&rdquo; argument, so the callback can abort if it executes later than expected.</p></span>
 	</span>
 	
 	
@@ -196,6 +258,262 @@ It queues requests to execute asyncronously and concurrently, and handles retrie
 					</div>
 					
 					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/queueRequest:" title="queueRequest:"></a>
+	<h3 class="subsubtitle method-title">queueRequest:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Queue and send a request, with no callback. If the network is unavilable, it will be automatically retried when the network becomes available again.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)queueRequest:(TATapestryRequest *)<em>request</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>request</em></dt>
+			<dd><p>The request to send</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Queue and send a request, with no callback. If the network is unavilable, it will be automatically retried when the network becomes available again.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapestryClientNG.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/queueRequest:withResponseBlock:" title="queueRequest:withResponseBlock:"></a>
+	<h3 class="subsubtitle method-title">queueRequest:withResponseBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Queue and send a request, with a callback. If the network is unavilable, it will be automatically retried when the network becomes available again. The callback includes an &ldquo;interval since first queued&rdquo; argument, so the callback can abort if it executes later than expected.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)queueRequest:(TATapestryRequest *)<em>request</em> withResponseBlock:(TATapestryResponseHandler)<em>handler</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>request</em></dt>
+			<dd><p>The request to send</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>handler</em></dt>
+			<dd><p>The callback to invoke upon completion of the request.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Queue and send a request, with a callback. If the network is unavilable, it will be automatically retried when the network becomes available again. The callback includes an &ldquo;interval since first queued&rdquo; argument, so the callback can abort if it executes later than expected.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapestryClientNG.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setBaseURL:" title="setBaseURL:"></a>
+	<h3 class="subsubtitle method-title">setBaseURL:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Override the default base URL.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setBaseURL:(NSString *)<em>baseURL</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>baseURL</em></dt>
+			<dd><p>The new base URL</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Override the default base URL.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapestryClientNG.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setDefaultBaseURL" title="setDefaultBaseURL"></a>
+	<h3 class="subsubtitle method-title">setDefaultBaseURL</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Reset the default base URL.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setDefaultBaseURL</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Reset the default base URL.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapestryClientNG.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setPartnerId:" title="setPartnerId:"></a>
+	<h3 class="subsubtitle method-title">setPartnerId:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Convenience function to set default partner ID once, instead of on each request. This partner ID will be added to each request, unless the request itself has one set.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setPartnerId:(NSString *)<em>partnerId</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>partnerId</em></dt>
+			<dd><p>The partner ID</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Convenience function to set default partner ID once, instead of on each request. This partner ID will be added to each request, unless the request itself has one set.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapestryClientNG.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
 				</div>
