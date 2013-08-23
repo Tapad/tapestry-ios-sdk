@@ -61,13 +61,11 @@ static NSDictionary* deviceIDs = nil;
     deviceIDs = nil;
 }
 
-/** @return comma-separated list of enabled_id_type:id_value. */
 + (NSString*) typedDeviceIDsAsCommaSeparatedString
 {
     return [self dictionaryAsEncodedCsvString:[self typedDeviceIDs]];
 }
 
-/** @return dictionary of enabled id types -> id values. */
 + (NSDictionary*) typedDeviceIDs
 {
     @synchronized(self)

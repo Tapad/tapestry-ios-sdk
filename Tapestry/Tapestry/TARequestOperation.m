@@ -18,13 +18,6 @@
 
 @implementation TARequestOperation
 
-/**
- Create and return a TARequestOperation.
- 
- @param request Tapestry request object
- @param baseUrl Base url to which tapestry request params are appended
- @param startTime The time when this request was originally queued
- */
 + (TARequestOperation*)operationWithRequest:(TATapestryRequest *)request andBaseUrl:(NSString*)baseUrl andHandler:(TATapestryResponseHandler)handler andStartTime:(NSDate*)startTime
 {
     TARequestOperation* operation = [[TARequestOperation alloc] init];

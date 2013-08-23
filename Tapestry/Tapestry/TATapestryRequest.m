@@ -132,9 +132,9 @@
     [self addValue:[NSString stringWithFormat:@"%d", depth] forParameter:@"ta_depth"];
 }
 
-- (void)setPartnerId:(NSString*)partnedId
+- (void)setPartnerId:(NSString*)partnerId
 {
-    [self addValue:partnedId forParameter:@"ta_partner_id"];
+    [self addValue:partnerId forParameter:@"ta_partner_id"];
 }
 
 - (void)addUserId:(NSString*)userId forSource:(NSString*)source

@@ -41,6 +41,7 @@ static NSString* const kTATapestryConnectivityTestHostname = @"google.com";
     self = [super init];
     if (self != nil)
     {
+        [self setPartnerId:nil];
         self.baseURL = kTATapestryClientBaseURL;
         self.requestQueue = [[NSOperationQueue alloc] init];
         [self.requestQueue setMaxConcurrentOperationCount:2];

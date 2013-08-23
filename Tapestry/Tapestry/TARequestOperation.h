@@ -10,8 +10,19 @@
 #import "TATapestryClientNG.h"
 #import <Foundation/Foundation.h>
 
+/**
+ An operation which actually makes the HTTP request. It's run asyncronously in a queue.
+ */
 @interface TARequestOperation : NSOperation
 
+/**
+ Create and return a TARequestOperation.
+ 
+ @param request Tapestry request object
+ @param baseUrl Base url to which tapestry request params are appended
+ @param handler Callback which is invoked upon request completion
+ @param startTime The time when this request was originally queued
+ */
 + (TARequestOperation*)operationWithRequest:(TATapestryRequest*)request andBaseUrl:(NSString*)baseUrl andHandler:(TATapestryResponseHandler)handler andStartTime:(NSDate*)startTime;
 
 @end

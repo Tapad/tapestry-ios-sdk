@@ -18,9 +18,21 @@
  */
 typedef void(^TATapestryResponseHandler)(TATapestryResponse* response, NSError* error, NSTimeInterval intervalSinceRequestFirstInvoked);
 
+/**
+ The TATapestryClient actually sends Tapestry requests to the API and invokes the optional callback upon completion.
+ It queues requests to execute asyncronously and concurrently, and handles retries if the network is unavailable.
+ */
 @interface TATapestryClientNG : NSObject
 
+/**
+  @return The shared client. Created exactly once.
+ */
 + (TATapestryClientNG*)sharedClient;
+
+/**
+ Convenience function to set partner ID once, instead of on each request
+ @param partnerId The partner ID
+ */
 - (void)setPartnerId:(NSString*)partnerId;
 - (void)setBaseURL:(NSString*)baseURL;
 - (void)setDefaultBaseURL;

@@ -27,6 +27,12 @@
 					<select id="jumpTo">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
 	
 	
 	
@@ -34,6 +40,31 @@
 	
 	
 	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/buildDeviceIDs">&nbsp;&nbsp;&nbsp;&nbsp;+ buildDeviceIDs</option>
+	
+	<option value="//api/name/fetchAdvertisingIdentifier">&nbsp;&nbsp;&nbsp;&nbsp;+ fetchAdvertisingIdentifier</option>
+	
+	<option value="//api/name/fetchMD5HashedMAC">&nbsp;&nbsp;&nbsp;&nbsp;+ fetchMD5HashedMAC</option>
+	
+	<option value="//api/name/fetchMD5HashedRawMAC">&nbsp;&nbsp;&nbsp;&nbsp;+ fetchMD5HashedRawMAC</option>
+	
+	<option value="//api/name/fetchOpenUDID">&nbsp;&nbsp;&nbsp;&nbsp;+ fetchOpenUDID</option>
+	
+	<option value="//api/name/fetchSHA1HashedMAC">&nbsp;&nbsp;&nbsp;&nbsp;+ fetchSHA1HashedMAC</option>
+	
+	<option value="//api/name/fetchSHA1HashedRawMAC">&nbsp;&nbsp;&nbsp;&nbsp;+ fetchSHA1HashedRawMAC</option>
+	
+	<option value="//api/name/invalidateIDs">&nbsp;&nbsp;&nbsp;&nbsp;+ invalidateIDs</option>
+	
+	<option value="//api/name/setIdentifierEnabledMAC:">&nbsp;&nbsp;&nbsp;&nbsp;+ setIdentifierEnabledMAC:</option>
+	
+	<option value="//api/name/setIdentifierEnabledOpenUDID:">&nbsp;&nbsp;&nbsp;&nbsp;+ setIdentifierEnabledOpenUDID:</option>
+	
+	<option value="//api/name/typedDeviceIDs">&nbsp;&nbsp;&nbsp;&nbsp;+ typedDeviceIDs</option>
+	
+	<option value="//api/name/typedDeviceIDsAsCommaSeparatedString">&nbsp;&nbsp;&nbsp;&nbsp;+ typedDeviceIDsAsCommaSeparatedString</option>
 	
 	
 	
@@ -46,6 +77,18 @@
 		<nav id="tocContainer" class="isShowingTOC">
 			<ul id="toc" role="tree">
 				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Configuring IDs">Configuring IDs</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Retrieving IDs">Retrieving IDs</a></span></li>
+	
+</ul></li>
 
 
 
@@ -53,7 +96,33 @@
 
 
 
-
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/buildDeviceIDs">buildDeviceIDs</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fetchAdvertisingIdentifier">fetchAdvertisingIdentifier</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fetchMD5HashedMAC">fetchMD5HashedMAC</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fetchMD5HashedRawMAC">fetchMD5HashedRawMAC</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fetchOpenUDID">fetchOpenUDID</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fetchSHA1HashedMAC">fetchSHA1HashedMAC</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fetchSHA1HashedRawMAC">fetchSHA1HashedRawMAC</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/invalidateIDs">invalidateIDs</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setIdentifierEnabledMAC:">setIdentifierEnabledMAC:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setIdentifierEnabledOpenUDID:">setIdentifierEnabledOpenUDID:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/typedDeviceIDs">typedDeviceIDs</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/typedDeviceIDsAsCommaSeparatedString">typedDeviceIDsAsCommaSeparatedString</a></span></li>
+	
+</ul></li>
 
 
 
@@ -89,6 +158,129 @@
 					
 					
 					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>Interface to retreive device IDs and to configure device ID preferences.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Configuring IDs" name="task_Configuring IDs"></a>
+						<h3 class="subsubtitle task-title">Configuring IDs</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setIdentifierEnabledMAC:">+&nbsp;setIdentifierEnabledMAC:</a></code>
+		<span class="tooltip"><p>Set usage of hashed MAC address as an identifier.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setIdentifierEnabledOpenUDID:">+&nbsp;setIdentifierEnabledOpenUDID:</a></code>
+		<span class="tooltip"><p>Set usage of OpenUDID as an identifier.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Retrieving IDs" name="task_Retrieving IDs"></a>
+						<h3 class="subsubtitle task-title">Retrieving IDs</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/typedDeviceIDsAsCommaSeparatedString">+&nbsp;typedDeviceIDsAsCommaSeparatedString</a></code>
+		<span class="tooltip"><p>Get device IDs as string</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/typedDeviceIDs">+&nbsp;typedDeviceIDs</a></code>
+		<span class="tooltip"><p>Get device IDs as dictionary</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						
+						<h3 class="subsubtitle task-title">Other Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/invalidateIDs">+&nbsp;invalidateIDs</a></code>
+		<span class="tooltip"><p>Clear the static representation of enabled ids.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/buildDeviceIDs">+&nbsp;buildDeviceIDs</a></code>
+		<span class="tooltip"><p>dictionary of enabled id types &ndash;> id values.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fetchOpenUDID">+&nbsp;fetchOpenUDID</a></code>
+		<span class="tooltip"><p>tuple of @[ open udid type, open udid value ], or nil if disabled. openudid value is a string of 0s if the user is opted out.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fetchMD5HashedRawMAC">+&nbsp;fetchMD5HashedRawMAC</a></code>
+		<span class="tooltip"><p>tuple of @[ md5 hashed raw mac type, md5 hashed raw mac value ], or nil if disabled.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fetchSHA1HashedRawMAC">+&nbsp;fetchSHA1HashedRawMAC</a></code>
+		<span class="tooltip"><p>tuple of @[ sha1 hashed raw mac type, sha1 hashed raw mac value ], or nil if disabled</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fetchMD5HashedMAC">+&nbsp;fetchMD5HashedMAC</a></code>
+		<span class="tooltip"><p>tuple of @[ md5 hashed mac type, md5 hashed mac value ], or nil if disabled</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fetchSHA1HashedMAC">+&nbsp;fetchSHA1HashedMAC</a></code>
+		<span class="tooltip"><p>tuple of @[ sha1 hashed mac type, sha1 hashed mac value ], or nil if disabled</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fetchAdvertisingIdentifier">+&nbsp;fetchAdvertisingIdentifier</a></code>
+		<span class="tooltip"><p>tuple of @[ idfa type, idfa value ], or nil if unavailable. idfa value is &ldquo;0&rdquo; if user is opted out.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
 					
 					
 					
@@ -96,6 +288,533 @@
 					
 					
 					
+					<div class="section section-methods">
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/buildDeviceIDs" title="buildDeviceIDs"></a>
+	<h3 class="subsubtitle method-title">buildDeviceIDs</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>dictionary of enabled id types &ndash;> id values.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)buildDeviceIDs</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>dictionary of enabled id types &ndash;> id values.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapadIdentifiers.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fetchAdvertisingIdentifier" title="fetchAdvertisingIdentifier"></a>
+	<h3 class="subsubtitle method-title">fetchAdvertisingIdentifier</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>tuple of @[ idfa type, idfa value ], or nil if unavailable. idfa value is &ldquo;0&rdquo; if user is opted out.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)fetchAdvertisingIdentifier</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>tuple of @[ idfa type, idfa value ], or nil if unavailable. idfa value is &ldquo;0&rdquo; if user is opted out.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapadIdentifiers.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fetchMD5HashedMAC" title="fetchMD5HashedMAC"></a>
+	<h3 class="subsubtitle method-title">fetchMD5HashedMAC</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>tuple of @[ md5 hashed mac type, md5 hashed mac value ], or nil if disabled</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)fetchMD5HashedMAC</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>tuple of @[ md5 hashed mac type, md5 hashed mac value ], or nil if disabled</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapadIdentifiers.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fetchMD5HashedRawMAC" title="fetchMD5HashedRawMAC"></a>
+	<h3 class="subsubtitle method-title">fetchMD5HashedRawMAC</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>tuple of @[ md5 hashed raw mac type, md5 hashed raw mac value ], or nil if disabled.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)fetchMD5HashedRawMAC</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>tuple of @[ md5 hashed raw mac type, md5 hashed raw mac value ], or nil if disabled.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapadIdentifiers.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fetchOpenUDID" title="fetchOpenUDID"></a>
+	<h3 class="subsubtitle method-title">fetchOpenUDID</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>tuple of @[ open udid type, open udid value ], or nil if disabled. openudid value is a string of 0s if the user is opted out.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)fetchOpenUDID</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>tuple of @[ open udid type, open udid value ], or nil if disabled. openudid value is a string of 0s if the user is opted out.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapadIdentifiers.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fetchSHA1HashedMAC" title="fetchSHA1HashedMAC"></a>
+	<h3 class="subsubtitle method-title">fetchSHA1HashedMAC</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>tuple of @[ sha1 hashed mac type, sha1 hashed mac value ], or nil if disabled</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)fetchSHA1HashedMAC</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>tuple of @[ sha1 hashed mac type, sha1 hashed mac value ], or nil if disabled</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapadIdentifiers.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fetchSHA1HashedRawMAC" title="fetchSHA1HashedRawMAC"></a>
+	<h3 class="subsubtitle method-title">fetchSHA1HashedRawMAC</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>tuple of @[ sha1 hashed raw mac type, sha1 hashed raw mac value ], or nil if disabled</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSArray *)fetchSHA1HashedRawMAC</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>tuple of @[ sha1 hashed raw mac type, sha1 hashed raw mac value ], or nil if disabled</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapadIdentifiers.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/invalidateIDs" title="invalidateIDs"></a>
+	<h3 class="subsubtitle method-title">invalidateIDs</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Clear the static representation of enabled ids.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)invalidateIDs</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Clear the static representation of enabled ids.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapadIdentifiers.m</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setIdentifierEnabledMAC:" title="setIdentifierEnabledMAC:"></a>
+	<h3 class="subsubtitle method-title">setIdentifierEnabledMAC:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set usage of hashed MAC address as an identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setIdentifierEnabledMAC:(BOOL)<em>enabled</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>enabled</em></dt>
+			<dd><p>YES to enable MAC identifiers, NO to disable</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Set usage of hashed MAC address as an identifier.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapadIdentifiers.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setIdentifierEnabledOpenUDID:" title="setIdentifierEnabledOpenUDID:"></a>
+	<h3 class="subsubtitle method-title">setIdentifierEnabledOpenUDID:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set usage of OpenUDID as an identifier.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (void)setIdentifierEnabledOpenUDID:(BOOL)<em>enabled</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>enabled</em></dt>
+			<dd><p>YES to enable OpenUDID, NO to disable</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Set usage of OpenUDID as an identifier.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapadIdentifiers.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/typedDeviceIDs" title="typedDeviceIDs"></a>
+	<h3 class="subsubtitle method-title">typedDeviceIDs</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get device IDs as dictionary</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSDictionary *)typedDeviceIDs</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>dictionary of enabled id types &ndash;> id values.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Get device IDs as dictionary</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapadIdentifiers.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/typedDeviceIDsAsCommaSeparatedString" title="typedDeviceIDsAsCommaSeparatedString"></a>
+	<h3 class="subsubtitle method-title">typedDeviceIDsAsCommaSeparatedString</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get device IDs as string</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (NSString *)typedDeviceIDsAsCommaSeparatedString</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>comma-separated list of enabled_id_type:id_value.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Get device IDs as string</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapadIdentifiers.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
 					
@@ -110,7 +829,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Tapad. All rights reserved. (Last updated: 2013-08-01)</span><br />
+						<p><span class="copyright">&copy; 2013 Tapad. All rights reserved. (Last updated: 2013-08-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

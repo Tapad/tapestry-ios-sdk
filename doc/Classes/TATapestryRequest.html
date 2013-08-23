@@ -61,13 +61,17 @@
 	
 	<option value="//api/name/clearData:">&nbsp;&nbsp;&nbsp;&nbsp;- clearData:</option>
 	
-	<option value="//api/name/listDevices">&nbsp;&nbsp;&nbsp;&nbsp;- listDevices</option>
+	<option value="//api/name/getData">&nbsp;&nbsp;&nbsp;&nbsp;- getData</option>
+	
+	<option value="//api/name/getDevices">&nbsp;&nbsp;&nbsp;&nbsp;- getDevices</option>
 	
 	<option value="//api/name/query">&nbsp;&nbsp;&nbsp;&nbsp;- query</option>
 	
 	<option value="//api/name/removeAudiences:">&nbsp;&nbsp;&nbsp;&nbsp;- removeAudiences:</option>
 	
 	<option value="//api/name/removeData:forKey:">&nbsp;&nbsp;&nbsp;&nbsp;- removeData:forKey:</option>
+	
+	<option value="//api/name/requestID">&nbsp;&nbsp;&nbsp;&nbsp;- requestID</option>
 	
 	<option value="//api/name/setAnalytics:">&nbsp;&nbsp;&nbsp;&nbsp;- setAnalytics:</option>
 	
@@ -76,6 +80,8 @@
 	<option value="//api/name/setDepth:">&nbsp;&nbsp;&nbsp;&nbsp;- setDepth:</option>
 	
 	<option value="//api/name/setPartnerId:">&nbsp;&nbsp;&nbsp;&nbsp;- setPartnerId:</option>
+	
+	<option value="//api/name/setPlatform:">&nbsp;&nbsp;&nbsp;&nbsp;- setPlatform:</option>
 	
 	<option value="//api/name/setStrength:">&nbsp;&nbsp;&nbsp;&nbsp;- setStrength:</option>
 	
@@ -137,13 +143,17 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearData:">clearData:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/listDevices">listDevices</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getData">getData</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getDevices">getDevices</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/query">query</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeAudiences:">removeAudiences:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeData:forKey:">removeData:forKey:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/requestID">requestID</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setAnalytics:">setAnalytics:</a></span></li>
 	
@@ -152,6 +162,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setDepth:">setDepth:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setPartnerId:">setPartnerId:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setPlatform:">setPlatform:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setStrength:">setStrength:</a></span></li>
 	
@@ -199,7 +211,7 @@
 <pre><code>TATapestryRequest* request = [TATapestryRequest request];
 [request addAudiences:@"aud1", @"aud2", @"aud3", nil];
 [request addData:@"blue" forKey:@"color"];
-[request addData:@"ford" forKey:@"ford"];
+[request addData:@"ford" forKey:@"make"];
 [request listDevices];
 [request depth:2];
 </code></pre>
@@ -271,7 +283,14 @@ more than once will simply replace any existing values with the most recent.</p>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/listDevices">&ndash;&nbsp;listDevices</a></code>
+		<code><a href="#//api/name/getData">&ndash;&nbsp;getData</a></code>
+		<span class="tooltip"><p>Tells Tapestry to return data (for use in a callback). This is automatically set by the client when a handler is present.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getDevices">&ndash;&nbsp;getDevices</a></code>
 		<span class="tooltip"><p>Tells Tapestry to return all the devices listed out as well as combined.
 The list of devices can be accessed in the response.</p></span>
 	</span>
@@ -346,7 +365,7 @@ The list of devices can be accessed in the response.</p></span>
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/addTypedId:forSource:">&ndash;&nbsp;addTypedId:forSource:</a></code>
-		<span class="tooltip"><p>Add a typed device id, e.g. OpenUDID or IADF.</p></span>
+		<span class="tooltip"><p>Add a typed device id, e.g. OpenUDID or IDFA. The client sets these automatically; under normal circumstances it is not necessary to set your own.</p></span>
 	</span>
 	
 	
@@ -369,6 +388,20 @@ The list of devices can be accessed in the response.</p></span>
 	<span class="tooltip">
 		<code><a href="#//api/name/query">&ndash;&nbsp;query</a></code>
 		<span class="tooltip"><p>Converts the <a href="#//api/name/request">request</a> into a URL-encoded query string.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setPlatform:">&ndash;&nbsp;setPlatform:</a></code>
+		<span class="tooltip"><p>Sets the platform <a href="#//api/name/query">query</a> parameter to better identify the device type. This is set automatically by the client.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/requestID">&ndash;&nbsp;requestID</a></code>
+		<span class="tooltip"><p>Returns the <a href="#//api/name/uuid">uuid</a> for this <a href="#//api/name/request">request</a></p></span>
 	</span>
 	
 	
@@ -552,7 +585,7 @@ more than once will simply replace any existing values with the most recent.</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Add a typed device id, e.g. OpenUDID or IADF.</p>
+		<p>Add a typed device id, e.g. OpenUDID or IDFA. The client sets these automatically; under normal circumstances it is not necessary to set your own.</p>
 	</div>		
 	
     
@@ -584,7 +617,7 @@ more than once will simply replace any existing values with the most recent.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Add a typed device id, e.g. OpenUDID or IADF.</p>
+		<p>Add a typed device id, e.g. OpenUDID or IDFA. The client sets these automatically; under normal circumstances it is not necessary to set your own.</p>
 	</div>
 	
 	
@@ -621,13 +654,13 @@ more than once will simply replace any existing values with the most recent.</p>
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>key</em></dt>
-			<dd><p>The data key</p></dd>
+			<dt><em>data</em></dt>
+			<dd><p>The value to set-add to the key</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>value</em></dt>
-			<dd><p>The value to set-add to the key</p></dd>
+			<dt><em>key</em></dt>
+			<dd><p>The data key</p></dd>
 		</dl>
 		
 	</div>
@@ -733,7 +766,7 @@ more than once will simply replace any existing values with the most recent.</p>
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>keys</em></dt>
+			<dt><em>firstDataKey</em></dt>
 			<dd><p>Nil terminated list of keys to remove.</p></dd>
 		</dl>
 		
@@ -765,8 +798,49 @@ more than once will simply replace any existing values with the most recent.</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/listDevices" title="listDevices"></a>
-	<h3 class="subsubtitle method-title">listDevices</h3>
+	<a name="//api/name/getData" title="getData"></a>
+	<h3 class="subsubtitle method-title">getData</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Tells Tapestry to return data (for use in a callback). This is automatically set by the client when a handler is present.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)getData</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Tells Tapestry to return data (for use in a callback). This is automatically set by the client when a handler is present.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapestryRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getDevices" title="getDevices"></a>
+	<h3 class="subsubtitle method-title">getDevices</h3>
 	
 	
 	
@@ -777,7 +851,7 @@ The list of devices can be accessed in the response.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)listDevices</code></div>
+	<div class="method-subsection method-declaration"><code>- (void)getDevices</code></div>
 
     
 	
@@ -944,6 +1018,52 @@ The list of devices can be accessed in the response.</p>
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Removes the value for a data key.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapestryRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/requestID" title="requestID"></a>
+	<h3 class="subsubtitle method-title">requestID</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the <a href="#//api/name/uuid">uuid</a> for this <a href="#//api/name/request">request</a></p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)requestID</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><a href="#//api/name/uuid">uuid</a> for this <a href="#//api/name/request">request</a></p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the <a href="#//api/name/uuid">uuid</a> for this <a href="#//api/name/request">request</a></p>
 	</div>
 	
 	
@@ -1130,9 +1250,19 @@ The list of devices can be accessed in the response.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)setPartnerId:(NSString *)<em>partnedId</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)setPartnerId:(NSString *)<em>partnerId</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>partnerId</em></dt>
+			<dd><p>The partner id</p></dd>
+		</dl>
+		
+	</div>
 	
 	
 	
@@ -1143,6 +1273,57 @@ The list of devices can be accessed in the response.</p>
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Sets the partner ID for this <a href="#//api/name/request">request</a>, will be set by the Tapestry SDK automatically.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapestryRequest.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setPlatform:" title="setPlatform:"></a>
+	<h3 class="subsubtitle method-title">setPlatform:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the platform <a href="#//api/name/query">query</a> parameter to better identify the device type. This is set automatically by the client.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setPlatform:(NSString *)<em>platform</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>platform</em></dt>
+			<dd><p>The platform string, like a user agent</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets the platform <a href="#//api/name/query">query</a> parameter to better identify the device type. This is set automatically by the client.</p>
 	</div>
 	
 	
@@ -1218,7 +1399,7 @@ The list of devices can be accessed in the response.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Tapad. All rights reserved. (Last updated: 2013-08-01)</span><br />
+						<p><span class="copyright">&copy; 2013 Tapad. All rights reserved. (Last updated: 2013-08-23)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						

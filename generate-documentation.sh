@@ -15,7 +15,8 @@ fi
 srcBaseDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $srcBaseDir
 
-appledoc --project-name "Tapestry iOS SDK" --project-company "Tapad" --company-id com.tapad.tapestry --create-html --keep-undocumented-objects --output . .
+# appledoc --project-name "Tapestry iOS SDK" --project-company "Tapad" --company-id com.tapad.tapestry --create-html --keep-undocumented-objects --output . .
+appledoc --project-name "Tapestry iOS SDK" --project-company "Tapad" --company-id com.tapad.tapestry --create-html --output . .
 
 rm -rf ./doc
 

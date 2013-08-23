@@ -61,7 +61,7 @@
  This method will add or set a unique value (set-add) for this key. No duplicates.
  
  @param key   The data key
- @param value The value to set-add to the key
+ @param data  The value to set-add to the key
  */
 - (void)addUniqueData:(NSString*)data forKey:(NSString*)key;
 
@@ -76,7 +76,7 @@
 /**
  Clear data removes all data from one or more keys.
  
- @param keys   Nil terminated list of keys to remove.
+ @param firstDataKey Nil terminated list of keys to remove.
  */
 - (void)clearData:(NSString *)firstDataKey, ... NS_REQUIRES_NIL_TERMINATION;
 
@@ -137,8 +137,9 @@
 
 /**
  Sets the partner ID for this request, will be set by the Tapestry SDK automatically.
+ @param partnerId The partner id
  */
-- (void)setPartnerId:(NSString*)partnedId;
+- (void)setPartnerId:(NSString*)partnerId;
 
 /**
  Adds a cross-device user id
