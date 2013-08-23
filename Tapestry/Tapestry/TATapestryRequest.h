@@ -183,6 +183,13 @@
  */
 - (void)setPlatform:(NSString*)platform;
 
+/**
+ Returns the uuid for this request
+ 
+ @return uuid for this request
+ */
+- (NSString*)requestID;
+
 @end
 
 @interface TATapestryRequest (Testing)

@@ -102,7 +102,7 @@ static NSDictionary* deviceIDs = nil;
     return [NSDictionary dictionaryWithDictionary:dids];
 }
 
-/** @return tuple of @[ open udid type, open udid value ], or nil if disabled */
+/** @return tuple of @[ open udid type, open udid value ], or nil if disabled. openudid value is a string of 0s if the user is opted out. */
 + (NSArray*) fetchOpenUDID {
     if ([self isIdentifierEnabled:kIdentifierOpenUDID]) {
         return @[kTypeOpenUDID, [TAOpenUDID value]];
@@ -175,14 +175,14 @@ static NSDictionary* deviceIDs = nil;
     }
 }
 
-/** @return tuple of @[ idfa type, idfa value ], or nil if disabled or unavailable **/
+/** @return tuple of @[ idfa type, idfa value ], or nil if unavailable. idfa value is "0" if user is opted out. */
 + (NSArray*) fetchAdvertisingIdentifier {
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")) {
         if ([[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled]) {
             return @[kTypeAdvertisingIdentifier, [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString]];
         }
         else {
-            return nil;
+            return @[kTypeAdvertisingIdentifier, @"0"];
         }
     }
     else {

@@ -13,16 +13,25 @@
 @property(nonatomic, retain)    TATapestryRequest* request;
 @property(nonatomic, copy)      NSString* baseUrl;
 @property(nonatomic, copy)      TATapestryResponseHandler handler;
+@property(nonatomic, copy)      NSDate* startTime;
 @end
 
 @implementation TARequestOperation
 
-+ (TARequestOperation*)operationWithRequest:(TATapestryRequest *)request andBaseUrl:(NSString*)baseUrl andHandler:(TATapestryResponseHandler)handler
+/**
+ Create and return a TARequestOperation.
+ 
+ @param request Tapestry request object
+ @param baseUrl Base url to which tapestry request params are appended
+ @param startTime The time when this request was originally queued
+ */
++ (TARequestOperation*)operationWithRequest:(TATapestryRequest *)request andBaseUrl:(NSString*)baseUrl andHandler:(TATapestryResponseHandler)handler andStartTime:(NSDate*)startTime
 {
     TARequestOperation* operation = [[TARequestOperation alloc] init];
     operation.request = request;
     operation.baseUrl = baseUrl;
     operation.handler = handler;
+    operation.startTime = startTime;
     return operation;
 }
 
@@ -44,9 +53,15 @@
                                          returningResponse:&networkResponse
                                                      error:&networkError];
     
+    // Interval between now and when the request was first queued.
+    NSTimeInterval interval = [[NSDate date] timeIntervalSinceDate:self.startTime];
+    
+    NSError* finalError = nil;
+    TATapestryResponse* response = nil; 
+    
     if (networkError) {
        TALog(@"There was an error when retrieving %@ (%@)", url, [networkError domain]);
-        self.handler(nil, networkError, 0 /* FIXME */);
+        finalError = networkError;
     } else {
         // If there's no error, extract the response string.
         NSString *responseString = [[NSString alloc] initWithBytes:[data bytes]
@@ -73,18 +88,21 @@
                        JSONObjectWithData:[responseString dataUsingEncoding:NSUTF8StringEncoding]
                        options:0
                        error:&jsonError];
+            
             if (jsonError) {
                 // JSON was malformed.
                 TALog(@"Unable to parse Tapestry response as JSON: %@", responseString);
-                self.handler(nil, jsonError, 0 /* FIXME */);
+                finalError = jsonError;
             } else if([json isKindOfClass:[NSDictionary class]]) {
-                // Good response. Invoke the callback!
-                TATapestryResponse* response = [TATapestryResponse responseWithDictionary:(NSDictionary*)json];
-                self.handler(response, nil, 0 /* FIXME */);
+                // JSON response is all good
+                response = [TATapestryResponse responseWithDictionary:(NSDictionary*)json];
             } else {
                 TALog(@"Received unexpected JSON response: %@", responseString);
-                self.handler(nil, [NSError errorWithDomain:@"com.tapad" code:1 userInfo:@{NSLocalizedDescriptionKey: @"Unexpected JSON response"}], 0 /* FIXME */);
+                finalError = [NSError errorWithDomain:@"com.tapad" code:1
+                                             userInfo:@{NSLocalizedDescriptionKey: @"Unexpected JSON response"}];
             }
+            
+            self.handler(response, finalError, interval);
         }
     }
 }

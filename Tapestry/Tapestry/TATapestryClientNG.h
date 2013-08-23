@@ -14,9 +14,9 @@
  Type signature of Tapestry request callback.
  @param response The resulting data of the original request, or nil if there was an error.
  @param error Network error or json parsing error, or nil if response was successfully received.
- @param millisSinceRequestFirstInvoked the number of millisecond since the queueRequest was first invoked. Important because when requests may be queued when the device has no network connection, resulting in the callback running significantly later than expected.
+ @param intervalSinceRequestFirstInvoked the interval since the queueRequest was first invoked. Important because when requests may be queued when the device has no network connection, resulting in the callback running significantly later than expected.
  */
-typedef void(^TATapestryResponseHandler)(TATapestryResponse* response, NSError* error, long millisSinceRequestFirstInvoked);
+typedef void(^TATapestryResponseHandler)(TATapestryResponse* response, NSError* error, NSTimeInterval intervalSinceRequestFirstInvoked);
 
 @interface TATapestryClientNG : NSObject
 

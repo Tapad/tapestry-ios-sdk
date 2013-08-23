@@ -11,6 +11,7 @@
 
 @interface TATapestryRequest ()
 @property(nonatomic, strong) NSMutableDictionary* parameters;
+@property(nonatomic, strong) NSString* uuid;
 @end
 
 @implementation TATapestryRequest
@@ -26,8 +27,14 @@
     if (self != nil)
     {
         self.parameters = [NSMutableDictionary dictionary];
+        self.uuid = [[NSUUID UUID] UUIDString];
     }
     return self;
+}
+
+- (NSString*)requestID
+{
+    return self.uuid;
 }
 
 - (void)addMapParameter:(NSString*)parameter forKey:(NSString*)key andValue:(NSString*)value
