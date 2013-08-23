@@ -15,7 +15,6 @@
 		2F180B8E17A1C3F900EC3F5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F180B8C17A1C3F900EC3F5F /* InfoPlist.strings */; };
 		2F180BC617A1C64200EC3F5F /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BB617A1C64200EC3F5F /* NSString+MD5.m */; };
 		2F180BC717A1C64200EC3F5F /* TATapadIdentifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BB817A1C64200EC3F5F /* TATapadIdentifiers.m */; };
-		2F180BC817A1C64200EC3F5F /* TATapadPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BBA17A1C64200EC3F5F /* TATapadPreferences.m */; };
 		2F180BCB17A1C64200EC3F5F /* TAOpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BC217A1C64200EC3F5F /* TAOpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2F180BCC17A1C64200EC3F5F /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BC517A1C64200EC3F5F /* UIDevice+Hardware.m */; };
 		2F180BE317A1D0B900EC3F5F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F180BE217A1D0B900EC3F5F /* AdSupport.framework */; };
@@ -77,8 +76,6 @@
 		2F180BB617A1C64200EC3F5F /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MD5.m"; path = "../NSString+MD5.m"; sourceTree = "<group>"; };
 		2F180BB717A1C64200EC3F5F /* TATapadIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapadIdentifiers.h; sourceTree = "<group>"; };
 		2F180BB817A1C64200EC3F5F /* TATapadIdentifiers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapadIdentifiers.m; sourceTree = "<group>"; };
-		2F180BB917A1C64200EC3F5F /* TATapadPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapadPreferences.h; sourceTree = "<group>"; };
-		2F180BBA17A1C64200EC3F5F /* TATapadPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapadPreferences.m; sourceTree = "<group>"; };
 		2F180BC117A1C64200EC3F5F /* TAOpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAOpenUDID.h; sourceTree = "<group>"; };
 		2F180BC217A1C64200EC3F5F /* TAOpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAOpenUDID.m; sourceTree = "<group>"; };
 		2F180BC417A1C64200EC3F5F /* UIDevice+Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Hardware.h"; sourceTree = "<group>"; };
@@ -178,8 +175,6 @@
 				2F180B7517A1C3F900EC3F5F /* Supporting Files */,
 				2F180BB717A1C64200EC3F5F /* TATapadIdentifiers.h */,
 				2F180BB817A1C64200EC3F5F /* TATapadIdentifiers.m */,
-				2F180BB917A1C64200EC3F5F /* TATapadPreferences.h */,
-				2F180BBA17A1C64200EC3F5F /* TATapadPreferences.m */,
 				2FC96E8717A6C3B200FA1C7D /* TAURLBuilder.h */,
 				2FC96E8817A6C3B200FA1C7D /* TAURLBuilder.m */,
 				2F180BBF17A1C64200EC3F5F /* Vendors */,
@@ -371,7 +366,6 @@
 			files = (
 				2F180BC617A1C64200EC3F5F /* NSString+MD5.m in Sources */,
 				2F180BC717A1C64200EC3F5F /* TATapadIdentifiers.m in Sources */,
-				2F180BC817A1C64200EC3F5F /* TATapadPreferences.m in Sources */,
 				2F180BCB17A1C64200EC3F5F /* TAOpenUDID.m in Sources */,
 				2F180BCC17A1C64200EC3F5F /* UIDevice+Hardware.m in Sources */,
 				2FC96E8A17A6C3B200FA1C7D /* TAURLBuilder.m in Sources */,
