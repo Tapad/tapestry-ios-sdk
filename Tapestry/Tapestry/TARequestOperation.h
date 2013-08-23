@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- An operation which actually makes the HTTP request. It's run asyncronously in a queue.
+ An operation which actually makes the HTTP request. It's run asyncronously in a queue which is coordinated by TATapestryClientNG. It should not be used directly.
  */
 @interface TARequestOperation : NSOperation
 
