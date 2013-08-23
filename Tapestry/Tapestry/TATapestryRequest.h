@@ -197,3 +197,8 @@
 // Exposing the parameters dictionary for testing purpose.
 - (NSDictionary*)test_parameters;
 @end
+
+@interface TATapestryRequest (Internal)
+// Exposing partner ID so TATapestryClientNG can check if it is already set.
+- (NSString*)getPartnerId;
+@end

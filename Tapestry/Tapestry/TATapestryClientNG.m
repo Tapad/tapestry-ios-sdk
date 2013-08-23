@@ -55,16 +55,6 @@ static NSString* const kTATapestryConnectivityTestHostname = @"google.com";
     [self stopMonitoringNetworkConnectivity];
 }
 
-- (void)setPartnerId:(NSString *)partnerId
-{
-    _partnerId = partnerId;
-}
-
-- (void)setBaseURL:(NSString *)baseURL
-{
-    _baseURL = baseURL;
-}
-
 - (void)setDefaultBaseURL
 {
     _baseURL = kTATapestryClientBaseURL;
@@ -86,6 +76,11 @@ static NSString* const kTATapestryConnectivityTestHostname = @"google.com";
     // If there's a handler, then we want data back.
     if (handler != nil) {
         [request getData];
+    }
+    
+    // Set the parter id if it isn't already set and one is available.
+    if ([request getPartnerId] == nil && self.partnerId != nil) {
+        [request setPartnerId:self.partnerId];
     }
 
     // Set the platform parameter, because we don't control the user agent header.

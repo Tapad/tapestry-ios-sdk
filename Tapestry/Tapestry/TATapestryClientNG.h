@@ -34,9 +34,30 @@ typedef void(^TATapestryResponseHandler)(TATapestryResponse* response, NSError* 
  @param partnerId The partner ID
  */
 - (void)setPartnerId:(NSString*)partnerId;
+
+/**
+ Override the default base URL.
+ @param baseURL The new base URL
+ */
 - (void)setBaseURL:(NSString*)baseURL;
+
+/**
+ Reset the default base URL.
+ */
 - (void)setDefaultBaseURL;
+
+
+/**
+ Queue and send a request, with no callback. If the network is unavilable, it will be automatically retried when the network becomes available again.
+ @param request The request to send
+ */
 - (void)queueRequest:(TATapestryRequest*)request;
+
+/**
+ Queue and send a request, with a callback. If the network is unavilable, it will be automatically retried when the network becomes available again. The callback includes an "interval since first queued" argument, so the callback can abort if it executes later than expected.
+ @param request The request to send
+ @param handler The callback to invoke upon completion of the request.
+ */
 - (void)queueRequest:(TATapestryRequest*)request withResponseBlock:(TATapestryResponseHandler)handler;
 
 

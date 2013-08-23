@@ -137,6 +137,11 @@
     [self addValue:partnerId forParameter:@"ta_partner_id"];
 }
 
+- (NSString*)getPartnerId
+{
+    return [self.parameters objectForKey:@"ta_partner_id"];
+}
+
 - (void)addUserId:(NSString*)userId forSource:(NSString*)source
 {
     [self addMapParameter:@"ta_partner_user_id" forKey:source andValue:userId];
