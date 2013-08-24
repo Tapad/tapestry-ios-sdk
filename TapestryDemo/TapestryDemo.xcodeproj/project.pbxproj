@@ -48,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F4E2CF617C8518B00510E8E /* black_car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = black_car.jpg; sourceTree = "<group>"; };
+		2F4E2CF717C8518B00510E8E /* blue_car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blue_car.jpg; sourceTree = "<group>"; };
+		2F4E2CF917C8519500510E8E /* gray_car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gray_car.jpg; sourceTree = "<group>"; };
+		2F4E2CFA17C8519500510E8E /* red_car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = red_car.jpg; sourceTree = "<group>"; };
 		DABE4D4217C6E76000961521 /* TapestryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapestryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DABE4D4517C6E76000961521 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DABE4D4717C6E76000961521 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -86,6 +90,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F4E2CFB17C851D800510E8E /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				2F4E2CF917C8519500510E8E /* gray_car.jpg */,
+				2F4E2CFA17C8519500510E8E /* red_car.jpg */,
+				2F4E2CF617C8518B00510E8E /* black_car.jpg */,
+				2F4E2CF717C8518B00510E8E /* blue_car.jpg */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
 		DABE4D3917C6E76000961521 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +134,7 @@
 		DABE4D4B17C6E76000961521 /* TapestryDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2F4E2CFB17C851D800510E8E /* Graphics */,
 				DABE4D5417C6E76000961521 /* AppDelegate.h */,
 				DABE4D5517C6E76000961521 /* AppDelegate.m */,
 				DABE4D5D17C6E76000961521 /* ViewController.h */,

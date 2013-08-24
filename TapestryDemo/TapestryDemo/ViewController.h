@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-
+- (IBAction)onRefresh:(id)sender;
+- (IBAction)onBridge:(id)sender;
 @end
