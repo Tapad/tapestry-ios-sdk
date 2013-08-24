@@ -2,7 +2,7 @@
 //  ViewController.h
 //  TapestryDemo
 //
-//  Created by Toby Matejovsky on 8/22/13.
+//  Created by Toby Matejovsky & Sveinung Kval Bakken on 8/22/13.
 //  Copyright (c) 2013 TapAd. All rights reserved.
 //
 

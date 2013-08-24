@@ -19,6 +19,8 @@
 		2F180BCB17A1C64200EC3F5F /* TAOpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BC217A1C64200EC3F5F /* TAOpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2F180BCC17A1C64200EC3F5F /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F180BC517A1C64200EC3F5F /* UIDevice+Hardware.m */; };
 		2F180BE317A1D0B900EC3F5F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F180BE217A1D0B900EC3F5F /* AdSupport.framework */; };
+		2F4E2D0517C8607F00510E8E /* TATapadIdentifiers.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2F180BB717A1C64200EC3F5F /* TATapadIdentifiers.h */; };
+		2F4E2D0617C8631800510E8E /* NSString+Tapad.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2FC96E8B17A6C82700FA1C7D /* NSString+Tapad.h */; };
 		2F91C18F17A8540C00A004FF /* TATapestryRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F91C18E17A8540C00A004FF /* TATapestryRequestTests.m */; };
 		2F91C19317A8697600A004FF /* TATapestryClientNG.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F91C19117A8697600A004FF /* TATapestryClientNG.m */; };
 		2F91C19717A86B2D00A004FF /* TATapestryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F91C19517A86B2D00A004FF /* TATapestryResponse.m */; };
@@ -57,6 +59,8 @@
 			dstSubfolderSpec = 16;
 			files = (
 				DABE4D7517C6E88400961521 /* TATapestryRequest.h in CopyFiles */,
+				2F4E2D0617C8631800510E8E /* NSString+Tapad.h in CopyFiles */,
+				2F4E2D0517C8607F00510E8E /* TATapadIdentifiers.h in CopyFiles */,
 				DABE4D7617C6E88A00961521 /* TATapestryResponse.h in CopyFiles */,
 				DABE4D7417C6E7EC00961521 /* TATapestryClientNG.h in CopyFiles */,
 			);

@@ -19,10 +19,10 @@
 typedef void(^TATapestryResponseHandler)(TATapestryResponse* response, NSError* error, NSTimeInterval intervalSinceRequestFirstInvoked);
 
 @interface TATapestryClientNG : NSObject
+@property(nonatomic, copy) NSString* partnerId;
+@property(nonatomic, copy) NSString* baseURL;
 
 + (TATapestryClientNG*)sharedClient;
-- (void)setPartnerId:(NSString*)partnerId;
-- (void)setBaseURL:(NSString*)baseURL;
 - (void)queueRequest:(TATapestryRequest*)request;
 - (void)queueRequest:(TATapestryRequest*)request withResponseBlock:(TATapestryResponseHandler)handler;
 

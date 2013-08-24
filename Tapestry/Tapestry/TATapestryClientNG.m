@@ -19,8 +19,6 @@ static NSString* const kTATapestryInfoKeyBaseURL            = @"TapestryBaseURL"
 static NSString* const kTATapestryInfoKeyPartnerID          = @"TapestryPartnerID";
 
 @interface TATapestryClientNG ()
-@property(nonatomic, copy) NSString* partnerId;
-@property(nonatomic, copy) NSString* baseURL;
 @property(nonatomic, strong) NSOperationQueue* requestQueue;
 @property(nonatomic, strong) NSMutableDictionary* requestTiming;
 @property(nonatomic, assign) SCNetworkReachabilityRef reachabilityRef;

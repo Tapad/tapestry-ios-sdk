@@ -2,14 +2,17 @@
 //  ViewController.m
 //  TapestryDemo
 //
-//  Created by Toby Matejovsky on 8/22/13.
+//  Created by Toby Matejovsky & Sveinung Kval Bakken on 8/22/13.
 //  Copyright (c) 2013 TapAd. All rights reserved.
 //
 
+#import <MessageUI/MessageUI.h>
 #import "TATapestryClientNG.h"
+#import "TATapadIdentifiers.h"
+#import "NSString+Tapad.h"
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <MFMailComposeViewControllerDelegate>
 @property(nonatomic, weak) IBOutlet UIImageView*        carImage;
 @property(nonatomic, strong) NSArray*                   carColors;
 @property(nonatomic, copy) NSString*                    currentColor;
@@ -89,10 +92,35 @@
 
 - (void)onBridge:(id)sender
 {
-//    NSDictionary* typedIds = [TATapadIdentifiers typedDeviceIDs];
-//    for (id key in typedIds) {
-//        [request addTypedId:[typedIds objectForKey:key] forSource:key];
-//    }
+    NSDictionary* typedIds = [TATapadIdentifiers typedDeviceIDs];
+    NSError* error = nil;
+    NSData* typedIDsData = [NSJSONSerialization dataWithJSONObject:typedIds options:0 error:&error];
+    NSString* typedIDsString = [[NSString alloc] initWithData:typedIDsData encoding:NSUTF8StringEncoding];
+    
+    
+    TATapestryClientNG* client = [TATapestryClientNG sharedClient];
+    NSMutableString* url = [NSMutableString stringWithString:client.baseURL];
+    [url appendFormat:@"?ta_partner_id=%@", client.partnerId];
+    [url appendFormat:@"&ta_bridge=%@", [typedIDsString ta_URLEncodedString]];
+    [url appendFormat:@"&ta_redirect=%@", [@"http://tapestry-demo-test.dev.tapad.com/content_optimization" ta_URLEncodedString]];
+
+    MFMailComposeViewController* mailComposer = [[MFMailComposeViewController alloc] init];
+
+    [mailComposer setSubject:[NSString stringWithFormat:@"TapAd Bridge: %@", [[UIDevice currentDevice] name]]];
+    NSString* body = [NSString stringWithFormat:@"Please open this URL in your desktop's browser to bridge %@:\n\n%@", [[UIDevice currentDevice] name], url];
+    [mailComposer setMailComposeDelegate:self];
+    [mailComposer setMessageBody:body isHTML:NO];
+    
+    [self presentViewController:mailComposer animated:YES completion:nil];
+    
+    NSLog(@"URL: %@", url);
+}
+
+#pragma mark MFMailComposeViewDelegate
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
