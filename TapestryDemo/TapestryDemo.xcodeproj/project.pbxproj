@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F4E2CFE17C8556700510E8E /* gray_car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4E2CF917C8519500510E8E /* gray_car.jpg */; };
+		2F4E2D0017C8556A00510E8E /* red_car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4E2CFA17C8519500510E8E /* red_car.jpg */; };
+		2F4E2D0117C8556E00510E8E /* black_car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4E2CF617C8518B00510E8E /* black_car.jpg */; };
+		2F4E2D0217C8557100510E8E /* blue_car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4E2CF717C8518B00510E8E /* blue_car.jpg */; };
 		DABE4D4617C6E76000961521 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DABE4D4517C6E76000961521 /* UIKit.framework */; };
 		DABE4D4817C6E76000961521 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DABE4D4717C6E76000961521 /* Foundation.framework */; };
 		DABE4D4A17C6E76000961521 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DABE4D4917C6E76000961521 /* CoreGraphics.framework */; };
@@ -246,7 +250,11 @@
 				DABE4D5017C6E76000961521 /* InfoPlist.strings in Resources */,
 				DABE4D5817C6E76000961521 /* Default.png in Resources */,
 				DABE4D5A17C6E76000961521 /* Default@2x.png in Resources */,
+				2F4E2CFE17C8556700510E8E /* gray_car.jpg in Resources */,
+				2F4E2D0217C8557100510E8E /* blue_car.jpg in Resources */,
 				DABE4D5C17C6E76000961521 /* Default-568h@2x.png in Resources */,
+				2F4E2D0017C8556A00510E8E /* red_car.jpg in Resources */,
+				2F4E2D0117C8556E00510E8E /* black_car.jpg in Resources */,
 				DABE4D6217C6E76000961521 /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
