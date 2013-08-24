@@ -106,6 +106,7 @@ static NSString* const kTATapestryInfoKeyPartnerID          = @"TapestryPartnerI
     }
 
     // Set the platform parameter, because we don't control the user agent header.
+    [request setPartnerId:self.partnerId];
     [request setPlatform:[[UIDevice currentDevice] ta_platform]];
     
     TALog(@"TATapestryClientNG queueRequest %@", request);
