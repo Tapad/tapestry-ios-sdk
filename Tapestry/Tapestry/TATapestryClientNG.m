@@ -15,8 +15,8 @@
 
 static NSString* const kTATapestryClientBaseURL             = @"http://tapestry.tapad.com/tapestry/1";
 static NSString* const kTATapestryConnectivityTestHostname  = @"google.com";
-static NSString* const kTATapestryInfoKeyBaseURL            = @"TapadBaseURL";
-static NSString* const kTATapestryInfoKeyPartnerID          = @"TapadPartnerID";
+static NSString* const kTATapestryInfoKeyBaseURL            = @"TapestryBaseURL";
+static NSString* const kTATapestryInfoKeyPartnerID          = @"TapestryPartnerID";
 
 @interface TATapestryClientNG ()
 @property(nonatomic, copy) NSString* partnerId;
@@ -70,6 +70,7 @@ static NSString* const kTATapestryInfoKeyPartnerID          = @"TapadPartnerID";
     if (partnerID != nil) {
         [self setPartnerId:partnerID];
     }
+    TALog(@"Client init'ed: %@", [self description]);
 }
 
 - (NSString*)bundleInfoStringOrNilForKey:(NSString*)key
@@ -79,6 +80,11 @@ static NSString* const kTATapestryInfoKeyPartnerID          = @"TapadPartnerID";
         return value;
     }
     return nil;
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ <%p>, base URL: %@, partner ID: %@", NSStringFromClass(self.class), self, self.baseURL, self.partnerId];
 }
 
 - (void)queueRequest:(TATapestryRequest*)request
