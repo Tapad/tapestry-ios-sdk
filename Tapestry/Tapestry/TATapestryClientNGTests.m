@@ -19,12 +19,6 @@
     [[TATapestryClientNG sharedClient] setBaseURL:@"http://localhost:4567/tapestry/1"];
 }
 
-- (void)tearDown
-{
-    [[TATapestryClientNG sharedClient] setDefaultBaseURL];
-    [super tearDown];
-}
-
 - (void)testBasicResponseCallback
 {
     __block BOOL hasCalledBack = NO;
