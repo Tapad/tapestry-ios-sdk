@@ -12,11 +12,11 @@
 
 + (TATapestryResponse*) responseWithDictionary:(NSDictionary*)dictionary;
 - (BOOL)wasSuccess;
-- (NSDictionary*)getIds;
-- (NSDictionary*)getData;
-- (NSArray*)getAudiences;
-- (NSArray*)getPlatforms;
-- (NSArray*)getErrors;
-- (NSArray*)getDevices;
+- (NSDictionary*)IDs;
+- (NSDictionary*)data;
+- (NSArray*)audiences;
+- (NSArray*)platforms;
+- (NSArray*)errors;
+- (NSArray*)devices;
 
 @end

@@ -80,7 +80,7 @@
         TALog(@"callback: %@", response);
         STAssertNotNil(response, @"Expected valid response.");
         STAssertNil(error, @"Did not expect an error in this callback.");
-        NSDictionary *data = [response getData];
+        NSDictionary *data = [response data];
         NSString *echoedQueryString = [[data objectForKey:@"query"] objectAtIndex:0];
         
         NSRange match = [echoedQueryString rangeOfString:@"ta_get"];
@@ -107,7 +107,7 @@
         TALog(@"callback: %@", response);
         STAssertNotNil(response, @"Expected valid response.");
         STAssertNil(error, @"Did not expect an error in this callback.");
-        NSDictionary *data = [response getData];
+        NSDictionary *data = [response data];
         NSString *echoedQueryString = [[data objectForKey:@"query"] objectAtIndex:0];
         NSString *expected = @"ta_typed_did";
         NSRange match = [echoedQueryString rangeOfString:expected];
@@ -134,7 +134,7 @@
         TALog(@"callback: %@", response);
         STAssertNotNil(response, @"Expected valid response.");
         STAssertNil(error, @"Did not expect an error in this callback.");
-        NSDictionary *data = [response getData];
+        NSDictionary *data = [response data];
         NSString *echoedQueryString = [[data objectForKey:@"query"] objectAtIndex:0];
         NSString *expected = @"ta_platform";
         NSRange match = [echoedQueryString rangeOfString:expected];

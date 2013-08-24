@@ -34,32 +34,32 @@
     return [self.response objectForKey:@"errors"] == nil;
 }
 
-- (NSDictionary*)getIds
+- (NSDictionary*)IDs
 {
     return [self.response objectForKey:@"ids"];
 }
 
-- (NSDictionary*)getData
+- (NSDictionary*)data
 {
     return [self.response objectForKey:@"data"];
 }
 
-- (NSArray*)getAudiences
+- (NSArray*)audiences
 {
     return [self.response objectForKey:@"audiences"];
 }
 
-- (NSArray*)getPlatforms
+- (NSArray*)platforms
 {
     return [self.response objectForKey:@"platforms"];
 }
 
-- (NSArray*)getErrors
+- (NSArray*)errors
 {
     return [self.response objectForKey:@"errors"];
 }
 
-- (NSArray*)getDevices
+- (NSArray*)devices
 {
     return [self.response objectForKey:@"devices"];
 }

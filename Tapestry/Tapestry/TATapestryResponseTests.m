@@ -69,28 +69,28 @@
 - (void)testGetIds
 {
     NSDictionary *expected = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObjects:@"12345", @"abc", nil], @"idfa", nil];
-    NSDictionary *actual = [response getIds];
+    NSDictionary *actual = [response IDs];
     STAssertEqualObjects(actual, expected, @"IDs dictionary is incorrect.");
 }
 
 - (void)testGetData
 {
     NSDictionary *expected = [NSDictionary dictionaryWithObjectsAndKeys:[NSArray arrayWithObject:@"white"], @"color", [NSArray arrayWithObjects:@"volvo", @"lambo", nil], @"make",nil];
-    NSDictionary *actual = [response getData];
+    NSDictionary *actual = [response data];
     STAssertEqualObjects(actual, expected, @"IDs dictionary is incorrect.");
 }
 
 - (void)testGetAudiences
 {
     NSArray *expected = [NSArray arrayWithObjects:nil];
-    NSArray *actual = [response getAudiences];
+    NSArray *actual = [response audiences];
     STAssertEqualObjects(actual, expected, @"Audience list is incorrect.");
 }
 
 - (void)testGetPlatforms
 {
     NSArray *expected = [NSArray arrayWithObjects:@"Computer", nil];
-    NSArray *actual = [response getPlatforms];
+    NSArray *actual = [response platforms];
     STAssertEqualObjects(actual, expected, @"Platform list is incorrect.");
 }
 
@@ -98,7 +98,7 @@
 {
     NSArray *expected = [NSArray arrayWithObject:@"testing error"];
     response = [TATapestryResponse responseWithDictionary:[NSDictionary dictionaryWithObjectsAndKeys:expected, @"errors", nil]];
-    NSArray *actual = [response getErrors];
+    NSArray *actual = [response errors];
     STAssertEqualObjects(actual, expected, @"Error list is incorrect.");
 }
 
@@ -129,7 +129,7 @@
                               @"platforms" : @[]
                               };
     NSArray *expected = @[device1, device2];
-    NSArray *actual = [response getDevices];
+    NSArray *actual = [response devices];
     STAssertEqualObjects(actual, expected, @"Device list is incorrect.");
 }
 

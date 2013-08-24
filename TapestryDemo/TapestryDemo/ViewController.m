@@ -73,9 +73,9 @@
             NSLog(@"Call failed with error: %@", [error localizedDescription]);
         } else {
             if ([response wasSuccess]) {
-                [self handleData:[response getData]];
+                [self handleData:[response data]];
             } else {
-                NSLog(@"Call failed with service failures: \n%@", [response getErrors]);
+                NSLog(@"Call failed with service failures: \n%@", [response errors]);
             }
         }
     };
