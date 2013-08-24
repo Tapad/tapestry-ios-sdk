@@ -23,7 +23,6 @@ typedef void(^TATapestryResponseHandler)(TATapestryResponse* response, NSError* 
 + (TATapestryClientNG*)sharedClient;
 - (void)setPartnerId:(NSString*)partnerId;
 - (void)setBaseURL:(NSString*)baseURL;
-- (void)setDefaultBaseURL;
 - (void)queueRequest:(TATapestryRequest*)request;
 - (void)queueRequest:(TATapestryRequest*)request withResponseBlock:(TATapestryResponseHandler)handler;
 

@@ -13,8 +13,10 @@
 #import "TATapestryClientNG.h"
 #import "TAMacros.h"
 
-static NSString* const kTATapestryClientBaseURL = @"http://tapestry.tapad.com/tapestry/1";
-static NSString* const kTATapestryConnectivityTestHostname = @"google.com";
+static NSString* const kTATapestryClientBaseURL             = @"http://tapestry.tapad.com/tapestry/1";
+static NSString* const kTATapestryConnectivityTestHostname  = @"google.com";
+static NSString* const kTATapestryInfoKeyBaseURL            = @"TapadBaseURL";
+static NSString* const kTATapestryInfoKeyPartnerID          = @"TapadPartnerID";
 
 @interface TATapestryClientNG ()
 @property(nonatomic, copy) NSString* partnerId;
@@ -44,6 +46,7 @@ static NSString* const kTATapestryConnectivityTestHostname = @"google.com";
         self.baseURL = kTATapestryClientBaseURL;
         self.requestQueue = [[NSOperationQueue alloc] init];
         [self.requestQueue setMaxConcurrentOperationCount:2];
+        [self readInfoPlistOrSetDefaults];
         [self startMonitoringNetworkConnectivity];
     }
     return self;
@@ -54,19 +57,28 @@ static NSString* const kTATapestryConnectivityTestHostname = @"google.com";
     [self stopMonitoringNetworkConnectivity];
 }
 
-- (void)setPartnerId:(NSString *)partnerId
+- (void)readInfoPlistOrSetDefaults
 {
-    _partnerId = partnerId;
+    NSString* url = [self bundleInfoStringOrNilForKey:kTATapestryInfoKeyBaseURL];
+    NSString* partnerID = [self bundleInfoStringOrNilForKey:kTATapestryInfoKeyPartnerID];
+    if (url != nil) {
+        [self setBaseURL:url];
+    }
+    else {
+        [self setBaseURL:kTATapestryClientBaseURL];
+    }
+    if (partnerID != nil) {
+        [self setPartnerId:partnerID];
+    }
 }
 
-- (void)setBaseURL:(NSString *)baseURL
+- (NSString*)bundleInfoStringOrNilForKey:(NSString*)key
 {
-    _baseURL = baseURL;
-}
-
-- (void)setDefaultBaseURL
-{
-    _baseURL = kTATapestryClientBaseURL;
+    NSString* value = [[[NSBundle mainBundle] infoDictionary] valueForKey:key];
+    if (value != nil && [value isKindOfClass:[NSString class]] && [value length] > 0) {
+        return value;
+    }
+    return nil;
 }
 
 - (void)queueRequest:(TATapestryRequest*)request
