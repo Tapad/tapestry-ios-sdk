@@ -10,7 +10,25 @@
 #import <ADSupport/ASIdentifierManager.h>
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
-/** Interface to retreive device IDs and to configure device ID preferences. */
+/**
+ TATapadIdentifiers is an interface to retrieve device IDs and to configure device ID preferences.
+ 
+ There are three classes of identifiers: IDFA, OpenUDID, and hashed MAC address.
+ 
+ __IDFA__ is managed by iOS; users can opt out via general preferences. As of summer 2013, 94% of iOS devices support IDFA (iOS 6+).
+ 
+ __OpenUDID__ can be disabled by setting `setIdentifierEnabledOpenUDID` to `NO`. If this method is enabled but the user has opted out, the value is the generic OpenUDID opt-out value.
+ 
+ __Hashed MAC addresses__ can be disabled by setting `setIdentifierEnabledMAC` to `NO`. If this method is enabled, the MAC address is hashed to protect privacy. If a user is opted out, the hashed MAC address is still sent because the opt-out status is stored on Tapad's servers, and it must be sent in order to properly look up the opt-out status and prevent tracking.
+ 
+ If you wish to avoid having any code which even accesses the device's MAC address, simply remove the following methods and their usages in `TATapadIdentifiers.m`:
+    fetchMD5HashedMAC
+    fetchMD5HashedRawMAC
+    fetchSHA1HashedMAC
+    fetchSHA1HashedRawMAC
+ 
+ If any of the identifiers turns out to be opted out, Tapad considers the entire device opted out. More privacy information is available here: http://www.tapad.com/consumer-privacy/
+ */
 @interface TATapadIdentifiers : NSObject
 
 /** @name Configuring IDs */

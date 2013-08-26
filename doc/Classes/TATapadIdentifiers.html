@@ -161,7 +161,25 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Interface to retreive device IDs and to configure device ID preferences.</p>
+						<p>TATapadIdentifiers is an interface to retreive device IDs and to configure device ID preferences.</p>
+
+<p>There are three classes of identifiers: IDFA, OpenUDID, and hashed MAC address.</p>
+
+<p><strong>IDFA</strong> is managed by iOS; users can opt out via general preferences. As of summer 2013, 94% of iOS devices support IDFA (iOS 6+).</p>
+
+<p><strong>OpenUDID</strong> can be disabled by setting <code>setIdentifierEnabledOpenUDID</code> to <code>NO</code>. If this method is enabled but the user has opted out, the value is the generic OpenUDID opt-out value.</p>
+
+<p><strong>Hashed MAC addresses</strong> can be disabled by setting <code>setIdentifierEnabledMAC</code> to <code>NO</code>. If this method is enabled, the MAC address is hashed to protect privacy. If a user is opted out, the hashed MAC address is still sent because the opt-out status is stored on Tapad&rsquo;s servers, and it must be sent in order to properly look up the opt-out status and prevent tracking.</p>
+
+<p>If you wish to avoid having any code which even accesses the device&rsquo;s MAC address, simply remove the following methods and their usages in <code>TATapadIdentifiers.m</code>:</p>
+
+<pre><code>fetchMD5HashedMAC
+fetchMD5HashedRawMAC
+fetchSHA1HashedMAC
+fetchSHA1HashedRawMAC
+</code></pre>
+
+<p>If any of the identifiers turns out to be opted out, Tapad considers the entire device opted out. More privacy information is available here: <a href="http://www.tapad.com/consumer-privacy/">http://www.tapad.com/consumer-privacy/</a></p>
 					</div>
 					
 					

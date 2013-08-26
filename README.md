@@ -28,6 +28,11 @@ To run the client unit tests, you will need to run the provided mock server:
     ruby scripts/test_server.rb -p 4567
 
 
+Privacy:
+--------
+The SDK uses IDFA, OpenUDID, and hashed MAC addresses for device identification. If any identifier is found to be opted-out, Tapad considers the entire device opted-out. OpenUDID and MAC address can be disabled with a configuration setting. To remove any trace of code which accesses the MAC address, you can simply delete a few lines of code in TATapadIdentifiers.m. See the documentation for TATapadIdentifiers for more details.
+
+
 License:
 --------
 This software is released under the MIT license. See the LICENSE file for details.
