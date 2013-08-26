@@ -16,6 +16,7 @@
 - (void)setUp
 {
     [super setUp];
+    // Run the mock server: ruby scripts/test_server.rb -p 4567.
     [[TATapestryClient sharedClient] setBaseURL:@"http://localhost:4567/tapestry/1"];
 }
 
