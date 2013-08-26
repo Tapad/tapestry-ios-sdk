@@ -34,9 +34,11 @@
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@", self.baseUrl, self.request.query]];
     
     // Non-caching request with 10s timeout.
-    NSURLRequest *req = [NSURLRequest requestWithURL:url
-                                         cachePolicy:NSURLRequestReloadIgnoringCacheData
-                                     timeoutInterval:10.0];
+    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url
+                            cachePolicy:NSURLRequestReloadIgnoringCacheData
+                        timeoutInterval:10.0];
+    [req setValue:[self.request getPartnerId] forHTTPHeaderField:@"X-Tapestry-Id"];
+    
     TALog(@"Going to request %@", req);
     
     // Synchronous request.

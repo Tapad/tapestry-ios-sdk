@@ -179,4 +179,30 @@
     if (!hasCalledBack) { STFail(@"callback timed out!"); }
 }
 
+- (void)testXTapestryIdHeader
+{
+    __block BOOL hasCalledBack = NO;
+    
+    TATapestryRequest *request = [TATapestryRequest request];
+    NSString *partnerId = @"123";
+    [[TATapestryClient sharedClient] setPartnerId:partnerId];
+    
+    [[TATapestryClient sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error, NSTimeInterval sinceQueued){
+        TALog(@"callback: %@", response);
+        STAssertNotNil(response, @"Expected valid response.");
+        STAssertNil(error, @"Did not expect an error in this callback.");
+        NSString *echoedXTapestryId = [response firstValueForKey:@"x_tapestry_id_header"];
+        NSString *expected = partnerId;
+        STAssertEqualObjects(echoedXTapestryId, expected, @"Expected %@, got %@", expected, echoedXTapestryId);
+        hasCalledBack = YES;
+    }];
+    
+    NSDate *loopUntil = [NSDate dateWithTimeIntervalSinceNow:5];
+    while (hasCalledBack == NO && [loopUntil timeIntervalSinceNow] > 0) {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode
+                                 beforeDate:loopUntil];
+    }
+    if (!hasCalledBack) { STFail(@"callback timed out!"); }
+}
+
 @end

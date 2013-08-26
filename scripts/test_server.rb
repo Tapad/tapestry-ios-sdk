@@ -31,9 +31,23 @@ get "*" do
     end
   end
 
+  # Rack upcases all http headers, prefixes them with HTTP_, and converts - to _.
+  # Select only the http headers and strip the HTTP_ prefix to get a new hash
+  # with only http header.
+  headers = Hash[*request.env.select { |k,v|
+    k.start_with? 'HTTP_'
+  }.map{ |k,v|
+    [k.sub(/^HTTP_/, ''), v]
+  }.flatten]
+
   response = {
     :ids => {},
-    :data => { :query => [request.query_string] },
+    :data => {
+      :query => [request.query_string],
+      :user_agent => [request.user_agent],
+      :x_tapestry_id_header => [headers['X_TAPESTRY_ID']].compact,
+      :headers => headers.map{ |k,v| "#{k}: #{v}" }
+    },
     :audiences => [],
     :platforms => ["iPhone"]
   }
