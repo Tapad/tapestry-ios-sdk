@@ -1,5 +1,5 @@
 //
-//  TATapestryClientNGTests.m
+//  TATapestryClientTests.m
 //  Tapestry
 //
 //  Created by Toby Matejovsky on 8/21/13.
@@ -7,16 +7,16 @@
 //
 
 
-#import "TATapestryClientNGTests.h"
-#import "TATapestryClientNG.h"
+#import "TATapestryClientTests.h"
+#import "TATapestryClient.h"
 #import "TAMacros.h"
 
-@implementation TATapestryClientNGTests
+@implementation TATapestryClientTests
 
 - (void)setUp
 {
     [super setUp];
-    [[TATapestryClientNG sharedClient] setBaseURL:@"http://localhost:4567/tapestry/1"];
+    [[TATapestryClient sharedClient] setBaseURL:@"http://localhost:4567/tapestry/1"];
 }
 
 - (void)testBasicResponseCallback
@@ -25,7 +25,7 @@
 
     TATapestryRequest *request = [TATapestryRequest request];
     [request setPartnerId:@"12345"];
-    [[TATapestryClientNG sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error, NSTimeInterval sinceQueued){
+    [[TATapestryClient sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error, NSTimeInterval sinceQueued){
         TALog(@"callback: %@", response);
         STAssertNotNil(response, @"Expected valid response.");
         STAssertNil(error, @"Did not expect an error in this callback.");
@@ -42,14 +42,14 @@
 
 - (void)testTimeoutResponseCallback
 {
-    [[[TATapestryClientNG sharedClient] test_requestQueue] setSuspended:YES];
+    [[[TATapestryClient sharedClient] test_requestQueue] setSuspended:YES];
     __block BOOL hasCalledBack = NO;
     
     TATapestryRequest *request = [TATapestryRequest request];
     [request setPartnerId:@"12345"];
     // Setting an integrer as the data for key "sleep" will cause the test server to sleep for that many seconds before returning.
 
-    [[TATapestryClientNG sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error, NSTimeInterval sinceQueued){
+    [[TATapestryClient sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error, NSTimeInterval sinceQueued){
         TALog(@"callback: %@", response);
         STAssertNotNil(response, @"Did not expected valid response.");
         STAssertNil(error, @"Expected to receive a network failure error in this callback (because of request timeout).");
@@ -59,7 +59,7 @@
     }];
     
     sleep(5);
-    [[[TATapestryClientNG sharedClient] test_requestQueue] setSuspended:NO];
+    [[[TATapestryClient sharedClient] test_requestQueue] setSuspended:NO];
     
     double delayInSeconds = 2.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
@@ -76,7 +76,7 @@
     
     TATapestryRequest *request = [TATapestryRequest request];
     [request setPartnerId:@"12345"];
-    [[TATapestryClientNG sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error, NSTimeInterval sinceQueued){
+    [[TATapestryClient sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error, NSTimeInterval sinceQueued){
         TALog(@"callback: %@", response);
         STAssertNotNil(response, @"Expected valid response.");
         STAssertNil(error, @"Did not expect an error in this callback.");
@@ -103,7 +103,7 @@
     
     TATapestryRequest *request = [TATapestryRequest request];
     [request setPartnerId:@"12345"];
-    [[TATapestryClientNG sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error, NSTimeInterval sinceQueued){
+    [[TATapestryClient sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error, NSTimeInterval sinceQueued){
         TALog(@"callback: %@", response);
         STAssertNotNil(response, @"Expected valid response.");
         STAssertNil(error, @"Did not expect an error in this callback.");
@@ -130,7 +130,7 @@
     
     TATapestryRequest *request = [TATapestryRequest request];
     [request setPartnerId:@"12345"];
-    [[TATapestryClientNG sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error, NSTimeInterval sinceQueued){
+    [[TATapestryClient sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error, NSTimeInterval sinceQueued){
         TALog(@"callback: %@", response);
         STAssertNotNil(response, @"Expected valid response.");
         STAssertNil(error, @"Did not expect an error in this callback.");
@@ -156,9 +156,9 @@
     __block BOOL hasCalledBack = NO;
     
     TATapestryRequest *request = [TATapestryRequest request];
-    [[TATapestryClientNG sharedClient] setPartnerId:@"xxx"];
+    [[TATapestryClient sharedClient] setPartnerId:@"xxx"];
 
-    [[TATapestryClientNG sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error, NSTimeInterval sinceQueued){
+    [[TATapestryClient sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error, NSTimeInterval sinceQueued){
         TALog(@"callback: %@", response);
         STAssertNotNil(response, @"Expected valid response.");
         STAssertNil(error, @"Did not expect an error in this callback.");

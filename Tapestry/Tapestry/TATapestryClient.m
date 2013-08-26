@@ -1,5 +1,5 @@
 //
-//  TATapestryClientNG.m
+//  TATapestryClient.m
 //  Tapestry
 //
 //  Created by Sveinung Kval Bakken on 30.07.13.
@@ -10,7 +10,7 @@
 #import "TARequestOperation.h"
 #import "TATapadIdentifiers.h"
 #import "UIDevice+Hardware.h"
-#import "TATapestryClientNG.h"
+#import "TATapestryClient.h"
 #import "TAMacros.h"
 
 static NSString* const kTATapestryClientBaseURL             = @"http://tapestry.tapad.com/tapestry/1";
@@ -18,18 +18,18 @@ static NSString* const kTATapestryConnectivityTestHostname  = @"google.com";
 static NSString* const kTATapestryInfoKeyBaseURL            = @"TapestryBaseURL";
 static NSString* const kTATapestryInfoKeyPartnerID          = @"TapestryPartnerID";
 
-@interface TATapestryClientNG ()
+@interface TATapestryClient ()
 @property(nonatomic, strong) NSOperationQueue* requestQueue;
 @property(nonatomic, strong) NSMutableDictionary* requestTiming;
 @property(nonatomic, assign) SCNetworkReachabilityRef reachabilityRef;
 @end
 
-@implementation TATapestryClientNG
+@implementation TATapestryClient
 
-+ (TATapestryClientNG *)sharedClient
++ (TATapestryClient *)sharedClient
 {
     static dispatch_once_t singleton_guard;
-    static TATapestryClientNG* sharedClient;
+    static TATapestryClient* sharedClient;
     dispatch_once(&singleton_guard, ^{
         sharedClient = [[self alloc] init];
     });
@@ -113,7 +113,7 @@ static NSString* const kTATapestryInfoKeyPartnerID          = @"TapestryPartnerI
     [request setPartnerId:self.partnerId];
     [request setPlatform:[[UIDevice currentDevice] ta_platform]];
     
-    TALog(@"TATapestryClientNG queueRequest %@", request);
+    TALog(@"TATapestryClient queueRequest %@", request);
     
     // Record when this request was first sent.
     NSDate *start = [self startTimeForRequest:request];
@@ -191,7 +191,7 @@ static void (TANetworkConnectionCallBack)(SCNetworkReachabilityRef target, SCNet
     
     TALog(@"Connection state changed: 0x%02x, reachable: %@", (unsigned int) flags, reachable ? @"YES" : @"NO");
     
-    [[TATapestryClientNG sharedClient].requestQueue setSuspended:!reachable];
+    [[TATapestryClient sharedClient].requestQueue setSuspended:!reachable];
 }
 
 static BOOL (TANetworkIsReachableForFlag)(SCNetworkReachabilityFlags flags)

@@ -1,5 +1,5 @@
 //
-//  TATapestryClientNGTests.h
+//  TATapestryClientTests.h
 //  Tapestry
 //
 //  Created by Toby Matejovsky on 8/21/13.
@@ -8,6 +8,6 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface TATapestryClientNGTests : SenTestCase
+@interface TATapestryClientTests : SenTestCase
 
 @end

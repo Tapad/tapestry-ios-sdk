@@ -199,6 +199,6 @@
 @end
 
 @interface TATapestryRequest (Internal)
-// Exposing partner ID so TATapestryClientNG can check if it is already set.
+// Exposing partner ID so TATapestryClient can check if it is already set.
 - (NSString*)getPartnerId;
 @end

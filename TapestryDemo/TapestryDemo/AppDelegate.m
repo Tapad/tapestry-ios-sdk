@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "TATapestryClientNG.h"
+#import "TATapestryClient.h"
 #import "ViewController.h"
 
 @implementation AppDelegate

@@ -7,11 +7,11 @@
 //
 
 #import "TATapestryRequest.h"
-#import "TATapestryClientNG.h"
+#import "TATapestryClient.h"
 #import <Foundation/Foundation.h>
 
 /**
- An operation which actually makes the HTTP request. It's run asyncronously in a queue which is coordinated by TATapestryClientNG. It should not be used directly.
+ An operation which actually makes the HTTP request. It's run asyncronously in a queue which is coordinated by TATapestryClient. It should not be used directly.
  */
 @interface TARequestOperation : NSOperation
 

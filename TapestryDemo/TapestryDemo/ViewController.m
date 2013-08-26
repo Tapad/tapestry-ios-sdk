@@ -7,7 +7,7 @@
 //
 
 #import <MessageUI/MessageUI.h>
-#import "TATapestryClientNG.h"
+#import "TATapestryClient.h"
 #import "TATapadIdentifiers.h"
 #import "NSString+Tapad.h"
 #import "ViewController.h"
@@ -61,7 +61,7 @@
     [self setCarImageToColor:[self nextColor]];
     TATapestryRequest* request = [TATapestryRequest request];
     [request setData:self.currentColor forKey:@"color"];
-    [[TATapestryClientNG sharedClient] queueRequest:request];
+    [[TATapestryClient sharedClient] queueRequest:request];
 }
 
 - (void)onRefresh:(id)sender
@@ -79,7 +79,7 @@
             }
         }
     };
-    [[TATapestryClientNG sharedClient] queueRequest:request withResponseBlock:handler];
+    [[TATapestryClient sharedClient] queueRequest:request withResponseBlock:handler];
 }
 
 - (void)handleData:(NSDictionary*)data
@@ -98,7 +98,7 @@
     NSString* typedIDsString = [[NSString alloc] initWithData:typedIDsData encoding:NSUTF8StringEncoding];
     
     
-    TATapestryClientNG* client = [TATapestryClientNG sharedClient];
+    TATapestryClient* client = [TATapestryClient sharedClient];
     NSMutableString* url = [NSMutableString stringWithString:client.baseURL];
     [url appendFormat:@"?ta_partner_id=%@", client.partnerId];
     [url appendFormat:@"&ta_bridge=%@", [typedIDsString ta_URLEncodedString]];
