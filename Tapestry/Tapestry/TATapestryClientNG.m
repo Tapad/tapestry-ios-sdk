@@ -13,12 +13,12 @@
 #import "TATapestryClientNG.h"
 #import "TAMacros.h"
 
-static NSString* const kTATapestryClientBaseURL = @"http://tapestry.tapad.com/tapestry/1";
-static NSString* const kTATapestryConnectivityTestHostname = @"google.com";
+static NSString* const kTATapestryClientBaseURL             = @"http://tapestry.tapad.com/tapestry/1";
+static NSString* const kTATapestryConnectivityTestHostname  = @"google.com";
+static NSString* const kTATapestryInfoKeyBaseURL            = @"TapestryBaseURL";
+static NSString* const kTATapestryInfoKeyPartnerID          = @"TapestryPartnerID";
 
 @interface TATapestryClientNG ()
-@property(nonatomic, copy) NSString* partnerId;
-@property(nonatomic, copy) NSString* baseURL;
 @property(nonatomic, strong) NSOperationQueue* requestQueue;
 @property(nonatomic, strong) NSMutableDictionary* requestTiming;
 @property(nonatomic, assign) SCNetworkReachabilityRef reachabilityRef;
@@ -45,6 +45,7 @@ static NSString* const kTATapestryConnectivityTestHostname = @"google.com";
         self.baseURL = kTATapestryClientBaseURL;
         self.requestQueue = [[NSOperationQueue alloc] init];
         [self.requestQueue setMaxConcurrentOperationCount:2];
+        [self readInfoPlistOrSetDefaults];
         [self startMonitoringNetworkConnectivity];
     }
     return self;
@@ -55,9 +56,34 @@ static NSString* const kTATapestryConnectivityTestHostname = @"google.com";
     [self stopMonitoringNetworkConnectivity];
 }
 
-- (void)setDefaultBaseURL
+- (void)readInfoPlistOrSetDefaults
 {
-    _baseURL = kTATapestryClientBaseURL;
+    NSString* url = [self bundleInfoStringOrNilForKey:kTATapestryInfoKeyBaseURL];
+    NSString* partnerID = [self bundleInfoStringOrNilForKey:kTATapestryInfoKeyPartnerID];
+    if (url != nil) {
+        [self setBaseURL:url];
+    }
+    else {
+        [self setBaseURL:kTATapestryClientBaseURL];
+    }
+    if (partnerID != nil) {
+        [self setPartnerId:partnerID];
+    }
+    TALog(@"Client init'ed: %@", [self description]);
+}
+
+- (NSString*)bundleInfoStringOrNilForKey:(NSString*)key
+{
+    NSString* value = [[[NSBundle mainBundle] infoDictionary] valueForKey:key];
+    if (value != nil && [value isKindOfClass:[NSString class]] && [value length] > 0) {
+        return value;
+    }
+    return nil;
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ <%p>, base URL: %@, partner ID: %@", NSStringFromClass(self.class), self, self.baseURL, self.partnerId];
 }
 
 - (void)queueRequest:(TATapestryRequest*)request
@@ -84,6 +110,7 @@ static NSString* const kTATapestryConnectivityTestHostname = @"google.com";
     }
 
     // Set the platform parameter, because we don't control the user agent header.
+    [request setPartnerId:self.partnerId];
     [request setPlatform:[[UIDevice currentDevice] ta_platform]];
     
     TALog(@"TATapestryClientNG queueRequest %@", request);

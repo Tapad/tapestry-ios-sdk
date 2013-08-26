@@ -30,27 +30,27 @@
 /**
  @return Dictionary of typed IDs. Key is the ID type and the object is a list of ID values.
  */
-- (NSDictionary*)getIds;
+- (NSDictionary*)IDs;
 
 /**
  @return Dictionary of data. Objects are a list of values for the given key in chronological order.
  */
-- (NSDictionary*)getData;
+- (NSDictionary*)data;
 
 /**
  @return Array of audience tags.
  */
-- (NSArray*)getAudiences;
+- (NSArray*)audiences;
 
 /**
  @return Array of human-readable platforms, such as iPhone, Computer, AndroidTablet.
  */
-- (NSArray*)getPlatforms;
+- (NSArray*)platforms;
 
 /**
  @return Array of API errors, such as permission violations.
  */
-- (NSArray*)getErrors;
+- (NSArray*)errors;
 
 /**
   Get the devices which were the source for the data in this class.
@@ -58,6 +58,6 @@
 
   @return Array of individual devices from the originating request.
  */
-- (NSArray*)getDevices;
+- (NSArray*)devices;
 
 @end

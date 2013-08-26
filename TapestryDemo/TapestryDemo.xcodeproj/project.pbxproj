@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F4E2CFE17C8556700510E8E /* gray_car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4E2CF917C8519500510E8E /* gray_car.jpg */; };
+		2F4E2D0017C8556A00510E8E /* red_car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4E2CFA17C8519500510E8E /* red_car.jpg */; };
+		2F4E2D0117C8556E00510E8E /* black_car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4E2CF617C8518B00510E8E /* black_car.jpg */; };
+		2F4E2D0217C8557100510E8E /* blue_car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4E2CF717C8518B00510E8E /* blue_car.jpg */; };
+		2F4E2D0417C85B4300510E8E /* white_car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F4E2D0317C85B3100510E8E /* white_car.jpg */; };
+		2F4E2D0817C863B600510E8E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4E2D0717C863B600510E8E /* MessageUI.framework */; };
 		DABE4D4617C6E76000961521 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DABE4D4517C6E76000961521 /* UIKit.framework */; };
 		DABE4D4817C6E76000961521 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DABE4D4717C6E76000961521 /* Foundation.framework */; };
 		DABE4D4A17C6E76000961521 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DABE4D4917C6E76000961521 /* CoreGraphics.framework */; };
@@ -48,6 +54,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F4E2CF617C8518B00510E8E /* black_car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = black_car.jpg; sourceTree = "<group>"; };
+		2F4E2CF717C8518B00510E8E /* blue_car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blue_car.jpg; sourceTree = "<group>"; };
+		2F4E2CF917C8519500510E8E /* gray_car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gray_car.jpg; sourceTree = "<group>"; };
+		2F4E2CFA17C8519500510E8E /* red_car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = red_car.jpg; sourceTree = "<group>"; };
+		2F4E2D0317C85B3100510E8E /* white_car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = white_car.jpg; sourceTree = "<group>"; };
+		2F4E2D0717C863B600510E8E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		DABE4D4217C6E76000961521 /* TapestryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapestryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DABE4D4517C6E76000961521 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DABE4D4717C6E76000961521 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -74,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F4E2D0817C863B600510E8E /* MessageUI.framework in Frameworks */,
 				DABE4D7A17C6EA6300961521 /* SystemConfiguration.framework in Frameworks */,
 				DABE4D7817C6EA5D00961521 /* AdSupport.framework in Frameworks */,
 				DABE4D7317C6E7AE00961521 /* libTapestry.a in Frameworks */,
@@ -86,6 +99,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F4E2CFB17C851D800510E8E /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				2F4E2D0317C85B3100510E8E /* white_car.jpg */,
+				2F4E2CF917C8519500510E8E /* gray_car.jpg */,
+				2F4E2CFA17C8519500510E8E /* red_car.jpg */,
+				2F4E2CF617C8518B00510E8E /* black_car.jpg */,
+				2F4E2CF717C8518B00510E8E /* blue_car.jpg */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
 		DABE4D3917C6E76000961521 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +132,7 @@
 		DABE4D4417C6E76000961521 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F4E2D0717C863B600510E8E /* MessageUI.framework */,
 				DABE4D7917C6EA6300961521 /* SystemConfiguration.framework */,
 				DABE4D7717C6EA5D00961521 /* AdSupport.framework */,
 				DABE4D4517C6E76000961521 /* UIKit.framework */,
@@ -119,6 +145,7 @@
 		DABE4D4B17C6E76000961521 /* TapestryDemo */ = {
 			isa = PBXGroup;
 			children = (
+				2F4E2CFB17C851D800510E8E /* Graphics */,
 				DABE4D5417C6E76000961521 /* AppDelegate.h */,
 				DABE4D5517C6E76000961521 /* AppDelegate.m */,
 				DABE4D5D17C6E76000961521 /* ViewController.h */,
@@ -229,8 +256,13 @@
 			files = (
 				DABE4D5017C6E76000961521 /* InfoPlist.strings in Resources */,
 				DABE4D5817C6E76000961521 /* Default.png in Resources */,
+				2F4E2D0417C85B4300510E8E /* white_car.jpg in Resources */,
 				DABE4D5A17C6E76000961521 /* Default@2x.png in Resources */,
+				2F4E2CFE17C8556700510E8E /* gray_car.jpg in Resources */,
+				2F4E2D0217C8557100510E8E /* blue_car.jpg in Resources */,
 				DABE4D5C17C6E76000961521 /* Default-568h@2x.png in Resources */,
+				2F4E2D0017C8556A00510E8E /* red_car.jpg in Resources */,
+				2F4E2D0117C8556E00510E8E /* black_car.jpg in Resources */,
 				DABE4D6217C6E76000961521 /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,7 +313,7 @@
 		DABE4D6317C6E76000961521 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -314,7 +346,7 @@
 		DABE4D6417C6E76000961521 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;

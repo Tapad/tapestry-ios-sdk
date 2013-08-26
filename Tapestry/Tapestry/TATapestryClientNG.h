@@ -23,6 +23,8 @@ typedef void(^TATapestryResponseHandler)(TATapestryResponse* response, NSError* 
  It queues requests to execute asyncronously and concurrently, and handles retries if the network is unavailable.
  */
 @interface TATapestryClientNG : NSObject
+@property(nonatomic, copy) NSString* partnerId;
+@property(nonatomic, copy) NSString* baseURL;
 
 /**
   @return The shared client. Created exactly once.
@@ -34,18 +36,6 @@ typedef void(^TATapestryResponseHandler)(TATapestryResponse* response, NSError* 
  @param partnerId The partner ID
  */
 - (void)setPartnerId:(NSString*)partnerId;
-
-/**
- Override the default base URL.
- @param baseURL The new base URL
- */
-- (void)setBaseURL:(NSString*)baseURL;
-
-/**
- Reset the default base URL.
- */
-- (void)setDefaultBaseURL;
-
 
 /**
  Queue and send a request, with no callback. If the network is unavilable, it will be automatically retried when the network becomes available again.

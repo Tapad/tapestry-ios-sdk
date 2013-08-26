@@ -20,20 +20,7 @@
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
-    [[TATapestryClientNG sharedClient] setPartnerId:@"12345"];
-    [self sendGibberidoo];
     return YES;
-}
-
-- (void)sendGibberidoo
-{
-    __block TATapestryRequest* request = [TATapestryRequest request];
-    [request setData:@"car" forKey:@"toyota"];
-    [[TATapestryClientNG sharedClient] queueRequest:request withResponseBlock:^(TATapestryResponse* response, NSError* error, NSTimeInterval intervalSinceInvoked){
-        NSLog(@"Request %@ finished after %.1f seconds", request, intervalSinceInvoked);
-    }];
-
-    [self performSelector:_cmd withObject:nil afterDelay:3];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
