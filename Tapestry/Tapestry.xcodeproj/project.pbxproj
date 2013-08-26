@@ -31,12 +31,12 @@
 		DABE4D7517C6E88400961521 /* TATapestryRequest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2FF0811617A812BA001F9AEA /* TATapestryRequest.h */; };
 		DABE4D7617C6E88A00961521 /* TATapestryResponse.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2F91C19417A86B2C00A004FF /* TATapestryResponse.h */; };
 		DABE4D7D17C6F93E00961521 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE8B09017C6DA48000D0BAB /* SystemConfiguration.framework */; };
+		DABE4D8517CB909F00961521 /* TATapestryClientNGTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DABE4D8417CB909F00961521 /* TATapestryClientNGTests.m */; };
 		DAE8AF2B17A6B9EB000D0BAB /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F180BE217A1D0B900EC3F5F /* AdSupport.framework */; };
 		DAE8AF2E17A70328000D0BAB /* TAURLBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8AF2D17A70328000D0BAB /* TAURLBuilderTests.m */; };
 		DAE8AF3117A71025000D0BAB /* TAURLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8AF3017A71025000D0BAB /* TAURLHelper.m */; };
 		DAE8AF3417A710D7000D0BAB /* TAURLHelperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8AF3317A710D7000D0BAB /* TAURLHelperTests.m */; };
 		DAE8B01017C2B153000D0BAB /* TATapestryResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8B00F17C2B152000D0BAB /* TATapestryResponseTests.m */; };
-		DAE8B08717C57ADB000D0BAB /* TATapestryClientNGTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8B08617C57ADB000D0BAB /* TATapestryClientNGTests.m */; };
 		DAE8B09117C6DA48000D0BAB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE8B09017C6DA48000D0BAB /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +99,8 @@
 		2FC96E8C17A6C82700FA1C7D /* NSString+Tapad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Tapad.m"; sourceTree = "<group>"; };
 		2FF0811617A812BA001F9AEA /* TATapestryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapestryRequest.h; sourceTree = "<group>"; };
 		2FF0811717A812BA001F9AEA /* TATapestryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapestryRequest.m; sourceTree = "<group>"; };
+		DABE4D8317CB909F00961521 /* TATapestryClientNGTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TATapestryClientNGTests.h; sourceTree = "<group>"; };
+		DABE4D8417CB909F00961521 /* TATapestryClientNGTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATapestryClientNGTests.m; sourceTree = "<group>"; };
 		DAE8AF2C17A70328000D0BAB /* TAURLBuilderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAURLBuilderTests.h; sourceTree = "<group>"; };
 		DAE8AF2D17A70328000D0BAB /* TAURLBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAURLBuilderTests.m; sourceTree = "<group>"; };
 		DAE8AF2F17A71025000D0BAB /* TAURLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAURLHelper.h; sourceTree = "<group>"; };
@@ -107,8 +109,6 @@
 		DAE8AF3317A710D7000D0BAB /* TAURLHelperTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAURLHelperTests.m; sourceTree = "<group>"; };
 		DAE8B00E17C2B152000D0BAB /* TATapestryResponseTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TATapestryResponseTests.h; path = ../Tapestry/TATapestryResponseTests.h; sourceTree = "<group>"; };
 		DAE8B00F17C2B152000D0BAB /* TATapestryResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TATapestryResponseTests.m; path = ../Tapestry/TATapestryResponseTests.m; sourceTree = "<group>"; };
-		DAE8B08517C57ADB000D0BAB /* TATapestryClientNGTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TATapestryClientNGTests.h; path = Tapestry/TATapestryClientNGTests.h; sourceTree = SOURCE_ROOT; };
-		DAE8B08617C57ADB000D0BAB /* TATapestryClientNGTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TATapestryClientNGTests.m; path = Tapestry/TATapestryClientNGTests.m; sourceTree = SOURCE_ROOT; };
 		DAE8B08817C57F20000D0BAB /* TAMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAMacros.h; sourceTree = "<group>"; };
 		DAE8B09017C6DA48000D0BAB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -206,8 +206,8 @@
 		2F180B8917A1C3F900EC3F5F /* TapestryTests */ = {
 			isa = PBXGroup;
 			children = (
-				DAE8B08517C57ADB000D0BAB /* TATapestryClientNGTests.h */,
-				DAE8B08617C57ADB000D0BAB /* TATapestryClientNGTests.m */,
+				DABE4D8317CB909F00961521 /* TATapestryClientNGTests.h */,
+				DABE4D8417CB909F00961521 /* TATapestryClientNGTests.m */,
 				DAE8B00E17C2B152000D0BAB /* TATapestryResponseTests.h */,
 				DAE8B00F17C2B152000D0BAB /* TATapestryResponseTests.m */,
 				2F180B8A17A1C3F900EC3F5F /* Supporting Files */,
@@ -390,7 +390,7 @@
 				DAE8AF3417A710D7000D0BAB /* TAURLHelperTests.m in Sources */,
 				2F91C18F17A8540C00A004FF /* TATapestryRequestTests.m in Sources */,
 				DAE8B01017C2B153000D0BAB /* TATapestryResponseTests.m in Sources */,
-				DAE8B08717C57ADB000D0BAB /* TATapestryClientNGTests.m in Sources */,
+				DABE4D8517CB909F00961521 /* TATapestryClientNGTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
