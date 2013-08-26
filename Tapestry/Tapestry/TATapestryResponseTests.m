@@ -80,6 +80,14 @@
     STAssertEqualObjects(actual, expected, @"IDs dictionary is incorrect.");
 }
 
+- (void)testGetFirstValueForKey
+{
+    NSString* expected = @"volvo";
+    NSString* actual = [response firstValueForKey:@"make"];
+    STAssertEqualObjects(actual, expected, @"Expected %@, got %@", expected, actual);
+    STAssertNil([response firstValueForKey:@"non-existent-key"], @"Expected non-existent key to return nil first value");
+}
+
 - (void)testGetAudiences
 {
     NSArray *expected = [NSArray arrayWithObjects:nil];

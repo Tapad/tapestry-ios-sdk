@@ -38,6 +38,13 @@
 - (NSDictionary*)data;
 
 /**
+ Convenience method to get the first value of the NSArray for a given key in the data dictionary, or nil if it is not available. This corresponds to the most recent data added or set for the given device clique.
+ @param key The key for the values in the data dictionary.
+ @return The first value in the NSArray which exists in the data dictionary for the given key.
+ */
+- (NSString*)firstValueForKey:(NSString*)key;
+
+/**
  @return Array of audience tags.
  */
 - (NSArray*)audiences;

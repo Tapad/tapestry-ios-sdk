@@ -44,6 +44,19 @@
     return [self.response objectForKey:@"data"];
 }
 
+- (NSString*)firstValueForKey:(NSString*)key
+{
+    id data = [self data];
+    NSString* firstValue = nil;
+    if (data) {
+        id valuesForKey = [data valueForKey:key];
+        if (valuesForKey != nil && [valuesForKey isKindOfClass:[NSArray class]] && [valuesForKey count] > 0) {
+            firstValue = [valuesForKey firstObject];
+        }
+    }
+    return firstValue;
+}
+
 - (NSArray*)audiences
 {
     return [self.response objectForKey:@"audiences"];

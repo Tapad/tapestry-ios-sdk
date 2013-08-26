@@ -59,6 +59,8 @@
 	
 	<option value="//api/name/errors">&nbsp;&nbsp;&nbsp;&nbsp;- errors</option>
 	
+	<option value="//api/name/firstValueForKey:">&nbsp;&nbsp;&nbsp;&nbsp;- firstValueForKey:</option>
+	
 	<option value="//api/name/platforms">&nbsp;&nbsp;&nbsp;&nbsp;- platforms</option>
 	
 	<option value="//api/name/wasSuccess">&nbsp;&nbsp;&nbsp;&nbsp;- wasSuccess</option>
@@ -106,6 +108,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/devices">devices</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/errors">errors</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/firstValueForKey:">firstValueForKey:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/platforms">platforms</a></span></li>
 	
@@ -191,6 +195,13 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/data">&ndash;&nbsp;data</a></code>
 		<span class="tooltip"><p>Dictionary of data. Objects are a list of values for the given key in chronological order.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/firstValueForKey:">&ndash;&nbsp;firstValueForKey:</a></code>
+		<span class="tooltip"><p>Convenience method to get the first value of the NSArray for a given key in the <a href="#//api/name/data">data</a> dictionary, or nil if it is not available. This corresponds to the most recent <a href="#//api/name/data">data</a> added or set for the given device clique.</p></span>
 	</span>
 	
 	
@@ -499,6 +510,62 @@
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapestryResponse.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/firstValueForKey:" title="firstValueForKey:"></a>
+	<h3 class="subsubtitle method-title">firstValueForKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Convenience method to get the first value of the NSArray for a given key in the <a href="#//api/name/data">data</a> dictionary, or nil if it is not available. This corresponds to the most recent <a href="#//api/name/data">data</a> added or set for the given device clique.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)firstValueForKey:(NSString *)<em>key</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>key</em></dt>
+			<dd><p>The key for the values in the <a href="#//api/name/data">data</a> dictionary.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The first value in the NSArray which exists in the <a href="#//api/name/data">data</a> dictionary for the given key.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Convenience method to get the first value of the NSArray for a given key in the <a href="#//api/name/data">data</a> dictionary, or nil if it is not available. This corresponds to the most recent <a href="#//api/name/data">data</a> added or set for the given device clique.</p>
+	</div>
 	
 	
 	
