@@ -73,7 +73,7 @@
             NSLog(@"Call failed with error: %@", [error localizedDescription]);
         } else {
             if ([response wasSuccess]) {
-                [self handleData:[response data]];
+                [self setColor:response];
             } else {
                 NSLog(@"Call failed with service failures: \n%@", [response errors]);
             }
@@ -82,11 +82,11 @@
     [[TATapestryClient sharedClient] queueRequest:request withResponseBlock:handler];
 }
 
-- (void)handleData:(NSDictionary*)data
+- (void)setColor:(TATapestryResponse*)response
 {
-    NSArray* colorValues = [data valueForKey:@"color"];
-    if (colorValues != nil && [colorValues isKindOfClass:[NSArray class]] && [colorValues count] > 0) {
-        [self setCarImageToColor:[colorValues objectAtIndex:0]];
+    NSString* color = [response firstValueForKey:@"color"];
+    if (color != nil) {
+        [self setCarImageToColor:color];
     }
 }
 
