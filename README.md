@@ -14,6 +14,14 @@ Project setup:
 4. Under your project or target, add the following build info:
 5. 
   1. Add ${BUILD_PRODUCTS_DIR}/include/ (Recursive) to Header Search Path for your app project
-
   2. Add -ObjC to Other Linker Flags
+
+
+Documentation:
+--------------
+* See the docs folder for documentation.
+
+License:
+--------
+This software is released under the MIT license. See the LICENSE file for details.
 
