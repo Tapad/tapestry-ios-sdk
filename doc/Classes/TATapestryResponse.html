@@ -49,17 +49,19 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/getAudiences">&nbsp;&nbsp;&nbsp;&nbsp;- getAudiences</option>
+	<option value="//api/name/IDs">&nbsp;&nbsp;&nbsp;&nbsp;- IDs</option>
 	
-	<option value="//api/name/getData">&nbsp;&nbsp;&nbsp;&nbsp;- getData</option>
+	<option value="//api/name/audiences">&nbsp;&nbsp;&nbsp;&nbsp;- audiences</option>
 	
-	<option value="//api/name/getDevices">&nbsp;&nbsp;&nbsp;&nbsp;- getDevices</option>
+	<option value="//api/name/data">&nbsp;&nbsp;&nbsp;&nbsp;- data</option>
 	
-	<option value="//api/name/getErrors">&nbsp;&nbsp;&nbsp;&nbsp;- getErrors</option>
+	<option value="//api/name/devices">&nbsp;&nbsp;&nbsp;&nbsp;- devices</option>
 	
-	<option value="//api/name/getIds">&nbsp;&nbsp;&nbsp;&nbsp;- getIds</option>
+	<option value="//api/name/errors">&nbsp;&nbsp;&nbsp;&nbsp;- errors</option>
 	
-	<option value="//api/name/getPlatforms">&nbsp;&nbsp;&nbsp;&nbsp;- getPlatforms</option>
+	<option value="//api/name/firstValueForKey:">&nbsp;&nbsp;&nbsp;&nbsp;- firstValueForKey:</option>
+	
+	<option value="//api/name/platforms">&nbsp;&nbsp;&nbsp;&nbsp;- platforms</option>
 	
 	<option value="//api/name/wasSuccess">&nbsp;&nbsp;&nbsp;&nbsp;- wasSuccess</option>
 	
@@ -97,17 +99,19 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getAudiences">getAudiences</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/IDs">IDs</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getData">getData</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/audiences">audiences</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getDevices">getDevices</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/data">data</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getErrors">getErrors</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/devices">devices</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getIds">getIds</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/errors">errors</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getPlatforms">getPlatforms</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/firstValueForKey:">firstValueForKey:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/platforms">platforms</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wasSuccess">wasSuccess</a></span></li>
 	
@@ -150,7 +154,7 @@
 						<h2 class="subtitle subtitle-overview">Overview</h2>
 						<p>The response type which is passed into a Tapestry request&rsquo;s callback.</p>
 
-<p>It contains data returned by the API for the requesting device and its associated devices (as determined by the request).</p>
+<p>It contains <a href="#//api/name/data">data</a> returned by the API for the requesting device and its associated <a href="#//api/name/devices">devices</a> (as determined by the request).</p>
 					</div>
 					
 					
@@ -176,50 +180,57 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/wasSuccess">&ndash;&nbsp;wasSuccess</a></code>
-		<span class="tooltip"><p>Whether or not the request has any API-level errors, such as permission violations.</p></span>
+		<span class="tooltip"><p>Whether or not the request has any API-level <a href="#//api/name/errors">errors</a>, such as permission violations.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/getIds">&ndash;&nbsp;getIds</a></code>
+		<code><a href="#//api/name/IDs">&ndash;&nbsp;IDs</a></code>
 		<span class="tooltip"><p>Dictionary of typed IDs. Key is the ID type and the object is a list of ID values.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/getData">&ndash;&nbsp;getData</a></code>
+		<code><a href="#//api/name/data">&ndash;&nbsp;data</a></code>
 		<span class="tooltip"><p>Dictionary of data. Objects are a list of values for the given key in chronological order.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/getAudiences">&ndash;&nbsp;getAudiences</a></code>
+		<code><a href="#//api/name/firstValueForKey:">&ndash;&nbsp;firstValueForKey:</a></code>
+		<span class="tooltip"><p>Convenience method to get the first value of the NSArray for a given key in the <a href="#//api/name/data">data</a> dictionary, or nil if it is not available. This corresponds to the most recent <a href="#//api/name/data">data</a> added or set for the given device clique.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/audiences">&ndash;&nbsp;audiences</a></code>
 		<span class="tooltip"><p>Array of audience tags.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/getPlatforms">&ndash;&nbsp;getPlatforms</a></code>
+		<code><a href="#//api/name/platforms">&ndash;&nbsp;platforms</a></code>
 		<span class="tooltip"><p>Array of human-readable platforms, such as iPhone, Computer, AndroidTablet.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/getErrors">&ndash;&nbsp;getErrors</a></code>
+		<code><a href="#//api/name/errors">&ndash;&nbsp;errors</a></code>
 		<span class="tooltip"><p>Array of API errors, such as permission violations.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/getDevices">&ndash;&nbsp;getDevices</a></code>
-		<span class="tooltip"><p>  Get the devices which were the source for the data in this class.
-  Each device is an NSDictionary which can be fed back into the constructor to access the data more easily.</p></span>
+		<code><a href="#//api/name/devices">&ndash;&nbsp;devices</a></code>
+		<span class="tooltip"><p>  Get the devices which were the source for the <a href="#//api/name/data">data</a> in this class.
+  Each device is an NSDictionary which can be fed back into the constructor to access the <a href="#//api/name/data">data</a> more easily.</p></span>
 	</span>
 	
 	
@@ -259,7 +270,7 @@
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>dictionary</em></dt>
-			<dd><p>Dictionary which contains the data from an API request</p></dd>
+			<dd><p>Dictionary which contains the <a href="#//api/name/data">data</a> from an API request</p></dd>
 		</dl>
 		
 	</div>
@@ -303,8 +314,49 @@
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/getAudiences" title="getAudiences"></a>
-	<h3 class="subsubtitle method-title">getAudiences</h3>
+	<a name="//api/name/IDs" title="IDs"></a>
+	<h3 class="subsubtitle method-title">IDs</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Dictionary of typed IDs. Key is the ID type and the object is a list of ID values.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)IDs</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Dictionary of typed IDs. Key is the ID type and the object is a list of ID values.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">TATapestryResponse.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/audiences" title="audiences"></a>
+	<h3 class="subsubtitle method-title">audiences</h3>
 	
 	
 	
@@ -314,7 +366,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSArray *)getAudiences</code></div>
+	<div class="method-subsection method-declaration"><code>- (NSArray *)audiences</code></div>
 
     
 	
@@ -344,8 +396,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/getData" title="getData"></a>
-	<h3 class="subsubtitle method-title">getData</h3>
+	<a name="//api/name/data" title="data"></a>
+	<h3 class="subsubtitle method-title">data</h3>
 	
 	
 	
@@ -355,7 +407,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSDictionary *)getData</code></div>
+	<div class="method-subsection method-declaration"><code>- (NSDictionary *)data</code></div>
 
     
 	
@@ -385,19 +437,19 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/getDevices" title="getDevices"></a>
-	<h3 class="subsubtitle method-title">getDevices</h3>
+	<a name="//api/name/devices" title="devices"></a>
+	<h3 class="subsubtitle method-title">devices</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>  Get the devices which were the source for the data in this class.
-  Each device is an NSDictionary which can be fed back into the constructor to access the data more easily.</p>
+		<p>  Get the devices which were the source for the <a href="#//api/name/data">data</a> in this class.
+  Each device is an NSDictionary which can be fed back into the constructor to access the <a href="#//api/name/data">data</a> more easily.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSArray *)getDevices</code></div>
+	<div class="method-subsection method-declaration"><code>- (NSArray *)devices</code></div>
 
     
 	
@@ -414,8 +466,8 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>  Get the devices which were the source for the data in this class.
-  Each device is an NSDictionary which can be fed back into the constructor to access the data more easily.</p>
+		<p>  Get the devices which were the source for the <a href="#//api/name/data">data</a> in this class.
+  Each device is an NSDictionary which can be fed back into the constructor to access the <a href="#//api/name/data">data</a> more easily.</p>
 	</div>
 	
 	
@@ -433,8 +485,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/getErrors" title="getErrors"></a>
-	<h3 class="subsubtitle method-title">getErrors</h3>
+	<a name="//api/name/errors" title="errors"></a>
+	<h3 class="subsubtitle method-title">errors</h3>
 	
 	
 	
@@ -444,7 +496,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSArray *)getErrors</code></div>
+	<div class="method-subsection method-declaration"><code>- (NSArray *)errors</code></div>
 
     
 	
@@ -474,31 +526,46 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/getIds" title="getIds"></a>
-	<h3 class="subsubtitle method-title">getIds</h3>
+	<a name="//api/name/firstValueForKey:" title="firstValueForKey:"></a>
+	<h3 class="subsubtitle method-title">firstValueForKey:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Dictionary of typed IDs. Key is the ID type and the object is a list of ID values.</p>
+		<p>Convenience method to get the first value of the NSArray for a given key in the <a href="#//api/name/data">data</a> dictionary, or nil if it is not available. This corresponds to the most recent <a href="#//api/name/data">data</a> added or set for the given device clique.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSDictionary *)getIds</code></div>
+	<div class="method-subsection method-declaration"><code>- (NSString *)firstValueForKey:(NSString *)<em>key</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>key</em></dt>
+			<dd><p>The key for the values in the <a href="#//api/name/data">data</a> dictionary.</p></dd>
+		</dl>
+		
+	</div>
 	
 	
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Dictionary of typed IDs. Key is the ID type and the object is a list of ID values.</p>
+		<p>The first value in the NSArray which exists in the <a href="#//api/name/data">data</a> dictionary for the given key.</p>
 	</div>
 	
 	
 	
 	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Convenience method to get the first value of the NSArray for a given key in the <a href="#//api/name/data">data</a> dictionary, or nil if it is not available. This corresponds to the most recent <a href="#//api/name/data">data</a> added or set for the given device clique.</p>
+	</div>
 	
 	
 	
@@ -515,8 +582,8 @@
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/getPlatforms" title="getPlatforms"></a>
-	<h3 class="subsubtitle method-title">getPlatforms</h3>
+	<a name="//api/name/platforms" title="platforms"></a>
+	<h3 class="subsubtitle method-title">platforms</h3>
 	
 	
 	
@@ -526,7 +593,7 @@
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSArray *)getPlatforms</code></div>
+	<div class="method-subsection method-declaration"><code>- (NSArray *)platforms</code></div>
 
     
 	
@@ -562,7 +629,7 @@
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Whether or not the request has any API-level errors, such as permission violations.</p>
+		<p>Whether or not the request has any API-level <a href="#//api/name/errors">errors</a>, such as permission violations.</p>
 	</div>		
 	
     
@@ -575,7 +642,7 @@
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>Whether or not the request has any API-level errors, such as permission violations.</p>
+		<p>Whether or not the request has any API-level <a href="#//api/name/errors">errors</a>, such as permission violations.</p>
 	</div>
 	
 	
@@ -609,7 +676,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Tapad. All rights reserved. (Last updated: 2013-08-23)</span><br />
+						<p><span class="copyright">&copy; 2013 Tapad. All rights reserved. (Last updated: 2013-08-26)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
