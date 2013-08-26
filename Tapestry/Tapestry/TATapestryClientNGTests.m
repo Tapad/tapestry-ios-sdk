@@ -162,7 +162,7 @@
         TALog(@"callback: %@", response);
         STAssertNotNil(response, @"Expected valid response.");
         STAssertNil(error, @"Did not expect an error in this callback.");
-        NSDictionary *data = [response getData];
+        NSDictionary *data = [response data];
         NSString *echoedQueryString = [[data objectForKey:@"query"] objectAtIndex:0];
         NSString *expected = @"ta_partner_id=xxx";
         NSRange match = [echoedQueryString rangeOfString:expected];
