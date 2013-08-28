@@ -16,6 +16,46 @@ Project setup:
     2. Add -ObjC to Other Linker Flags
 5. Under your target's "Info" tab, add the `TapestryPartnerID` key the Custom iOS Target Properies; the value should be your partner id.
 
+Code Samples:
+-------------
+
+Include the Tapestry header file:
+
+```objc
+    #import "TATapestryClient.h"
+```
+
+Construct a request, add some audiences and data, and send the request:
+
+```objc
+    TATapestryRequest* request = [TATapestryRequest request];
+    [request addAudiences:@"aud1", @"aud2", @"aud3", nil];
+    [request addData:@"blue" forKey:@"color"];
+    [request addData:@"ford" forKey:@"make"];
+    [[TATapestryClient sharedClient] queueRequest:request];
+```
+
+Make a request for data, and do something with it in a callback:
+
+```objc
+    TATapestryRequest* request = [TATapestryRequest request];
+    TATapestryResponseHandler handler = ^(TATapestryResponse* response, NSError* error,
+                                          NSTimeInterval intervalSinceRequestFirstInvoked){
+        if (error) {
+            NSLog(@"Call failed with error: %@", [error localizedDescription]);
+        } else {
+            if ([response wasSuccess]) {
+                NSString* color = [response firstValueForKey:@"color"];
+                NSArray* allColors = [[response data] valueForKey:@"color"];
+                NSLog(@"This user likes the color %@", color");
+            } else {
+                NSLog(@"Call failed with service failures: \n%@", [response errors]);
+            }
+        }
+    };
+    [[TATapestryClient sharedClient] queueRequest:request withResponseBlock:handler];
+```
+
 
 Documentation:
 --------------
