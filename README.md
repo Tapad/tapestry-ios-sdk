@@ -14,6 +14,7 @@ Project setup:
 4. Under your project or target, add the following build info:
     1. Add ${BUILD_PRODUCTS_DIR}/include/ (Recursive) to Header Search Path for your app project
     2. Add -ObjC to Other Linker Flags
+5. Under your target's "Info" tab, add the `TapestryPartnerID` key the Custom iOS Target Properies; the value should be your partner id.
 
 
 Documentation:
