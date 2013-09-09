@@ -7,9 +7,9 @@
 //
 
 #import <MessageUI/MessageUI.h>
-#import "TATapestryClient.h"
-#import "TATapadIdentifiers.h"
-#import "NSString+Tapad.h"
+#import "Tapestry/TATapestryClient.h"
+#import "Tapestry/TATapadIdentifiers.h"
+#import "Tapestry/NSString+Tapad.h"
 #import "ViewController.h"
 
 @interface ViewController () <MFMailComposeViewControllerDelegate>
