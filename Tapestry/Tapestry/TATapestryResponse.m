@@ -57,6 +57,11 @@
     return firstValue;
 }
 
+- (NSArray*)analytics
+{
+    return [self.response objectForKey:@"analytics"];
+}
+
 - (NSArray*)audiences
 {
     return [self.response objectForKey:@"audiences"];

@@ -159,7 +159,7 @@
 
 - (void)setAnalytics:(BOOL)isNewSession
 {
-    [self addValue:isNewSession ? @"true" : @"false" forParameter:@"ta_analytics"];
+    [self addMapParameter:@"ta_analytics" forKey:@"isNewSession" andValue:(isNewSession ? @"true" : @"false")];
 }
 
 - (void)setPlatform:(NSString*)platform

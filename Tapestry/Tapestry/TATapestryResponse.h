@@ -28,6 +28,11 @@
 - (BOOL)wasSuccess;
 
 /**
+ @return Dictionary of analytics data.
+ */
+- (NSDictionary*)analytics;
+
+/**
  @return Dictionary of typed IDs. Key is the ID type and the object is a list of ID values.
  */
 - (NSDictionary*)IDs;
