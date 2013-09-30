@@ -20,14 +20,14 @@ static int64_t lastAnalyticsPush = 0;
                                            dispatchPeriod:10
                                                  delegate:nil];
     [self sendAnalytics];
-    [self sendAnalytics];
 }
 
 - (void)sendAnalytics {
     // has 30 minutes elapsed since last analytics push?
-    BOOL isNewSession = lastAnalyticsPush < [[NSDate date] timeIntervalSince1970] - 30 * 60 * 1000;
+    NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
+    BOOL isNewSession = lastAnalyticsPush < currentTime - 30 * 60 * 1000;
     // update timestamp in a thread-safe manner
-    OSAtomicCompareAndSwap64(lastAnalyticsPush, [[NSDate date] timeIntervalSince1970], &lastAnalyticsPush);
+    OSAtomicCompareAndSwap64(lastAnalyticsPush, currentTime, &lastAnalyticsPush);
 
     TATapestryRequest* request = [TATapestryRequest request];
     [request setAnalytics:isNewSession];

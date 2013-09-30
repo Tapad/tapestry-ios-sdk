@@ -79,7 +79,6 @@
 		23B83F1614210534003DAFFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		23B83F1814210534003DAFFE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		23B83F2214210534003DAFFE /* DemoApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoApp-Prefix.pch"; sourceTree = "<group>"; };
-		23D5C9CF159408DC000E92C2 /* MyEnabledTapadIdentifiers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyEnabledTapadIdentifiers.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +117,6 @@
 				237C713614210758002DF422 /* AppDelegate.m */,
 				1D3A62F1176A4FC100EDCF1A /* AppDelegate.h */,
 				1D3A62F0176A4F7E00EDCF1A /* GANTracker.h */,
-				23D5C9CF159408DC000E92C2 /* MyEnabledTapadIdentifiers.h */,
 				237C714414210873002DF422 /* MainStoryboard_iPhone.storyboard */,
 			);
 			name = DemoApp;
