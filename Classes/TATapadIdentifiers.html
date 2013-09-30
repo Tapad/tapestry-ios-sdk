@@ -4,10 +4,9 @@
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
 		<title>TATapadIdentifiers Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
-		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.1 (build 840)" />
+		<meta name="generator" content="appledoc 2.2 (build 961)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -155,13 +154,13 @@
 </tr>
 						</tbody></table></div>
 					
-					
-					
+                    
+                    
 					
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>TATapadIdentifiers is an interface to retreive device IDs and to configure device ID preferences.</p>
+						<p>TATapadIdentifiers is an interface to retrieve device IDs and to configure device ID preferences.</p>
 
 <p>There are three classes of identifiers: IDFA, OpenUDID, and hashed MAC address.</p>
 
@@ -171,13 +170,11 @@
 
 <p><strong>Hashed MAC addresses</strong> can be disabled by setting <code>setIdentifierEnabledMAC</code> to <code>NO</code>. If this method is enabled, the MAC address is hashed to protect privacy. If a user is opted out, the hashed MAC address is still sent because the opt-out status is stored on Tapad&rsquo;s servers, and it must be sent in order to properly look up the opt-out status and prevent tracking.</p>
 
-<p>If you wish to avoid having any code which even accesses the device&rsquo;s MAC address, simply remove the following methods and their usages in <code>TATapadIdentifiers.m</code>:</p>
-
-<pre><code>fetchMD5HashedMAC
-fetchMD5HashedRawMAC
-fetchSHA1HashedMAC
-fetchSHA1HashedRawMAC
-</code></pre>
+<p>If you wish to avoid having any code which even accesses the device&rsquo;s MAC address, simply remove the following methods and their usages in <code>TATapadIdentifiers.m</code>:
+    fetchMD5HashedMAC
+    fetchMD5HashedRawMAC
+    fetchSHA1HashedMAC
+    fetchSHA1HashedRawMAC</p>
 
 <p>If any of the identifiers turns out to be opted out, Tapad considers the entire device opted out. More privacy information is available here: <a href="http://www.tapad.com/consumer-privacy/">http://www.tapad.com/consumer-privacy/</a></p>
 					</div>
@@ -198,14 +195,12 @@ fetchSHA1HashedRawMAC
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/setIdentifierEnabledMAC:">+&nbsp;setIdentifierEnabledMAC:</a></code>
-		<span class="tooltip"><p>Set usage of hashed MAC address as an identifier.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/setIdentifierEnabledOpenUDID:">+&nbsp;setIdentifierEnabledOpenUDID:</a></code>
-		<span class="tooltip"><p>Set usage of OpenUDID as an identifier.</p></span>
 	</span>
 	
 	
@@ -220,14 +215,12 @@ fetchSHA1HashedRawMAC
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/typedDeviceIDsAsCommaSeparatedString">+&nbsp;typedDeviceIDsAsCommaSeparatedString</a></code>
-		<span class="tooltip"><p>Get device IDs as string</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/typedDeviceIDs">+&nbsp;typedDeviceIDs</a></code>
-		<span class="tooltip"><p>Get device IDs as dictionary</p></span>
 	</span>
 	
 	
@@ -242,56 +235,48 @@ fetchSHA1HashedRawMAC
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/invalidateIDs">+&nbsp;invalidateIDs</a></code>
-		<span class="tooltip"><p>Clear the static representation of enabled ids.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/buildDeviceIDs">+&nbsp;buildDeviceIDs</a></code>
-		<span class="tooltip"><p>dictionary of enabled id types &ndash;> id values.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/fetchOpenUDID">+&nbsp;fetchOpenUDID</a></code>
-		<span class="tooltip"><p>tuple of @[ open udid type, open udid value ], or nil if disabled. openudid value is a string of 0s if the user is opted out.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/fetchMD5HashedRawMAC">+&nbsp;fetchMD5HashedRawMAC</a></code>
-		<span class="tooltip"><p>tuple of @[ md5 hashed raw mac type, md5 hashed raw mac value ], or nil if disabled.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/fetchSHA1HashedRawMAC">+&nbsp;fetchSHA1HashedRawMAC</a></code>
-		<span class="tooltip"><p>tuple of @[ sha1 hashed raw mac type, sha1 hashed raw mac value ], or nil if disabled</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/fetchMD5HashedMAC">+&nbsp;fetchMD5HashedMAC</a></code>
-		<span class="tooltip"><p>tuple of @[ md5 hashed mac type, md5 hashed mac value ], or nil if disabled</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/fetchSHA1HashedMAC">+&nbsp;fetchSHA1HashedMAC</a></code>
-		<span class="tooltip"><p>tuple of @[ sha1 hashed mac type, sha1 hashed mac value ], or nil if disabled</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/fetchAdvertisingIdentifier">+&nbsp;fetchAdvertisingIdentifier</a></code>
-		<span class="tooltip"><p>tuple of @[ idfa type, idfa value ], or nil if unavailable. idfa value is &ldquo;0&rdquo; if user is opted out.</p></span>
 	</span>
 	
 	
@@ -317,7 +302,7 @@ fetchSHA1HashedRawMAC
 	
 	
 	<div class="method-subsection brief-description">
-		<p>dictionary of enabled id types &ndash;> id values.</p>
+		<p>dictionary of enabled id types -> id values.</p>
 	</div>		
 	
     
@@ -330,7 +315,7 @@ fetchSHA1HashedRawMAC
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>dictionary of enabled id types &ndash;> id values.</p>
+		<p>dictionary of enabled id types -> id values.</p>
 	</div>
 	
 	
@@ -760,7 +745,7 @@ fetchSHA1HashedRawMAC
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>dictionary of enabled id types &ndash;> id values.</p>
+		<p>dictionary of enabled id types -> id values.</p>
 	</div>
 	
 	
@@ -837,6 +822,8 @@ fetchSHA1HashedRawMAC
 					
 					
 					
+                    
+                    
 				</div>
 				<div class="main-navigation navigation-bottom">
 					<ul>
@@ -847,9 +834,9 @@ fetchSHA1HashedRawMAC
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Tapad. All rights reserved. (Last updated: 2013-08-26)</span><br />
+						<p><span class="copyright">&copy; 2013 Tapad. All rights reserved. (Last updated: 2013-09-30)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						
 					</div>
 				</div>
