@@ -1,5 +1,5 @@
-Tapestry iOS SDK Demo
-
+Content Optimization Demo
+-------------------------
 1. Tap on the car picture to cycle through different colors.
 2. Send an email with a bridging link to yourself.
 3. Open that email from another device and click the link. You are redirected to web version of the content optimization demo. Color preferences are synced between the devices automatically. Try switching colors and refreshing to see.
