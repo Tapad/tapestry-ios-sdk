@@ -228,13 +228,13 @@
 - (void)testBooleanValueTrue
 {
     [self.request setAnalytics:YES];
-    [self assertQuery:@"ta_analytics=true"];
+    [self assertQuery:@"ta_analytics=isNewSession:true"];
 }
 
 - (void)testBooleanValueFalse
 {
     [self.request setAnalytics:NO];
-    [self assertQuery:@"ta_analytics=false"];
+    [self assertQuery:@"ta_analytics=isNewSession:false"];
 }
 
 // Helpers which use this class's various properties (key1, val1, request, etc).
