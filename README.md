@@ -1,6 +1,6 @@
 Quick Setup
 --------------
-Download the [Tapestry iOS SDK](https://github.com/Tapad/tapestry-ios-sdk/releases) (tapestry-ios-X-X-X.zip) from the releases page ([appledocs here](https://tapad.github.com/tapestry-ios-sdk)).
+Download the [Tapestry iOS SDK](https://github.com/Tapad/tapestry-ios-sdk/releases) (tapestry-ios-sdk-X-X-X.zip) from the releases page ([appledocs here](https://tapad.github.com/tapestry-ios-sdk)).
 
 1. Extract the zip and drag Tapestry.xcodeproj into your app project
 2. Select your target and choose the **Build Phases** tab, adding the following:
