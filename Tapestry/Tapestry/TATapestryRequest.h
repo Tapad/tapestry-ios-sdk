@@ -150,6 +150,13 @@
 - (void)addUserId:(NSString*)userId forSource:(NSString*)source;
 
 /**
+ Set a partner device id, typically the mobile browser's cookie id.
+
+ @param id The id value
+ */
+- (void)setPartnerDeviceId:(NSString*)deviceId;
+
+/**
  Add a typed device id, e.g. OpenUDID or IDFA. The client sets these automatically; under normal circumstances it is not necessary to set your own.
  
  @param typedId The typed id, e.g. ABCDEF-GHJID-FDSFASD

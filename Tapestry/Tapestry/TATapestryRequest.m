@@ -142,6 +142,11 @@
     return [self.parameters objectForKey:@"ta_partner_id"];
 }
 
+- (void)setPartnerDeviceId:(NSString*)deviceId
+{
+    [self addValue:deviceId forParameter:@"ta_partner_did"];
+}
+
 - (void)addUserId:(NSString*)userId forSource:(NSString*)source
 {
     [self addMapParameter:@"ta_partner_user_id" forKey:source andValue:userId];
