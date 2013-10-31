@@ -193,8 +193,10 @@
 {
     [self.request setStrength:5];
     [self.request setPartnerId:@"abc"];
+    [self.request setPartnerDeviceId:@"def"];
     [self assertQueryComponent:@"ta_strength=5"];
     [self assertQueryComponent:@"ta_partner_id=abc"];
+    [self assertQueryComponent:@"ta_partner_did=def"];
 }
 
 - (void)testExtendedCharsetValue
