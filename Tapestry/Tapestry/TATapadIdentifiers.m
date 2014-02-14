@@ -15,6 +15,7 @@
 @implementation TATapadIdentifiers
 
 static NSString* const kTypeAdvertisingIdentifier       = @"idfa";
+static NSString* const kTypeIdentifierForVendor         = @"idfv";
 static NSString* const kTypeOpenUDID                    = @"oudid";
 static NSString* const kTypeMacMd5                      = @"md5mac";
 static NSString* const kTypeMacRawMd5                   = @"md5rmac";
@@ -23,6 +24,7 @@ static NSString* const kTypeMacRawSha1                  = @"sha1rmac";
 
 static NSString* const kIdentifierOpenUDID              = @"tapestry.identifier.openudid.disabled";
 static NSString* const kIdentifierMAC                   = @"tapestry.identifier.mac.disabled";
+static NSString* const kIdentifierIDFV                  = @"tapestry.identifier.idfv.disabled";
 
 static NSDictionary* deviceIDs = nil;
 
@@ -34,6 +36,11 @@ static NSDictionary* deviceIDs = nil;
 + (void)setIdentifierEnabledOpenUDID:(BOOL)enabled
 {
     [self setIdentifier:kIdentifierOpenUDID enabled:enabled];
+}
+
++ (void)setIdentifierEnabledIdentifierForVendor:(BOOL)enabled
+{
+    [self setIdentifier:kIdentifierIDFV enabled:enabled];
 }
 
 + (void)setIdentifier:(NSString*)identifier enabled:(BOOL)enabled
@@ -51,7 +58,13 @@ static NSDictionary* deviceIDs = nil;
         return [value boolValue];
     }
     else {
-        return YES;
+        // default IDFV to NO
+        if (identifier == kIdentifierIDFV) {
+            return NO;
+        }
+        else {
+            return YES;
+        }
     }
 }
 
@@ -84,6 +97,7 @@ static NSDictionary* deviceIDs = nil;
     
     NSArray *ids = @[
       [self fetchAdvertisingIdentifier],
+      [self fetchIdentifierForVendor],
       [self fetchOpenUDID],
       [self fetchMD5HashedMAC],
       [self fetchMD5HashedRawMAC],
@@ -181,6 +195,21 @@ static NSDictionary* deviceIDs = nil;
         }
         else {
             return @[kTypeAdvertisingIdentifier, @"0"];
+        }
+    }
+    else {
+        return nil;
+    }
+}
+
+/** @return tuple of @[ idfv type, idfv value ], or nil if unavailable. */
++ (NSArray*) fetchIdentifierForVendor {
+    if ([self isIdentifierEnabled:kIdentifierIDFV] &&SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")) {
+        if ([[UIDevice currentDevice] identifierForVendor] != nil) {
+            return @[kTypeIdentifierForVendor, [[[UIDevice currentDevice] identifierForVendor] UUIDString]];
+        }
+        else {
+            return nil;
         }
     }
     else {
