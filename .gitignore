@@ -1,5 +1,6 @@
 .DS_Store
 .idea
 *xcuserdatad
+*xcshareddata
 docset-installed.txt
 *.zip
