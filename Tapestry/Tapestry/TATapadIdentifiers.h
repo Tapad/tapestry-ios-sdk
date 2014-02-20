@@ -13,9 +13,11 @@
 /**
  TATapadIdentifiers is an interface to retrieve device IDs and to configure device ID preferences.
  
- There are three classes of identifiers: IDFA, OpenUDID, and hashed MAC address.
+ There are four classes of identifiers: IDFA, OpenUDID, and hashed MAC address.
  
  __IDFA__ is managed by iOS; users can opt out via general preferences. As of summer 2013, 94% of iOS devices support IDFA (iOS 6+).
+ 
+ __IDFV__ is managed by iOS and is not collected by default. It can be enabled by setting `setIdentifierEnabledIdentifierForVendor` to `YES`. The value in this property remains the same while the app (or another app from the same vendor) is installed on the iOS device. The value changes when the user deletes all of that vendor’s apps from the device and subsequently reinstalls one or more of them. The value can also change when installing test builds using Xcode or when installing an app on a device using ad-hoc distribution. 
  
  __OpenUDID__ can be disabled by setting `setIdentifierEnabledOpenUDID` to `NO`. If this method is enabled but the user has opted out, the value is the generic OpenUDID opt-out value.
  
@@ -43,6 +45,10 @@
  */
 + (void)setIdentifierEnabledOpenUDID:(BOOL)enabled;
 
+/** Set usage of IDFV as an identifier.
+  @param enabled YES to enable IDFV, NO to disable
+ */
++ (void)setIdentifierEnabledIdentifierForVendor:(BOOL)enabled;
 
 /** @name Retrieving IDs */
 
