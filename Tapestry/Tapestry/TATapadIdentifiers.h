@@ -17,7 +17,7 @@
  
  __IDFA__ is managed by iOS; users can opt out via general preferences. As of summer 2013, 94% of iOS devices support IDFA (iOS 6+).
  
- __IDFV__ is managed by iOS and is not collected by default. It can be enabled by setting `setIdentiferEnabledIdentifierForVendor` to `YES`. The value in this property remains the same while the app (or another app from the same vendor) is installed on the iOS device. The value changes when the user deletes all of that vendor’s apps from the device and subsequently reinstalls one or more of them. The value can also change when installing test builds using Xcode or when installing an app on a device using ad-hoc distribution. 
+ __IDFV__ is managed by iOS and is not collected by default. It can be enabled by setting `setIdentifierEnabledIdentifierForVendor` to `YES`. The value in this property remains the same while the app (or another app from the same vendor) is installed on the iOS device. The value changes when the user deletes all of that vendor’s apps from the device and subsequently reinstalls one or more of them. The value can also change when installing test builds using Xcode or when installing an app on a device using ad-hoc distribution. 
  
  __OpenUDID__ can be disabled by setting `setIdentifierEnabledOpenUDID` to `NO`. If this method is enabled but the user has opted out, the value is the generic OpenUDID opt-out value.
  
