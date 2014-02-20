@@ -9,6 +9,7 @@
 #import "NavController.h"
 #import "RootViewController.h"
 #import "Tapestry/TATapestryClient.h"
+#import "Tapestry/TATapadIdentifiers.h"
 #import "GAIDictionaryBuilder.h"
 #import "GAIFields.h"
 #import <libkern/OSAtomic.h>
@@ -46,6 +47,8 @@ static int64_t lastAnalyticsPush = 0;
   self.tracker = [[GAI sharedInstance] trackerWithName:@"CuteAnimals"
                                             trackingId:kTrackingId];
   
+  // Enable IDFV
+  [TATapadIdentifiers setIdentifierEnabledIdentifierForVendor:YES];
   // Asynchronously fetch and send Tapestry's cross-platform web analytics to google anlytics.
   [self sendCrossPlatformWebAnalytics];
 
