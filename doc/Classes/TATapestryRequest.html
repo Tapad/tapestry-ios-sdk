@@ -4,9 +4,10 @@
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
 		<title>TATapestryRequest Class Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.2 (build 961)" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -201,8 +202,8 @@
 </tr>
 						</tbody></table></div>
 					
-                    
-                    
+					
+					
 					
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
@@ -236,6 +237,7 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/request">+&nbsp;request</a></code>
+		<span class="tooltip"><p>Create and return a TATapestryRequest instance</p></span>
 	</span>
 	
 	
@@ -250,42 +252,51 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/setData:forKey:">&ndash;&nbsp;setData:forKey:</a></code>
+		<span class="tooltip"><p>Sets the value for a data key. This will overwrite any existing data for this key.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/addData:forKey:">&ndash;&nbsp;addData:forKey:</a></code>
+		<span class="tooltip"><p>Adds a value to a data key.  Only one value can be added per <a href="#//api/name/request">request</a>, so calling this method with the same key
+more than once will simply replace any existing values with the most recent.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/addUniqueData:forKey:">&ndash;&nbsp;addUniqueData:forKey:</a></code>
+		<span class="tooltip"><p>This method will add or set a unique value (set-add) for this key. No duplicates.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/removeData:forKey:">&ndash;&nbsp;removeData:forKey:</a></code>
+		<span class="tooltip"><p>Removes the value for a data key.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/clearData:">&ndash;&nbsp;clearData:</a></code>
+		<span class="tooltip"><p>Clear data removes all data from one or more keys.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/getData">&ndash;&nbsp;getData</a></code>
+		<span class="tooltip"><p>Tells Tapestry to return data (for use in a callback). This is automatically set by the client when a handler is present.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/getDevices">&ndash;&nbsp;getDevices</a></code>
+		<span class="tooltip"><p>Tells Tapestry to return all the devices listed out as well as combined.
+The list of devices can be accessed in the response.</p></span>
 	</span>
 	
 	
@@ -300,12 +311,14 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/setDepth:">&ndash;&nbsp;setDepth:</a></code>
+		<span class="tooltip"><p>Tells Tapestry to consider devices this many steps away from the source device.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/setStrength:">&ndash;&nbsp;setStrength:</a></code>
+		<span class="tooltip"><p>The strength value between 1-5 inclusive. Default is 2</p></span>
 	</span>
 	
 	
@@ -320,12 +333,14 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/addAudiences:">&ndash;&nbsp;addAudiences:</a></code>
+		<span class="tooltip"><p>Adds this device to one or more audiences.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/removeAudiences:">&ndash;&nbsp;removeAudiences:</a></code>
+		<span class="tooltip"><p>Removes this device to one or more audiences.</p></span>
 	</span>
 	
 	
@@ -340,24 +355,28 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/setPartnerId:">&ndash;&nbsp;setPartnerId:</a></code>
+		<span class="tooltip"><p>Sets the partner ID for this <a href="#//api/name/request">request</a>, will be set by the Tapestry SDK automatically.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/addUserId:forSource:">&ndash;&nbsp;addUserId:forSource:</a></code>
+		<span class="tooltip"><p>Adds a cross-device user id</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/setPartnerDeviceId:">&ndash;&nbsp;setPartnerDeviceId:</a></code>
+		<span class="tooltip"><p>Set a partner device id, typically the mobile browser&rsquo;s cookie id.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/addTypedId:forSource:">&ndash;&nbsp;addTypedId:forSource:</a></code>
+		<span class="tooltip"><p>Add a typed device id, e.g. OpenUDID or IDFA. The client sets these automatically; under normal circumstances it is not necessary to set your own.</p></span>
 	</span>
 	
 	
@@ -372,24 +391,28 @@
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/setAnalytics:">&ndash;&nbsp;setAnalytics:</a></code>
+		<span class="tooltip"><p>Sets the analytics parameter for tracking in analytics platforms</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/query">&ndash;&nbsp;query</a></code>
+		<span class="tooltip"><p>Converts the <a href="#//api/name/request">request</a> into a URL-encoded query string.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/setPlatform:">&ndash;&nbsp;setPlatform:</a></code>
+		<span class="tooltip"><p>Sets the platform <a href="#//api/name/query">query</a> parameter to better identify the device type. This is set automatically by the client.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/requestID">&ndash;&nbsp;requestID</a></code>
+		<span class="tooltip"><p>Returns the <a href="#//api/name/uuid">uuid</a> for this <a href="#//api/name/request">request</a></p></span>
 	</span>
 	
 	
@@ -1428,8 +1451,6 @@ The list of devices can be accessed in the response.</p>
 					</div>
 					
 					
-                    
-                    
 				</div>
 				<div class="main-navigation navigation-bottom">
 					<ul>
@@ -1440,9 +1461,9 @@ The list of devices can be accessed in the response.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Tapad. All rights reserved. (Last updated: 2013-10-31)</span><br />
+						<p><span class="copyright">&copy; 2014 Tapad. All rights reserved. (Last updated: 2014-02-21)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
 						
 					</div>
 				</div>
