@@ -15,7 +15,7 @@
 #import <libkern/OSAtomic.h>
 
 /******* Set your tracking ID here *******/
-static NSString *const kTrackingId = @"UA-30562281-9";
+static NSString *const kTrackingId = @"YOUR TRACKING ID HERE";
 static NSString *const kAllowTracking = @"allowTracking";
 
 @interface AppDelegate ()
