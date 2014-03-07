@@ -129,7 +129,7 @@
 
 - (void)setDepth:(NSInteger)depth
 {
-    [self addValue:[NSString stringWithFormat:@"%d", depth] forParameter:@"ta_depth"];
+    [self addValue:[NSString stringWithFormat:@"%ld", (long)depth] forParameter:@"ta_depth"];
 }
 
 - (void)setPartnerId:(NSString*)partnerId
@@ -154,7 +154,7 @@
 
 - (void)setStrength:(NSInteger)strength
 {
-    [self addValue:[NSString stringWithFormat:@"%d", strength] forParameter:@"ta_strength"];
+    [self addValue:[NSString stringWithFormat:@"%ld", (long)strength] forParameter:@"ta_strength"];
 }
 
 - (void)addTypedId:(NSString*)typedId forSource:(NSString*)source
