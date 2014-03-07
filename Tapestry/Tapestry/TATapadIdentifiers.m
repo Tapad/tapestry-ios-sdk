@@ -90,27 +90,22 @@ static NSDictionary* deviceIDs = nil;
     return deviceIDs;
 }
 
+#define TA_FETCH_AND_ADD_IDENTIFIER(ID, FETCH, DICT) ID = FETCH; if (did != nil) { [DICT setValue:[did objectAtIndex:1] forKey:[did objectAtIndex:0]]; }; ID = nil;
+
 /** @return dictionary of enabled id types -> id values. */
 + (NSDictionary*) buildDeviceIDs
 {
     NSMutableDictionary *dids = [NSMutableDictionary dictionary];
+    NSArray *did = nil;
     
-    NSArray *ids = @[
-      [self fetchAdvertisingIdentifier],
-      [self fetchIdentifierForVendor],
-      [self fetchOpenUDID],
-      [self fetchMD5HashedMAC],
-      [self fetchMD5HashedRawMAC],
-      [self fetchSHA1HashedMAC],
-      [self fetchSHA1HashedRawMAC]
-    ];
+    TA_FETCH_AND_ADD_IDENTIFIER(did, [self fetchAdvertisingIdentifier], dids);
+    TA_FETCH_AND_ADD_IDENTIFIER(did, [self fetchIdentifierForVendor]  , dids);
+    TA_FETCH_AND_ADD_IDENTIFIER(did, [self fetchOpenUDID]             , dids);
+    TA_FETCH_AND_ADD_IDENTIFIER(did, [self fetchMD5HashedMAC]         , dids);
+    TA_FETCH_AND_ADD_IDENTIFIER(did, [self fetchMD5HashedRawMAC]      , dids);
+    TA_FETCH_AND_ADD_IDENTIFIER(did, [self fetchSHA1HashedMAC]        , dids);
+    TA_FETCH_AND_ADD_IDENTIFIER(did, [self fetchSHA1HashedRawMAC]     , dids);
     
-    for (NSArray* did in ids) {
-        if (did != nil) {
-            [dids setValue:[did objectAtIndex:1] forKey:[did objectAtIndex:0]];
-        }
-    }
-
     return [NSDictionary dictionaryWithDictionary:dids];
 }
 
